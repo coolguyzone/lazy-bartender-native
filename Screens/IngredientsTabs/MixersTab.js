@@ -1,23 +1,21 @@
-import { useState } from "react";
-import { StyleSheet, Text, View } from "react-native";
-import CheckBox from "react-native-check-box";
+import { ScrollView, StyleSheet, Text, View } from "react-native";
 import IngredientCheckBox from "../../components/IngredientCheckBox";
 import { Constants } from "../../util/constants";
 
-function LightBoozeTab() {
+function MixersTab() {
   return (
-    <>
-      <Text style={{ marginTop: 20 }}>Light Booze</Text>
+    <ScrollView>
+      <Text style={{ marginTop: 20 }}>Mixers</Text>
       <View style={styles.IngredientContainer}>
-        {Constants.clearDrinks.map((drink) => {
+        {Constants.mixers.map((drink) => {
          return <IngredientCheckBox key={drink}>{drink}</IngredientCheckBox>
         })}
       </View>
-    </>
+    </ScrollView>
   );
 }
 
-export default LightBoozeTab;
+export default  MixersTab;
 
 const styles = StyleSheet.create({
   IngredientContainer: {
