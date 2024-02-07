@@ -1,5 +1,5 @@
 export const Constants = {
-  brownDrinks: [
+  brownBooze: [
     "Bourbon",
     "Scotch",
     "Coffee Liqueur",
@@ -47,7 +47,7 @@ export const Constants = {
     "Cranberry Vodka",
     "Vanilla Vodka",
   ],
-  fruitDrinks: [
+  fruitBooze: [
     "Absinthe",
     "Irish Cream",
     "Triple Sec",

@@ -7,8 +7,12 @@ function ProduceTab() {
     <ScrollView>
       <Text style={{ marginTop: 20 }}>Produce</Text>
       <View style={styles.IngredientContainer}>
-        {Constants.produce.map((drink) => {
-         return <IngredientCheckBox key={drink}>{drink}</IngredientCheckBox>
+        {Constants.produce.map((produce) => {
+          return (
+            <IngredientCheckBox key={produce} ingredient={produce}>
+              {produce}
+            </IngredientCheckBox>
+          );
         })}
       </View>
     </ScrollView>

@@ -7,8 +7,8 @@ function MixersTab() {
     <ScrollView>
       <Text style={{ marginTop: 20 }}>Mixers</Text>
       <View style={styles.IngredientContainer}>
-        {Constants.mixers.map((drink) => {
-         return <IngredientCheckBox key={drink}>{drink}</IngredientCheckBox>
+        {Constants.mixers.map((mixer) => {
+         return <IngredientCheckBox key={mixer} ingredient={mixer}>{mixer}</IngredientCheckBox>
         })}
       </View>
     </ScrollView>

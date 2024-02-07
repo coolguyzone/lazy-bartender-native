@@ -20,10 +20,10 @@ function LightBoozeTab() {
     <ScrollView>
       <Text style={{ marginTop: 20 }}>Light Booze</Text>
       <View style={styles.IngredientContainer}>
-        {Constants.clearBooze.map((drink) => {
+        {Constants.clearBooze.map((booze) => {
           return (
-            <IngredientCheckBox key={drink} booze={drink}>
-              {drink}
+            <IngredientCheckBox key={booze} ingredient={booze}>
+              {booze}
             </IngredientCheckBox>
           );
         })}

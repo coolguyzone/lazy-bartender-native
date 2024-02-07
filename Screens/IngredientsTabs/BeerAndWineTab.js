@@ -7,8 +7,8 @@ function BeerAndWineBoozeTab() {
     <ScrollView>
       <Text style={{ marginTop: 20 }}>Beer and Wine</Text>
       <View style={styles.IngredientContainer}>
-        {Constants.beerWine.map((drink) => {
-         return <IngredientCheckBox key={drink}>{drink}</IngredientCheckBox>
+        {Constants.beerWine.map((booze) => {
+         return <IngredientCheckBox key={booze} ingredient={booze}>{booze}</IngredientCheckBox>
         })}
       </View>
     </ScrollView>

@@ -4,13 +4,15 @@ import CheckBox from "react-native-check-box";
 import IngredientCheckBox from "../../components/IngredientCheckBox";
 import { Constants } from "../../util/constants";
 
+
 function DarkBoozeTab() {
+
   return (
     <ScrollView>
       <Text style={{ marginTop: 20 }}>Dark Booze</Text>
       <View style={styles.IngredientContainer}>
-        {Constants.brownDrinks.map((drink) => {
-         return <IngredientCheckBox key={drink}>{drink}</IngredientCheckBox>
+        {Constants.brownBooze.map((booze) => {
+         return <IngredientCheckBox key={booze} ingredient={booze}>{booze}</IngredientCheckBox>
         })}
       </View>
     </ScrollView>
