@@ -17,10 +17,10 @@ function IngredientCheckBox(props) {
         {
           if (CheckBoxState === true) {
             setCheckBoxState(false);
-            dispatch(removeIngredient(props.booze));
+            dispatch(removeIngredient(props.ingredient));
           } else {
             setCheckBoxState(true);
-            dispatch(addIngredient(props.booze));
+            dispatch(addIngredient(props.ingredient));
           }
         }
       }
