@@ -12,6 +12,8 @@ import BeerAndWineBoozeTab from "./Screens/IngredientsTabs/BeerAndWineTab";
 import MixersTab from "./Screens/IngredientsTabs/MixersTab";
 import ProduceTab from "./Screens/IngredientsTabs/ProduceTab";
 import { Ionicons } from "@expo/vector-icons";
+import store from "./src/app/store";
+import { Provider } from 'react-redux';
 
 
 const Drawer = createDrawerNavigator();
@@ -60,7 +62,7 @@ function IngredientsTabNavigator() {
 
 export default function App() {
   return (
-    <>
+    <Provider store={store}>
       <NavigationContainer>
         <Drawer.Navigator initialRouteName="Home">
           <Drawer.Screen name="Home" component={HomeScreen} />
@@ -71,7 +73,7 @@ export default function App() {
           <Drawer.Screen name="Recipes" component={RecipesScreen} />
         </Drawer.Navigator>
       </NavigationContainer>
-    </>
+    </Provider>
   );
 }
 
