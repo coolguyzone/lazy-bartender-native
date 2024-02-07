@@ -1,17 +1,31 @@
 import { useState } from "react";
 import CheckBox from "react-native-check-box";
+import { useSelector, useDispatch } from "react-redux";
+import { addIngredient, removeIngredient } from "../util/slices/inventorySlice";
 
-function IngredientCheckBox({ children }) {
+function IngredientCheckBox(props) {
+  const ingredients = useSelector((state) => state.inventory);
+  const dispatch = useDispatch();
+
   const [CheckBoxState, setCheckBoxState] = useState(false);
   return (
     <CheckBox
       onClick={() =>
-        CheckBoxState === true
-          ? setCheckBoxState(false)
-          : setCheckBoxState(true)
+        // CheckBoxState === true
+        //   ? setCheckBoxState(false)
+        //   : setCheckBoxState(true)
+        {
+          if (CheckBoxState === true) {
+            setCheckBoxState(false);
+            dispatch(removeIngredient(props.booze));
+          } else {
+            setCheckBoxState(true);
+            dispatch(addIngredient(props.booze));
+          }
+        }
       }
       isChecked={CheckBoxState}
-      leftText={children}
+      leftText={props.children}
     />
   );
 }

@@ -10,10 +10,16 @@ export const inventorySlice = createSlice({
       console.log('addIngredient')
       state.ingredientsArray.push(action.payload);
     },
+    removeIngredient: (state, action) => {
+      const index = state.ingredientsArray.indexOf(action.payload);
+      if (index > -1) {
+        state.ingredientsArray.splice(index, 1)
+      }
+    }
   },
 });
 
-export const { addIngredient }  = inventorySlice.actions;
-export const ingredientsArray = (state) => state.inventory.ingredientsArray;
+export const { addIngredient, removeIngredient }  = inventorySlice.actions;
+export const ingredientsArray = (state) => state.inventory.ingredientsArray.toString();
 
 export default inventorySlice.reducer;

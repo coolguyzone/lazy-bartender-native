@@ -25,7 +25,7 @@ export const Constants = {
     "Añejo Rum",
     "Benedictine",
   ],
-  clearDrinks: [
+  clearBooze: [
     "Vodka",
     "Gin",
     "Tequila",
