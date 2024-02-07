@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Button, StyleSheet, Text, View } from "react-native";
+import { Button, ScrollView, StyleSheet, Text, View } from "react-native";
 import CheckBox from "react-native-check-box";
 import IngredientCheckBox from "../../components/IngredientCheckBox";
 import { Constants } from "../../util/constants";
@@ -13,29 +13,31 @@ function LightBoozeTab() {
   const ingredients = useSelector((state) => state.inventory);
   const dispatch = useDispatch();
   // dispatch(inventory.addIngredient('bourbon'))
-  console.log('addIngredient', addIngredient),
-  console.log('ingredients', ingredients)
-
-
+  console.log("addIngredient", addIngredient),
+    console.log("ingredients", ingredients);
 
   return (
-    <>
+    <ScrollView>
       <Text style={{ marginTop: 20 }}>Light Booze</Text>
       <View style={styles.IngredientContainer}>
-        {Constants.clearDrinks.map((drink) => {
-          return <IngredientCheckBox key={drink}>{drink}</IngredientCheckBox>;
+        {Constants.clearBooze.map((drink) => {
+          return (
+            <IngredientCheckBox key={drink} booze={drink}>
+              {drink}
+            </IngredientCheckBox>
+          );
         })}
-        <Button
+        {/* <Button
           title="test"
           onPress={() => {
             console.log("clicked");
-            console.log('ingredients2', ingredients)
+            console.log("ingredients2", ingredients);
             return dispatch(addIngredient("bourbon"));
           }}
-        ></Button>
-        <Text>WHat's up!!! {useSelector(ingredientsArray)}</Text>
+        ></Button>*/}
+        <Text>WHat's up!!! {useSelector(ingredientsArray)}</Text> 
       </View>
-    </>
+    </ScrollView>
   );
 }
 
