@@ -3,7 +3,7 @@ import { createSlice } from "@reduxjs/toolkit";
 export const inventorySlice = createSlice({
   name: "inventory",
   initialState: {
-    ingredientsArray: ['water'],
+    ingredientsArray: ['Water'],
   },
   reducers: {
     addIngredient: (state, action) => {
