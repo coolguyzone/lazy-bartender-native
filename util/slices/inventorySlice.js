@@ -7,7 +7,6 @@ export const inventorySlice = createSlice({
   },
   reducers: {
     addIngredient: (state, action) => {
-      console.log('addIngredient')
       state.ingredientsArray.push(action.payload);
     },
     removeIngredient: (state, action) => {
