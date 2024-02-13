@@ -13,8 +13,6 @@ function LightBoozeTab() {
   const ingredients = useSelector((state) => state.inventory);
   const dispatch = useDispatch();
   // dispatch(inventory.addIngredient('bourbon'))
-  console.log("addIngredient", addIngredient),
-    console.log("ingredients", ingredients);
 
   return (
     <ScrollView>
