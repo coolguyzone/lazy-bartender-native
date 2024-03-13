@@ -15,8 +15,8 @@ function LightBoozeTab() {
   // dispatch(inventory.addIngredient('bourbon'))
 
   return (
-    <ScrollView>
-      <Text style={{ marginTop: 20 }}>Light Booze</Text>
+    <ScrollView style = {styles.scrollView}>
+      <Text style={styles.subHeaderText}>Light Booze</Text>
       <View style={styles.IngredientContainer}>
         {Constants.clearBooze.map((booze) => {
           return (
@@ -42,8 +42,21 @@ function LightBoozeTab() {
 export default LightBoozeTab;
 
 const styles = StyleSheet.create({
+  scrollView: {
+    backgroundColor: '#717171',
+  },
   IngredientContainer: {
+    backgroundColor: '#717171',
     alignContent: "space-around",
     padding: 20,
+    borderTopWidth: 2,
+    borderTopColor: 'white',
+    marginTop: 6,
   },
+  subHeaderText: {
+    marginTop: 20,
+    color: 'white',
+    fontSize: 20,
+    backgroundColor: '#717171',
+  }
 });

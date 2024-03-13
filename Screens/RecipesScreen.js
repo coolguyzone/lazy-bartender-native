@@ -32,10 +32,6 @@ function RecipesScreen() {
         setModalVisible={setModalVisible}
       />
 
-      {ingredients.map((ingredient) => (
-        <Text>{ingredient}</Text>
-      ))}
-
       {drinkList.map((drink) => {
         let drinkIngredients = drink.ingredients;
         for (let i = 0; i < drinkIngredients.length; i++) {
@@ -49,7 +45,7 @@ function RecipesScreen() {
             onPress={() =>
               showDrinkModal(
                 drink.name,
-                drink.ingredients[0].toString(),
+                drink.ingredients.join(", "),
                 drink.instructions
               )
             }
