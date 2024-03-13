@@ -7,12 +7,13 @@ function RecipeModal({ recipeTitle, recipeIngredients, recipeInstructions, modal
     <Modal animationType="slide" transparent={true} visible={modalVisible}>
       <View style={styles.centeredView}>
         <View style={styles.modalView}>
-          <Text style={styles.modalText}>{recipeTitle}</Text>
-          <Text>Ingredients: {recipeIngredients}</Text>
-          <Text>Instructions: {recipeInstructions}</Text>
-          <Pressable onPress={() => setModalVisible(!modalVisible)}>
-            <Text>Here is a pressable</Text>
+        <Pressable onPress={() => setModalVisible(!modalVisible)}>
+            <Text style={styles.xOut}>X</Text>
           </Pressable>
+          <Text style={styles.modalTitle}>{recipeTitle}</Text>
+          <Text style={styles.modalIngredients}>Ingredients: {recipeIngredients}</Text>
+          <Text>Instructions: {recipeInstructions}</Text>
+         
         </View>
       </View>
     </Modal>
@@ -44,8 +45,19 @@ const styles = StyleSheet.create({
     shadowRadius: 4,
     elevation: 5,
   },
-  modalText: {
+  modalTitle: {
     color: "green",
     fontSize: 24,
+    marginVertical: 24,
   },
+  modalIngredients: {
+    marginBottom: 20,
+  },
+  xOut: {
+    color: 'red',
+    marginLeft: 270,
+    marginTop: -20,
+    fontSize: 20,
+    fontWeight: 'bold',
+  }
 });

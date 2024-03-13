@@ -13,8 +13,7 @@ import MixersTab from "./Screens/IngredientsTabs/MixersTab";
 import ProduceTab from "./Screens/IngredientsTabs/ProduceTab";
 import { Ionicons } from "@expo/vector-icons";
 import store from "./src/app/store";
-import { Provider } from 'react-redux';
-
+import { Provider } from "react-redux";
 
 const Drawer = createDrawerNavigator();
 const BottomTab = createBottomTabNavigator();
@@ -27,35 +26,57 @@ function IngredientsTabNavigator() {
         component={LightBoozeTab}
         options={{
           tabBarIcon: ({ color, size }) => (
-            <Ionicons name="wine" color={'black'} size={size} />
+            <Ionicons name="wine" color={"black"} size={size} />
+          ),
+          tabBarStyle: { backgroundColor: "#717171"},
+          tabBarLabelStyle: { color: 'white'}
+        }}
+      />
+      <BottomTab.Screen
+        name="Dark Booze"
+        component={DarkBoozeTab}
+        options={{
+          tabBarIcon: ({ size }) => (
+            <Ionicons name="wine" color={"brown"} size={size} />
           ),
         }}
       />
-      <BottomTab.Screen name="Dark Booze" component={DarkBoozeTab} options={{
+      <BottomTab.Screen
+        name="Fruity Booze"
+        component={FruityBoozeTab}
+        options={{
           tabBarIcon: ({ size }) => (
-            <Ionicons name="wine" color={'brown'} size={size} />
+            <Ionicons name="wine" color={"red"} size={size} />
           ),
-        }} />
-      <BottomTab.Screen name="Fruity Booze" component={FruityBoozeTab} options={{
+        }}
+      />
+      <BottomTab.Screen
+        name="Beer and Wine"
+        component={BeerAndWineBoozeTab}
+        options={{
           tabBarIcon: ({ size }) => (
-            <Ionicons name="wine" color={'red'} size={size} />
+            <Ionicons name="wine" color={"goldenrod"} size={size} />
           ),
-        }}  />
-      <BottomTab.Screen name="Beer and Wine" component={BeerAndWineBoozeTab} options={{
+        }}
+      />
+      <BottomTab.Screen
+        name="Mixers"
+        component={MixersTab}
+        options={{
           tabBarIcon: ({ size }) => (
-            <Ionicons name="wine" color={'goldenrod'} size={size} />
+            <Ionicons name="water" color={"blue"} size={size} />
           ),
-        }} />
-      <BottomTab.Screen name="Mixers" component={MixersTab} options={{
+        }}
+      />
+      <BottomTab.Screen
+        name="Produce"
+        component={ProduceTab}
+        options={{
           tabBarIcon: ({ size }) => (
-            <Ionicons name="water" color={'blue'} size={size} />
+            <Ionicons name="nutrition" color={"orange"} size={size} />
           ),
-        }} />
-      <BottomTab.Screen name="Produce" component={ProduceTab} options={{
-          tabBarIcon: ({ size }) => (
-            <Ionicons name="nutrition" color={'orange'} size={size} />
-          ),
-        }} />
+        }}
+      />
     </BottomTab.Navigator>
   );
 }
