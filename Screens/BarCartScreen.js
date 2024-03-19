@@ -9,6 +9,7 @@ import MainHeader from "../components/MainHeader";
 import InstructionsBlade from "../components/InstructionsBlade";
 import ChecklistBox from "../components/CheckListBox";
 import ScrollArrowBlade from "../components/ScrollArrowBlade";
+import Footer from "../components/Footer";
 
 const baseEssentials = {
   title: "Cocktail Base Essentials",
@@ -44,18 +45,20 @@ function BarCartScreen() {
   const ingredients = useSelector((state) => state.inventory);
 
   return (
+    <>
     <ScrollView style={styles.scrollView}>
       <MainHeader />
       <InstructionsBlade>
         First, Lets add what ingredients you have on hand
       </InstructionsBlade>
-
       <ChecklistBox titleOptionsObject={baseEssentials} />
       <View style={styles.spacer}></View>
       <ChecklistBox titleOptionsObject={mixersEssentials} />
-
-      <ScrollArrowBlade />
+      <ScrollArrowBlade />      
     </ScrollView>
+
+      <Footer />
+    </>
   );
 }
 
@@ -69,4 +72,5 @@ const styles = StyleSheet.create({
   spacer: {
     height: 20,
   },
+
 });
