@@ -14,6 +14,7 @@ import ProduceTab from "./Screens/IngredientsTabs/ProduceTab";
 import { Ionicons } from "@expo/vector-icons";
 import store from "./src/app/store";
 import { Provider } from "react-redux";
+import BarCartScreen from "./Screens/BarCartScreen";
 
 const Drawer = createDrawerNavigator();
 const BottomTab = createBottomTabNavigator();
@@ -92,7 +93,12 @@ export default function App() {
             component={IngredientsTabNavigator}
           />
           <Drawer.Screen name="Recipes" component={RecipesScreen} />
+          <Drawer.Screen
+            name="Bar Cart"
+            component={BarCartScreen}
+          />
         </Drawer.Navigator>
+       
       </NavigationContainer>
     </Provider>
   );
