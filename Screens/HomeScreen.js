@@ -1,6 +1,7 @@
 import { Button, Pressable, StyleSheet, Text, View } from "react-native";
 import * as Font from "expo-font";
 import { useEffect, useState } from "react";
+import Footer from "../components/Footer";
 
 function HomeScreen() {
   const [fontLoaded, setFontLoaded] = useState(false);
@@ -21,6 +22,7 @@ function HomeScreen() {
   }
 
   return (
+    <>
     <View style={styles.centeredView}>
       <Text style={styles.title}>Lazy Bartender</Text>
       <View style={styles.welcomeTextWrapper}>
@@ -34,6 +36,8 @@ function HomeScreen() {
         <Text style={styles.startButtonText}>Let's get started!</Text>
       </Pressable>
     </View>
+    <Footer />
+    </>
   );
 }
 
