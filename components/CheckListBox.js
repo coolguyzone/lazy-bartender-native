@@ -1,4 +1,7 @@
 import { View, Text, StyleSheet, Pressable } from "react-native";
+import { useSelector, useDispatch } from "react-redux";
+import ChecklistBoxOption from "./CheckListBoxOption";
+
 
 
 
@@ -12,9 +15,7 @@ function ChecklistBox({titleOptionsObject}) {
       <View style={styles.checklistOptionContainer}>
         {titleOptionsObject.options.map((option) => {
           return (
-            <Pressable style={styles.checklistOption}>
-              <Text style={styles.checklistOptionText}>{option}</Text>
-            </Pressable>
+           <ChecklistBoxOption option={option} />
           );
         })}
       </View>
@@ -51,14 +52,5 @@ const styles = StyleSheet.create({
     flexWrap: "wrap",
     flexDirection: "row",
     gap: 14,
-  },
-  checklistOption: {
-    width: 104,
-    height: 36,
-    backgroundColor: "lightgrey",
-    flex: 1,
-    justifyContent: "center",
-    alignItems: "center",
-    flexBasis: "30%",
   },
 });

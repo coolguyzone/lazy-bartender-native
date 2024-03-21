@@ -1,7 +1,6 @@
 import { View, Text, StyleSheet, Pressable } from "react-native";
 import { Ionicons } from "@expo/vector-icons";
 import { useNavigation } from "@react-navigation/native";
-import BarCartScreen from "../Screens/BarCartScreen";
 
 function Footer() {
   const navigation = useNavigation();
