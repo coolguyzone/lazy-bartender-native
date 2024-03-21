@@ -1,6 +1,7 @@
 import { View, Text, StyleSheet, Pressable } from "react-native";
 import { Ionicons } from "@expo/vector-icons";
 import { useNavigation } from "@react-navigation/native";
+import { GlobalStyles } from "../util/constants/globalStyles";
 
 function Footer() {
   const navigation = useNavigation();
@@ -12,7 +13,11 @@ function Footer() {
         style={styles.siteFooterOption}
       >
         <Text style={styles.siteFooterOptionIcon}>
-          <Ionicons name="water" color={"blue"} size={14} />
+          <Ionicons
+            name="water"
+            color={GlobalStyles.colors.robRoy100}
+            size={14}
+          />
         </Text>
         <Text style={styles.siteFooterOptionContent}>My Bar</Text>
       </Pressable>
@@ -21,19 +26,31 @@ function Footer() {
         onPress={() => navigation.navigate("Recipes")}
       >
         <Text style={styles.siteFooterOptionIcon}>
-          <Ionicons name="water" color={"blue"} size={14} />
+          <Ionicons
+            name="water"
+            color={GlobalStyles.colors.robRoy100}
+            size={14}
+          />
         </Text>
         <Text style={styles.siteFooterOptionContent}>Drinks</Text>
       </Pressable>
       <View style={styles.siteFooterOption}>
         <Text style={styles.siteFooterOptionIcon}>
-          <Ionicons name="water" color={"blue"} size={14} />
+          <Ionicons
+            name="water"
+            color={GlobalStyles.colors.robRoy100}
+            size={14}
+          />
         </Text>
         <Text style={styles.siteFooterOptionContent}>Favorites</Text>
       </View>
       <View style={styles.siteFooterOption}>
         <Text style={styles.siteFooterOptionIcon}>
-          <Ionicons name="water" color={"blue"} size={14} />
+          <Ionicons
+            name="water"
+            color={GlobalStyles.colors.robRoy100}
+            size={14}
+          />
         </Text>
         <Text style={styles.siteFooterOptionContent}>Saved</Text>
       </View>
@@ -48,8 +65,9 @@ const styles = StyleSheet.create({
     paddingHorizontal: 30,
     paddingVertical: 10,
     height: 50,
-    backgroundColor: "white",
-    borderColor: "black",
+    backgroundColor: GlobalStyles.colors.towerGray600,
+
+    borderColor: GlobalStyles.colors.robRoy100,
     borderWidth: 1,
     flexDirection: "row",
     flexWrap: "wrap",
@@ -58,5 +76,8 @@ const styles = StyleSheet.create({
   siteFooterOption: {
     justifyContent: "center",
     alignItems: "center",
+  },
+  siteFooterOptionContent: {
+    color: GlobalStyles.colors.robRoy100,
   },
 });

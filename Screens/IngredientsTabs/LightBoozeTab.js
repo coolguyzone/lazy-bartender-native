@@ -2,7 +2,7 @@ import { useState } from "react";
 import { Button, ScrollView, StyleSheet, Text, View } from "react-native";
 import CheckBox from "react-native-check-box";
 import IngredientCheckBox from "../../components/IngredientCheckBox";
-import { Constants } from "../../util/constants";
+import { Constants } from "../../util/constants/constants";
 import { useSelector, useDispatch } from "react-redux";
 import {
   addIngredient,

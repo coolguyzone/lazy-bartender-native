@@ -1,6 +1,6 @@
 import { ScrollView, Text, View, Pressable, StyleSheet } from "react-native";
 import RecipeCard from "../components/recipe-components/RecipeCard";
-import { Constants } from "../util/constants";
+import { Constants } from "../util/constants/constants";
 import { useSelector } from "react-redux";
 import RecipeModal from "../components/recipe-components/RecipeModal";
 import { useState, useEffect, useLayoutEffect } from "react";

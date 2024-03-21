@@ -1,6 +1,6 @@
 import { ScrollView, StyleSheet, Text, View } from "react-native";
 import IngredientCheckBox from "../../components/IngredientCheckBox";
-import { Constants } from "../../util/constants";
+import { Constants } from "../../util/constants/constants";
 
 function BeerAndWineBoozeTab() {
   return (

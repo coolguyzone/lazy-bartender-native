@@ -1,6 +1,7 @@
 import { View, Text, StyleSheet } from "react-native";
 import { Ionicons } from "@expo/vector-icons";
 import { AntDesign } from '@expo/vector-icons';
+import { GlobalStyles } from "../util/constants/globalStyles";
 
 
 function InstructionsBlade({children}) {
@@ -15,10 +16,12 @@ export default InstructionsBlade;
 
 const styles = StyleSheet.create({
   instructionContainer: {
-    backgroundColor: "white",
+    backgroundColor: GlobalStyles.colors.towerGray600,
     paddingVertical: 20,
   },
-  instructionText: {},
+  instructionText: {
+    color: GlobalStyles.colors.robRoy100,
+  },
   centeredView: {
     flex: 1,
     justifyContent: "center",

@@ -1,6 +1,7 @@
 import { View, Text, StyleSheet, Pressable } from "react-native";
 import { useSelector, useDispatch } from "react-redux";
 import ChecklistBoxOption from "./CheckListBoxOption";
+import { GlobalStyles } from "../util/constants/globalStyles";
 
 
 
@@ -28,7 +29,7 @@ export default ChecklistBox;
 const styles = StyleSheet.create({
   checklistContainer: {
     borderWidth: 1,
-    borderColor: "black",
+    borderColor: GlobalStyles.colors.robRoy100,
     borderRadius: 8,
     padding: 10,
   },
@@ -45,6 +46,7 @@ const styles = StyleSheet.create({
   checklistHeaderText: {
     fontSize: 20,
     marginTop: 4,
+    color: GlobalStyles.colors.robRoy100,
   },
   checklistOptionContainer: {
     marginTop: 12,
