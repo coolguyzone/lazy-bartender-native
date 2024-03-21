@@ -4,9 +4,9 @@ import { AntDesign } from '@expo/vector-icons';
 import { GlobalStyles } from "../util/constants/globalStyles";
 
 
-function MainHeader() {
+function MainHeader({children}) {
   return  <View style={[styles.headerContainer, styles.centeredView]}>
-  <Text style={styles.headerTitle}>LAZY BARTENDER</Text>
+  <Text style={styles.headerTitle}>{children}</Text>
   <View style={styles.headerSearchBar}>
 
   <AntDesign name="search1" size={24} color={GlobalStyles.colors.robRoy100} />

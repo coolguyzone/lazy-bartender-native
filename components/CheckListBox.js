@@ -28,14 +28,12 @@ export default ChecklistBox;
 
 const styles = StyleSheet.create({
   checklistContainer: {
-    borderWidth: 1,
-    borderColor: GlobalStyles.colors.robRoy100,
-    borderRadius: 8,
     padding: 10,
   },
   checklistHeaderWrapper: {
     flexDirection: "row",
     flexWrap: "wrap",
+    marginBottom: 16,
   },
   checklistHeaderIcon: {
     backgroundColor: "green",
