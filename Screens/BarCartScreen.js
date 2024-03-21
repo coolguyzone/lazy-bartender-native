@@ -48,7 +48,7 @@ function BarCartScreen() {
   return (
     <>
     <ScrollView style={styles.scrollView}>
-      <MainHeader />
+      <MainHeader>BAR CART </MainHeader>
       <InstructionsBlade>
         First, Lets add what ingredients you have on hand
       </InstructionsBlade>
