@@ -2,7 +2,7 @@ import { useState } from "react";
 import { ScrollView, StyleSheet, Text, View } from "react-native";
 import CheckBox from "react-native-check-box";
 import IngredientCheckBox from "../../components/IngredientCheckBox";
-import { Constants } from "../../util/constants";
+import { Constants } from "../../util/constants/constants";
 
 
 function DarkBoozeTab() {

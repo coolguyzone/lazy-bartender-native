@@ -1,11 +1,12 @@
 import { View, Text, StyleSheet } from "react-native";
 import { Ionicons } from "@expo/vector-icons";
+import { GlobalStyles } from "../util/constants/globalStyles";
 
 function ScrollArrowBlade() {
   return (
     <View style={[styles.scrollArrowBlade, styles.centeredView]}>
       <Text style={styles.scrollArrowBladeText}>
-        <Ionicons name="water" color={"blue"} size={34} />
+        <Ionicons name="water" color={GlobalStyles.colors.robRoy100} size={34} />
       </Text>
     </View>
   );
