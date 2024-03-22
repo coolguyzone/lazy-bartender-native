@@ -14,32 +14,12 @@ import { GlobalStyles } from "../util/constants/globalStyles";
 
 const baseEssentials = {
   title: "Cocktail Base Essentials",
-  options: [
-    "Vodka",
-    "Tequila",
-    "Mescal",
-    "Scotch",
-    "Bourbon",
-    "Rye",
-    "Dark Rum",
-    "Light Rum",
-    "Brandy",
-  ],
+  options: Constants.cocktailBaseEssentials,
 };
 
 const mixersEssentials = {
-  title: "Mixers Essentials",
-  options: [
-    "Lime",
-    "Orange",
-    "Cranberry Juice",
-    "Cola",
-    "Tonic Water",
-    "Club Soda",
-    "Cream",
-    "Coffee",
-    "Simple Syrup",
-  ],
+  title: "Mixer Essentials",
+  options: Constants.mixerEssentials,
 };
 
 function BarCartScreen() {

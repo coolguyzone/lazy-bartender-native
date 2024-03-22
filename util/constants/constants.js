@@ -1,4 +1,26 @@
 export const Constants = {
+  cocktailBaseEssentials: [
+    "Vodka",
+    "Tequila",
+    "Bourbon",
+    "Scotch",
+    "Gin",
+    "Light Rum",
+    "Dark Rum",
+    "Dry Vermouth",
+    "Sweet Vermouth",
+  ],
+  mixerEssentials: [
+    "Club Soda",
+    "Cola",
+    "Ginger Ale",
+    "Lime Juice",
+    "Lemon Juice",
+    "Cranberry Juice",
+    "Angostura Bitters",
+    "Tonic Water",
+    "Simple Syrup",
+  ],
   brownBooze: [
     "Bourbon",
     "Scotch",
