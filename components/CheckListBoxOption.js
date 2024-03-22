@@ -27,15 +27,11 @@ function ChecklistBoxOption({ option }) {
       onPress={() => {
         if (checkBoxSelected === true) {
           dispatch(removeIngredient(option));
-          setCheckBoxSelected(false);
-          setTimeout(() => console.log("ingredients", ingredients), 1000)
-          
+          setCheckBoxSelected(false);          
         } else {
           dispatch(addIngredient(option));
           setCheckBoxSelected(true);
-          setTimeout(() => console.log("ingredients", ingredients), 1000)
         }
-        return setTimeout(() => console.log("ingredients", ingredients), 3000)
       }}
     >
       <Text

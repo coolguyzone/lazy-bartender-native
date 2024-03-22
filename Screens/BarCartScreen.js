@@ -1,4 +1,4 @@
-import { Button, ScrollView, StyleSheet, Text, View } from "react-native";
+import { Button, Pressable, ScrollView, StyleSheet, Text, View } from "react-native";
 import { Constants } from "../util/constants/constants";
 import { useSelector, useDispatch } from "react-redux";
 import { addIngredient, ingredientsArray } from "../util/slices/inventorySlice";
@@ -11,6 +11,7 @@ import ChecklistBox from "../components/CheckListBox";
 import ScrollArrowBlade from "../components/ScrollArrowBlade";
 import Footer from "../components/Footer";
 import { GlobalStyles } from "../util/constants/globalStyles";
+import BarCartSubFooter from "../components/bar-cart-components/BarCartSubFooter";
 
 const baseEssentials = {
   title: "Cocktail Base Essentials",
@@ -34,9 +35,11 @@ function BarCartScreen() {
         </InstructionsBlade>
         <ChecklistBox titleOptionsObject={baseEssentials} />
         <ChecklistBox titleOptionsObject={mixersEssentials} />
-        <ScrollArrowBlade />
       </ScrollView>
 
+
+      
+      <BarCartSubFooter />
       <Footer />
     </>
   );
