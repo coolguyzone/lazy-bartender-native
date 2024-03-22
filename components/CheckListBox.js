@@ -3,23 +3,21 @@ import { useSelector, useDispatch } from "react-redux";
 import ChecklistBoxOption from "./CheckListBoxOption";
 import { GlobalStyles } from "../util/constants/globalStyles";
 
-
-
-
-function ChecklistBox({titleOptionsObject}) {
+function ChecklistBox({ titleOptionsObject }) {
   return (
     <View style={styles.checklistContainer}>
       <View style={styles.checklistHeaderWrapper}>
         <View style={styles.checklistHeaderIcon}></View>
-        <Text style={styles.checklistHeaderText}>{titleOptionsObject.title}</Text>
+        <Text style={styles.checklistHeaderText}>
+          {titleOptionsObject.title}
+        </Text>
       </View>
       <View style={styles.checklistOptionContainer}>
         {titleOptionsObject.options.map((option) => {
-          return (
-           <ChecklistBoxOption option={option} />
-          );
+          return <ChecklistBoxOption option={option} />;
         })}
       </View>
+      <View style={styles.divider}></View>
     </View>
   );
 }
@@ -52,5 +50,10 @@ const styles = StyleSheet.create({
     flexWrap: "wrap",
     flexDirection: "row",
     gap: 14,
+  },
+  divider: {
+    borderBottomColor: GlobalStyles.colors.robRoy100,
+    borderBottomWidth: 1,
+    marginVertical: 20,
   },
 });

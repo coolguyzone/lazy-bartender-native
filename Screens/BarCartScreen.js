@@ -27,16 +27,15 @@ function BarCartScreen() {
 
   return (
     <>
-    <ScrollView style={styles.scrollView}>
-      <MainHeader>BAR CART </MainHeader>
-      <InstructionsBlade>
-        First, Lets add what ingredients you have on hand
-      </InstructionsBlade>
-      <ChecklistBox titleOptionsObject={baseEssentials} />
-      <View style={styles.spacer}></View>
-      <ChecklistBox titleOptionsObject={mixersEssentials} />
-      <ScrollArrowBlade />      
-    </ScrollView>
+      <ScrollView style={styles.scrollView}>
+        <MainHeader>BAR CART </MainHeader>
+        <InstructionsBlade>
+          First, Lets add what ingredients you have on hand
+        </InstructionsBlade>
+        <ChecklistBox titleOptionsObject={baseEssentials} />
+        <ChecklistBox titleOptionsObject={mixersEssentials} />
+        <ScrollArrowBlade />
+      </ScrollView>
 
       <Footer />
     </>
@@ -50,8 +49,4 @@ const styles = StyleSheet.create({
     paddingHorizontal: 16,
     backgroundColor: GlobalStyles.colors.towerGray600,
   },
-  spacer: {
-    height: 20,
-  },
-
 });
