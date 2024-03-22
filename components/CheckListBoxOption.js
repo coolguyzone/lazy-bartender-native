@@ -1,11 +1,15 @@
 import { useState } from "react";
 import { View, Text, StyleSheet, Pressable } from "react-native";
 import { GlobalStyles } from "../util/constants/globalStyles";
+import { useDispatch, useSelector } from "react-redux";
+import { addIngredient, removeIngredient } from "../util/slices/inventorySlice";
 
 let bgColor = "grey";
 
 function ChecklistBoxOption({ option }) {
   const [checkBoxSelected, setCheckBoxSelected] = useState(false);
+  const dispatch = useDispatch();
+  const ingredients = useSelector((state) => state.inventory.ingredientsArray);
 
   return (
     <Pressable
@@ -16,16 +20,22 @@ function ChecklistBoxOption({ option }) {
             ? GlobalStyles.colors.tonysPink300
             : GlobalStyles.colors.towerGray600,
           borderColor: checkBoxSelected
-            ? GlobalStyles.colors.towerGray600  
-            : GlobalStyles.colors.robRoy100
+            ? GlobalStyles.colors.towerGray600
+            : GlobalStyles.colors.robRoy100,
         },
       ]}
       onPress={() => {
         if (checkBoxSelected === true) {
+          dispatch(removeIngredient(option));
           setCheckBoxSelected(false);
+          setTimeout(() => console.log("ingredients", ingredients), 1000)
+          
         } else {
+          dispatch(addIngredient(option));
           setCheckBoxSelected(true);
+          setTimeout(() => console.log("ingredients", ingredients), 1000)
         }
+        return setTimeout(() => console.log("ingredients", ingredients), 3000)
       }}
     >
       <Text
@@ -34,7 +44,7 @@ function ChecklistBoxOption({ option }) {
           {
             color: checkBoxSelected
               ? GlobalStyles.colors.lazyBlack
-              : GlobalStyles.colors.robRoy100,  
+              : GlobalStyles.colors.robRoy100,
           },
         ]}
       >
