@@ -9,7 +9,7 @@ function MainHeader({children}) {
   <Text style={styles.headerTitle}>{children}</Text>
   <View style={styles.headerSearchBar}>
 
-  <AntDesign name="search1" size={24} color={GlobalStyles.colors.robRoy100} />
+  <AntDesign name="search1" size={20} color={GlobalStyles.colors.robRoy100} />
   </View>
 </View>
 }
@@ -32,10 +32,10 @@ const styles = StyleSheet.create({
     borderRadius: 40,
     height: 36,
     width: '100%',
-    paddingLeft: 40,
+    paddingTop: 6,
     flexDirection: "row",
     justifyContent: "flex-end",
-    paddingHorizontal: 20,
+    paddingHorizontal: 10,
   },
   centeredView: {
     flex: 1,

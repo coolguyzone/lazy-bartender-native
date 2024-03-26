@@ -1,25 +1,9 @@
 import { Button, Pressable, StyleSheet, Text, View } from "react-native";
-import * as Font from "expo-font";
 import { useEffect, useState } from "react";
 import Footer from "../components/Footer";
 
 function HomeScreen() {
-  const [fontLoaded, setFontLoaded] = useState(false);
 
-  useEffect(() => {
-    async function loadFont() {
-      await Font.loadAsync({
-        "custom-font": require("./../assets/fonts/ProtestRiot-Regular.ttf"),
-      });
-      setFontLoaded(true);
-    }
-
-    loadFont();
-  }, []);
-
-  if (!fontLoaded) {
-    return <Text>Loading...</Text>;
-  }
 
   return (
     <>
@@ -51,7 +35,6 @@ const styles = StyleSheet.create({
     marginTop: -80,
   },
   title: {
-    fontFamily: "custom-font",
     marginBottom: 50,
     fontSize: 34,
     marginTop: 50,
@@ -68,7 +51,6 @@ const styles = StyleSheet.create({
   welcomeText: {
     fontSize: 34,
     color: "black",
-    fontFamily: "custom-font",
   },
   startButton: {
     backgroundColor:'grey',

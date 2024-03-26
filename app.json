@@ -1,12 +1,6 @@
 {
   "expo": {
     "plugins": [
-      [
-        "expo-font",
-        {
-          "fonts": ["./assets/fonts/ProtestRiot-Regular.ttf"]
-        }
-      ]
     ],
     "name": "Lazy-Bartender-Native",
     "slug": "Lazy-Bartender-Native",
