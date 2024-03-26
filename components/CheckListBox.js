@@ -2,8 +2,16 @@ import { View, Text, StyleSheet, Pressable } from "react-native";
 import { useSelector, useDispatch } from "react-redux";
 import ChecklistBoxOption from "./CheckListBoxOption";
 import { GlobalStyles } from "../util/constants/globalStyles";
+import { Ionicons } from "@expo/vector-icons";
+import { useState } from "react";
 
 function ChecklistBox({ titleOptionsObject }) {
+  const fullOptions = titleOptionsObject.options;
+  const firstNineOptions = titleOptionsObject.options.slice(0,9);
+
+  const [expanded, setExpanded] = useState(false);
+  
+
   return (
     <View style={styles.checklistContainer}>
       <View style={styles.checklistHeaderWrapper}>
@@ -13,10 +21,26 @@ function ChecklistBox({ titleOptionsObject }) {
         </Text>
       </View>
       <View style={styles.checklistOptionContainer}>
-        {titleOptionsObject.options.map((option) => {
+        {expanded ? fullOptions.map((option) => {
+          return <ChecklistBoxOption option={option} />;
+        }) : firstNineOptions.map((option) => {
           return <ChecklistBoxOption option={option} />;
         })}
       </View>
+      {titleOptionsObject.options.length > 9 && (
+        <Pressable 
+        onPress={() => {
+          !expanded ? setExpanded(true) : setExpanded(false)
+        }}
+        style={styles.expandIcon}>
+          <Ionicons
+            name={expanded ? "chevron-up-outline" : "chevron-down-outline"}
+            color={GlobalStyles.colors.robRoy100}
+            size={30}
+          />
+        </Pressable>
+      )}
+
       <View style={styles.divider}></View>
     </View>
   );
@@ -55,5 +79,11 @@ const styles = StyleSheet.create({
     borderBottomColor: GlobalStyles.colors.robRoy100,
     borderBottomWidth: 1,
     marginVertical: 20,
+  },
+  expandIcon: {
+    flex: 1,
+    justifyContent: "center",
+    alignItems: "center",
+    marginBottom: -20,
   },
 });

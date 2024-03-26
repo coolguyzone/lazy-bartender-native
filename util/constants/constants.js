@@ -20,6 +20,7 @@ export const Constants = {
     "Angostura Bitters",
     "Tonic Water",
     "Simple Syrup",
+    "Honey",
   ],
   brownBooze: [
     "Bourbon",
