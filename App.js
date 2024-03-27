@@ -15,6 +15,7 @@ import { Ionicons } from "@expo/vector-icons";
 import store from "./src/app/store";
 import { Provider } from "react-redux";
 import BarCartScreen from "./Screens/BarCartScreen";
+import IngredientsScreen from "./Screens/IngredientsScreen";
 
 const Drawer = createDrawerNavigator();
 const BottomTab = createBottomTabNavigator();
@@ -90,7 +91,7 @@ export default function App() {
           <Drawer.Screen name="Home" component={HomeScreen} />
           <Drawer.Screen
             name="Ingredients"
-            component={IngredientsTabNavigator}
+            component={IngredientsScreen}
           />
           <Drawer.Screen name="Recipes" component={RecipesScreen} />
           <Drawer.Screen

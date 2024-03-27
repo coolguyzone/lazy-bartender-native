@@ -8,6 +8,19 @@ function Footer() {
 
   return (
     <View style={styles.siteFooterContainer}>
+       <Pressable
+        style={styles.siteFooterOption}
+        onPress={() => navigation.navigate("Ingredients")}
+      >
+        <Text style={styles.siteFooterOptionIcon}>
+          <Ionicons
+            name="water"
+            color={GlobalStyles.colors.robRoy100}
+            size={14}
+          />
+        </Text>
+        <Text style={styles.siteFooterOptionContent}>Ingredients</Text>
+      </Pressable>
       <Pressable
         onPress={() => navigation.navigate("Bar Cart")}
         style={styles.siteFooterOption}
@@ -21,19 +34,7 @@ function Footer() {
         </Text>
         <Text style={styles.siteFooterOptionContent}>My Bar</Text>
       </Pressable>
-      <Pressable
-        style={styles.siteFooterOption}
-        onPress={() => navigation.navigate("Recipes")}
-      >
-        <Text style={styles.siteFooterOptionIcon}>
-          <Ionicons
-            name="water"
-            color={GlobalStyles.colors.robRoy100}
-            size={14}
-          />
-        </Text>
-        <Text style={styles.siteFooterOptionContent}>Drinks</Text>
-      </Pressable>
+     
       <View style={styles.siteFooterOption}>
         <Text style={styles.siteFooterOptionIcon}>
           <Ionicons
