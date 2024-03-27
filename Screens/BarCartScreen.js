@@ -13,12 +13,12 @@ import Footer from "../components/Footer";
 import { GlobalStyles } from "../util/constants/globalStyles";
 import BarCartSubFooter from "../components/bar-cart-components/BarCartSubFooter";
 
-const baseEssentials = {
+export const baseEssentials = {
   title: "Cocktail Base Essentials",
   options: Constants.cocktailBaseEssentials,
 };
 
-const mixersEssentials = {
+export const mixersEssentials = {
   title: "Mixer Essentials",
   options: Constants.mixerEssentials,
 };
