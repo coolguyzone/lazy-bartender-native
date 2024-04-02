@@ -16,6 +16,7 @@ import store from "./src/app/store";
 import { Provider } from "react-redux";
 import BarCartScreen from "./Screens/BarCartScreen";
 import IngredientsScreen from "./Screens/IngredientsScreen";
+import DrinkListScreen from "./Screens/DrinkListScreen";
 
 const Drawer = createDrawerNavigator();
 const BottomTab = createBottomTabNavigator();
@@ -92,6 +93,10 @@ export default function App() {
           <Drawer.Screen
             name="Ingredients"
             component={IngredientsScreen}
+          />
+          <Drawer.Screen
+            name="Drink List"
+            component={DrinkListScreen}
           />
           <Drawer.Screen name="Recipes" component={RecipesScreen} />
           <Drawer.Screen
