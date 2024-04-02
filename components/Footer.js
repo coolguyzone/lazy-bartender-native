@@ -34,6 +34,20 @@ function Footer() {
         </Text>
         <Text style={styles.siteFooterOptionContent}>My Bar</Text>
       </Pressable>
+
+      <Pressable
+        onPress={() => navigation.navigate("Drink List")}
+        style={styles.siteFooterOption}
+      >
+        <Text style={styles.siteFooterOptionIcon}>
+          <Ionicons
+            name="water"
+            color={GlobalStyles.colors.robRoy100}
+            size={14}
+          />
+        </Text>
+        <Text style={styles.siteFooterOptionContent}>Drinks</Text>
+      </Pressable>
      
       <View style={styles.siteFooterOption}>
         <Text style={styles.siteFooterOptionIcon}>
