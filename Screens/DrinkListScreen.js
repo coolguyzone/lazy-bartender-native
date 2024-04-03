@@ -15,6 +15,10 @@ function DrinkListScreen() {
         <MainHeader>My Drink List</MainHeader>
         <InstructionsBlade>Drinks available with your pantry</InstructionsBlade>
         <DrinkCard />
+        <DrinkCard />
+        <DrinkCard />
+        <DrinkCard />
+        <DrinkCard />
       </ScrollView>
       <Footer />
     </>

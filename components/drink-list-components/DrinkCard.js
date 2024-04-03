@@ -38,10 +38,10 @@ export default DrinkCard;
 
 const styles = StyleSheet.create({
   drinkContainer: {
+    marginBottom: 10,
     flexDirection: "row",
     flexWrap: "wrap",
     backgroundColor: GlobalStyles.colors.towerGray500,
-    widht: 356,
     height: 54,
     borderRadius: 5,
     padding: 8,
