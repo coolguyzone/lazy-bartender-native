@@ -4,7 +4,7 @@ import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Ionicons } from "@expo/vector-icons";
 
-function DrinkCard() {
+function DrinkCard({drinkTitle}) {
   return (
     <Pressable style={styles.drinkContainer}>
       <View style={styles.drinkIcon}>
@@ -14,7 +14,7 @@ function DrinkCard() {
           size={34}
         />
       </View>
-      <Text style={styles.drinkTitle}>Manhattan</Text>
+      <Text style={styles.drinkTitle}>{drinkTitle}</Text>
       <Text style={styles.drinkPercentage}>100%</Text>
       <View style={styles.faveIcon}>
         <Ionicons
@@ -38,10 +38,10 @@ export default DrinkCard;
 
 const styles = StyleSheet.create({
   drinkContainer: {
+    marginBottom: 10,
     flexDirection: "row",
     flexWrap: "wrap",
     backgroundColor: GlobalStyles.colors.towerGray500,
-    widht: 356,
     height: 54,
     borderRadius: 5,
     padding: 8,

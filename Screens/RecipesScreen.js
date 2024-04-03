@@ -8,10 +8,13 @@ import { useState, useEffect, useLayoutEffect } from "react";
 function RecipesScreen() {
   const drinkList = Constants.drinkList;
   const ingredients = useSelector((state) => state.inventory.ingredientsArray);
+  const availableDrinks = useSelector((state) => state.inventory.drinksArray);
+
   const [modalVisible, setModalVisible] = useState(true);
   const [recipeTitle, setRecipeTitle] = useState("");
   const [recipeIngredients, setRecipeIngredients] = useState([]);
   const [recipeInstructions, setRecipeInstructions] = useState([]);
+  
 
   function showDrinkModal(title, ingredients, instructions) {
     setRecipeTitle(title);
@@ -23,6 +26,8 @@ function RecipesScreen() {
   return (
     <ScrollView>
       <Text style={{ marginVertical: 20 }}>Recipes Screen</Text>
+      <Text>Ingredients: {ingredients}</Text>
+      <Text>Drinks: {availableDrinks}</Text>
 
       <RecipeModal
         recipeTitle={recipeTitle}

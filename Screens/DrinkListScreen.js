@@ -7,14 +7,24 @@ import { baseEssentials, mixersEssentials } from "./BarCartScreen";
 import { GlobalStyles } from "../util/constants/globalStyles";
 import { Ionicons } from "@expo/vector-icons";
 import DrinkCard from "../components/drink-list-components/DrinkCard";
+import { useDispatch, useSelector } from "react-redux";
+
 
 function DrinkListScreen() {
+  const dispatch = useDispatch();
+  const ingredients = useSelector((state) => state.inventory.ingredientsArray);
+  const drinkList = useSelector((state) => state.inventory.drinksArray);
+
   return (
     <>
       <ScrollView style={styles.scrollView}>
         <MainHeader>My Drink List</MainHeader>
         <InstructionsBlade>Drinks available with your pantry</InstructionsBlade>
-        <DrinkCard />
+        {drinkList.map((drink) => {
+          return <DrinkCard drinkTitle={drink} />
+        })}
+
+
       </ScrollView>
       <Footer />
     </>
