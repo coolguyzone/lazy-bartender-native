@@ -9,12 +9,12 @@ export const inventorySlice = createSlice({
   name: "inventory",
   initialState: {
     ingredientsArray: ["Water"],
-    drinksArray: ["testtt"],
+    drinksArray: [],
   },
   reducers: {
     addIngredient: (state, action) => {
       state.ingredientsArray.push(action.payload);
-      state.drinksArray = [""];
+      state.drinksArray = [];
       drinkList.map((drink) => {
         let drinkIngredients = drink.ingredients;
         for (let i = 0; i < drinkIngredients.length; i++) {
@@ -30,7 +30,7 @@ export const inventorySlice = createSlice({
       if (index > -1) {
         state.ingredientsArray.splice(index, 1);
       }
-      state.drinksArray = [""];
+      state.drinksArray = [];
       drinkList.map((drink) => {
         let drinkIngredients = drink.ingredients;
         for (let i = 0; i < drinkIngredients.length; i++) {

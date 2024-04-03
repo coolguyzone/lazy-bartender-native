@@ -4,7 +4,7 @@ import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Ionicons } from "@expo/vector-icons";
 
-function DrinkCard() {
+function DrinkCard({drinkTitle}) {
   return (
     <Pressable style={styles.drinkContainer}>
       <View style={styles.drinkIcon}>
@@ -14,7 +14,7 @@ function DrinkCard() {
           size={34}
         />
       </View>
-      <Text style={styles.drinkTitle}>Manhattan</Text>
+      <Text style={styles.drinkTitle}>{drinkTitle}</Text>
       <Text style={styles.drinkPercentage}>100%</Text>
       <View style={styles.faveIcon}>
         <Ionicons
