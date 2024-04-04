@@ -13,12 +13,15 @@ function RecipeScreen() {
     <>
       <ScrollView style={styles.scrollView}>
         <RecipeHeader />
-        <MainHeader>Cocktail Name</MainHeader>
-        <InstructionsBlade>
-          First, let's add what ingredients you have onhand
-        </InstructionsBlade>
-        <ChecklistBox titleOptionsObject={baseEssentials} />
-        <ChecklistBox titleOptionsObject={mixersEssentials} />
+        <View style={styles.recipeImage}><Text>Recipe Image</Text></View>
+        <View style={styles.recipeH1BladeContainer}>
+        <Text style={styles.recipeH1BladeTitle}>Cocktail Name</Text>
+       
+        </View>  
+        <View style={styles.strengthBarContainer}>
+          <Text style={styles.strengthBarCopy}>Strength:</Text>
+        </View>
+        <View style={styles.divider}></View>     
       </ScrollView>
       <Footer />
     </>
@@ -31,5 +34,33 @@ const styles = StyleSheet.create({
   scrollView: {
     paddingHorizontal: 8,
     backgroundColor: GlobalStyles.colors.towerGray600,
+  },
+  recipeImage: {
+    height: 190,
+    borderColor: GlobalStyles.colors.robRoy100,
+    borderWidth: 1,
+    color: GlobalStyles.colors.robRoy100,
+  },
+  recipeH1BladeContainer: {
+      flex: 1,
+      justifyContent: "center",
+      alignItems: "center",  
+  },
+  recipeH1BladeTitle: {
+    fontSize: 24,
+    marginVertical: 20,
+    color: GlobalStyles.colors.robRoy100,
+  },
+  strengthBarContainer: {},
+  strengthBarCopy: {
+    color: GlobalStyles.colors.robRoy100,
+    fontSize: 16,
+    fontWeight: 'bold',
+    marginLeft: 16,
+  },
+  divider: {
+    borderColor: GlobalStyles.colors.robRoy100,
+    borderBottomWidth: 1,
+    marginVertical: 24,
   },
 });
