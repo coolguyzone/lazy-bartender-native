@@ -15,6 +15,7 @@ export const inventorySlice = createSlice({
     addIngredient: (state, action) => {
       state.ingredientsArray.push(action.payload);
       state.drinksArray = [];
+      //update the drinksArray anytime something is added (or removed below)
       drinkList.map((drink) => {
         let drinkIngredients = drink.ingredients;
         for (let i = 0; i < drinkIngredients.length; i++) {

@@ -1,17 +1,23 @@
 import { View, Text, StyleSheet } from "react-native";
 import { Ionicons } from "@expo/vector-icons";
-import { AntDesign } from '@expo/vector-icons';
+import { AntDesign } from "@expo/vector-icons";
 import { GlobalStyles } from "../util/constants/globalStyles";
 
-
-function MainHeader({children}) {
-  return  <View style={[styles.headerContainer, styles.centeredView]}>
-  <Text style={styles.headerTitle}>{children}</Text>
-  <View style={styles.headerSearchBar}>
-
-  <AntDesign name="search1" size={20} color={GlobalStyles.colors.robRoy100} />
-  </View>
-</View>
+function MainHeader({ children, search = true }) {
+  return (
+    <View style={[styles.headerContainer, styles.centeredView]}>
+      <Text style={styles.headerTitle}>{children}</Text>
+      {search && (
+        <View style={styles.headerSearchBar}>
+          <AntDesign
+            name="search1"
+            size={20}
+            color={GlobalStyles.colors.robRoy100}
+          />
+        </View>
+      )}
+    </View>
+  );
 }
 
 export default MainHeader;
@@ -28,10 +34,10 @@ const styles = StyleSheet.create({
   },
   headerSearchBar: {
     borderColor: GlobalStyles.colors.robRoy100,
-    borderWidth: 1, 
+    borderWidth: 1,
     borderRadius: 40,
     height: 36,
-    width: '100%',
+    width: "100%",
     paddingTop: 6,
     flexDirection: "row",
     justifyContent: "flex-end",
@@ -42,4 +48,4 @@ const styles = StyleSheet.create({
     justifyContent: "center",
     alignItems: "center",
   },
-})
+});

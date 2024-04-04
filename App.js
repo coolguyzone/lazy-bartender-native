@@ -4,7 +4,7 @@ import { NavigationContainer } from "@react-navigation/native";
 import { createDrawerNavigator } from "@react-navigation/drawer";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import HomeScreen from "./Screens/HomeScreen";
-import RecipesScreen from "./Screens/RecipesScreen";
+import RecipesScreen from "./Screens/OldRecipesScreen";
 import LightBoozeTab from "./Screens/IngredientsTabs/LightBoozeTab";
 import DarkBoozeTab from "./Screens/IngredientsTabs/DarkBoozeTab";
 import FruityBoozeTab from "./Screens/IngredientsTabs/FruityBoozeTab";
@@ -17,6 +17,7 @@ import { Provider } from "react-redux";
 import BarCartScreen from "./Screens/BarCartScreen";
 import IngredientsScreen from "./Screens/IngredientsScreen";
 import DrinkListScreen from "./Screens/DrinkListScreen";
+import RecipeScreen from "./Screens/RecipeScreen";
 
 const Drawer = createDrawerNavigator();
 const BottomTab = createBottomTabNavigator();
@@ -102,6 +103,10 @@ export default function App() {
           <Drawer.Screen
             name="Bar Cart"
             component={BarCartScreen}
+          />
+           <Drawer.Screen
+            name="Recipe"
+            component={RecipeScreen}
           />
         </Drawer.Navigator>
        
