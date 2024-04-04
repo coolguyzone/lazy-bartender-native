@@ -7,22 +7,29 @@ import { baseEssentials, mixersEssentials } from "./BarCartScreen";
 import { GlobalStyles } from "../util/constants/globalStyles";
 import { Ionicons } from "@expo/vector-icons";
 import RecipeHeader from "../components/recipe-components/RecipeHeader";
+import IngredientBlade from "../components/recipe-components/IngredientBlade";
+import InstructionBlade from "../components/recipe-components/InstructionBlade";
 
 function RecipeScreen() {
   return (
     <>
       <ScrollView style={styles.scrollView}>
         <RecipeHeader />
-        <View style={styles.recipeImage}><Text>Recipe Image</Text></View>
+        <View style={styles.recipeImage}>
+          <Text>Recipe Image</Text>
+        </View>
         <View style={styles.recipeH1BladeContainer}>
-        <Text style={styles.recipeH1BladeTitle}>Cocktail Name</Text>
-       
-        </View>  
+          <Text style={styles.recipeH1BladeTitle}>Cocktail Name</Text>
+        </View>
         <View style={styles.strengthBarContainer}>
           <Text style={styles.strengthBarCopy}>Strength:</Text>
         </View>
-        <View style={styles.divider}></View>     
+        <View style={styles.divider}></View>
+        <IngredientBlade />
+        <View style={styles.divider}></View>
+        <InstructionBlade />
       </ScrollView>
+
       <Footer />
     </>
   );
@@ -42,9 +49,9 @@ const styles = StyleSheet.create({
     color: GlobalStyles.colors.robRoy100,
   },
   recipeH1BladeContainer: {
-      flex: 1,
-      justifyContent: "center",
-      alignItems: "center",  
+    flex: 1,
+    justifyContent: "center",
+    alignItems: "center",
   },
   recipeH1BladeTitle: {
     fontSize: 24,
@@ -55,7 +62,7 @@ const styles = StyleSheet.create({
   strengthBarCopy: {
     color: GlobalStyles.colors.robRoy100,
     fontSize: 16,
-    fontWeight: 'bold',
+    fontWeight: "bold",
     marginLeft: 16,
   },
   divider: {
