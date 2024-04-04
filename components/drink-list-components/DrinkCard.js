@@ -46,12 +46,14 @@ const styles = StyleSheet.create({
     borderRadius: 5,
     padding: 8,
   },
+  drinkIcon: {
+    flex: 0.15
+  },
   drinkTitle: {
     color: GlobalStyles.colors.robRoy100,
     fontSize: 18,
     marginTop: 6,
-    marginLeft: 4,
-    width: 210,
+    flex: 1,
   },
   drinkPercentage: {
     color: GlobalStyles.colors.robRoy100,
