@@ -3,10 +3,19 @@ import { GlobalStyles } from "../../util/constants/globalStyles";
 import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Ionicons } from "@expo/vector-icons";
+import { Constants } from "../../util/constants/constants";
+import { useNavigation } from "@react-navigation/native";
 
-function DrinkCard({drinkTitle}) {
+
+function DrinkCard({ drinkTitle }) {
+  const navigation = useNavigation();
+  function openDrinkRecipe() {
+    const drink = Constants.drinkList.find((d) => d.name === drinkTitle);
+    navigation.navigate("Recipe")
+  }
+
   return (
-    <Pressable style={styles.drinkContainer}>
+    <Pressable style={styles.drinkContainer} onPress={openDrinkRecipe}>
       <View style={styles.drinkIcon}>
         <Ionicons
           name="water"
@@ -47,7 +56,7 @@ const styles = StyleSheet.create({
     padding: 8,
   },
   drinkIcon: {
-    flex: 0.15
+    flex: 0.15,
   },
   drinkTitle: {
     color: GlobalStyles.colors.robRoy100,

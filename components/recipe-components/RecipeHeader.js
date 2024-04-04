@@ -3,11 +3,19 @@ import { GlobalStyles } from "../../util/constants/globalStyles";
 import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Ionicons } from "@expo/vector-icons";
+import { useNavigation } from "@react-navigation/native";
 
 function RecipeHeader() {
+  const navigation = useNavigation();
+  function goBack() {
+    navigation.navigate("Drink List");
+  }
+
   return (
     <View style={styles.recipeHeaderContainer}>
-      <Text style={styles.recipeHeaderBackLink}>&lt; Back</Text>
+      <Pressable  onPress={goBack}>
+        <Text style={styles.recipeHeaderBackLink}>&lt; Back</Text>
+      </Pressable>
       <View style={styles.recipeHeaderSpacer}></View>
       <View style={styles.recipeHeaderIcon}>
         <Ionicons
@@ -40,9 +48,8 @@ const styles = StyleSheet.create({
   recipeHeaderContainer: {
     flexDirection: "row",
     flexWrap: "wrap",
-    padding: 14,
-
     height: 58,
+    marginTop: 14,
   },
   recipeHeaderBackLink: {
     color: GlobalStyles.colors.robRoy100,
@@ -55,6 +62,5 @@ const styles = StyleSheet.create({
   },
   recipeHeaderIcon: {
     marginLeft: 12,
-    marginTop: 5,
   },
 });
