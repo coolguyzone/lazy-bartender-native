@@ -8,6 +8,7 @@ function RecipeHeader() {
   return (
     <View style={styles.recipeHeaderContainer}>
       <Text style={styles.recipeHeaderBackLink}>&lt; Back</Text>
+      <View style={styles.recipeHeaderSpacer}></View>
       <View style={styles.recipeHeaderIcon}>
         <Ionicons
           name="share-outline"
@@ -45,10 +46,12 @@ const styles = StyleSheet.create({
   },
   recipeHeaderBackLink: {
     color: GlobalStyles.colors.robRoy100,
-    marginLeft: 10,
-    marginRight: 170,
     marginTop: 6,
     fontSize: 18,
+    flex: 0.5,
+  },
+  recipeHeaderSpacer: {
+    flex: 1,
   },
   recipeHeaderIcon: {
     marginLeft: 12,
