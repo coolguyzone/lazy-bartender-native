@@ -2,6 +2,7 @@ import { StatusBar } from "expo-status-bar";
 import { StyleSheet, Text, View } from "react-native";
 import { NavigationContainer } from "@react-navigation/native";
 import { createDrawerNavigator } from "@react-navigation/drawer";
+import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import HomeScreen from "./Screens/HomeScreen";
 import RecipesScreen from "./Screens/OldRecipesScreen";
@@ -19,97 +20,44 @@ import IngredientsScreen from "./Screens/IngredientsScreen";
 import DrinkListScreen from "./Screens/DrinkListScreen";
 import RecipeScreen from "./Screens/RecipeScreen";
 
-const Drawer = createDrawerNavigator();
-const BottomTab = createBottomTabNavigator();
-
-function IngredientsTabNavigator() {
-  return (
-    <BottomTab.Navigator independent={true}>
-      <BottomTab.Screen
-        name="Light Booze"
-        component={LightBoozeTab}
-        options={{
-          tabBarIcon: ({ color, size }) => (
-            <Ionicons name="wine" color={"black"} size={size} />
-          ),
-          tabBarStyle: { backgroundColor: "#717171"},
-          tabBarLabelStyle: { color: 'white'}
-        }}
-      />
-      <BottomTab.Screen
-        name="Dark Booze"
-        component={DarkBoozeTab}
-        options={{
-          tabBarIcon: ({ size }) => (
-            <Ionicons name="wine" color={"brown"} size={size} />
-          ),
-        }}
-      />
-      <BottomTab.Screen
-        name="Fruity Booze"
-        component={FruityBoozeTab}
-        options={{
-          tabBarIcon: ({ size }) => (
-            <Ionicons name="wine" color={"red"} size={size} />
-          ),
-        }}
-      />
-      <BottomTab.Screen
-        name="Beer and Wine"
-        component={BeerAndWineBoozeTab}
-        options={{
-          tabBarIcon: ({ size }) => (
-            <Ionicons name="wine" color={"goldenrod"} size={size} />
-          ),
-        }}
-      />
-      <BottomTab.Screen
-        name="Mixers"
-        component={MixersTab}
-        options={{
-          tabBarIcon: ({ size }) => (
-            <Ionicons name="water" color={"blue"} size={size} />
-          ),
-        }}
-      />
-      <BottomTab.Screen
-        name="Produce"
-        component={ProduceTab}
-        options={{
-          tabBarIcon: ({ size }) => (
-            <Ionicons name="nutrition" color={"orange"} size={size} />
-          ),
-        }}
-      />
-    </BottomTab.Navigator>
-  );
-}
+const Stack = createNativeStackNavigator();
 
 export default function App() {
   return (
     <Provider store={store}>
       <NavigationContainer>
-        <Drawer.Navigator initialRouteName="Home">
-          <Drawer.Screen name="Home" component={HomeScreen} />
-          <Drawer.Screen
+        <Stack.Navigator initialRouteName="Home">
+          <Stack.Screen
+            name="Home"
+            component={HomeScreen}
+            options={{ headerShown: false }}
+          />
+          <Stack.Screen
             name="Ingredients"
             component={IngredientsScreen}
+            options={{ headerShown: false }}
           />
-          <Drawer.Screen
+          <Stack.Screen
             name="Drink List"
             component={DrinkListScreen}
+            options={{ headerShown: false }}
           />
-          <Drawer.Screen name="Recipes" component={RecipesScreen} />
-          <Drawer.Screen
+          <Stack.Screen
+            name="Recipes"
+            component={RecipesScreen}
+            options={{ headerShown: false }}
+          />
+          <Stack.Screen
             name="Bar Cart"
             component={BarCartScreen}
+            options={{ headerShown: false }}
           />
-           <Drawer.Screen
+          <Stack.Screen
             name="Recipe"
             component={RecipeScreen}
+            options={{ headerShown: false }}
           />
-        </Drawer.Navigator>
-       
+        </Stack.Navigator>
       </NavigationContainer>
     </Provider>
   );

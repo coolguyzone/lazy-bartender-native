@@ -36,21 +36,20 @@ function BarCartScreen() {
 
   return (
     <>
-      <ScrollView style={styles.scrollView}>
-        <LinearGradient
-          // Background Linear Gradient
-          colors={["#468891", "#125e6e"]}
-          style={styles.background}
-        >
+      <LinearGradient
+        // Background Linear Gradient
+        colors={["#468891", "#125e6e"]}
+        style={styles.background}
+      >
+        <ScrollView style={styles.scrollView}>
           <MainHeader>BAR CART </MainHeader>
           <InstructionsBlade>
             First, Lets add what ingredients you have on hand
           </InstructionsBlade>
           <ChecklistBox titleOptionsObject={baseEssentials} />
           <ChecklistBox titleOptionsObject={mixersEssentials} />
-        </LinearGradient>
-      </ScrollView>
-
+        </ScrollView>
+      </LinearGradient>
       <BarCartSubFooter />
       <Footer />
     </>
@@ -60,11 +59,9 @@ function BarCartScreen() {
 export default BarCartScreen;
 
 const styles = StyleSheet.create({
-  scrollView: {
-    backgroundColor: GlobalStyles.colors.towerGray600,
-  },
   background: {
     flex: 1,
     paddingHorizontal: 16,
+    paddingTop: 60,
   },
 });
