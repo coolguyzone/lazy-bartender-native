@@ -1,7 +1,7 @@
 import { View, Text, StyleSheet } from "react-native";
 import { GlobalStyles } from "../../util/constants/globalStyles";
 
-function IngredientBlade() {
+function IngredientBlade({ drinkObj }) {
   return (
     <View style={styles.ingredientBladeContainer}>
       <View style={styles.ingredientBladeRow}>
@@ -20,54 +20,31 @@ function IngredientBlade() {
           <Text style={styles.ingredientBladeHeader}>In Bar</Text>
         </View>
       </View>
-      <View style={styles.ingredientBladeRow}>
-        <View style={styles.ingredientBladeColumn}>
-          <Text style={styles.ingredientBladeText}>Rye Whiskey</Text>
-        </View>
-        <View style={styles.ingredientBladeColumn}>
-          <Text style={styles.ingredientBladeText}>2 Ounces</Text>
-        </View>
-        <View
-          style={[
-            styles.ingredientBladeColumn,
-            styles.ingredientBladeFinalColumn,
-          ]}
-        >
-          <View style={styles.ingredientBladeCircle}></View>
-        </View>
-      </View>
-      <View style={styles.ingredientBladeRow}>
-        <View style={styles.ingredientBladeColumn}>
-          <Text style={styles.ingredientBladeText}>Sweet Vermouth</Text>
-        </View>
-        <View style={styles.ingredientBladeColumn}>
-          <Text style={styles.ingredientBladeText}>1 Ounce</Text>
-        </View>
-        <View
-          style={[
-            styles.ingredientBladeColumn,
-            styles.ingredientBladeFinalColumn,
-          ]}
-        >
-          <View style={styles.ingredientBladeCircle}></View>
-        </View>
-      </View>
-      <View style={styles.ingredientBladeRow}>
-        <View style={styles.ingredientBladeColumn}>
-          <Text style={styles.ingredientBladeText}>Aromatic Bitters</Text>
-        </View>
-        <View style={styles.ingredientBladeColumn}>
-          <Text style={styles.ingredientBladeText}>2-3 Dashes</Text>
-        </View>
-        <View
-          style={[
-            styles.ingredientBladeColumn,
-            styles.ingredientBladeFinalColumn,
-          ]}
-        >
-          <View style={styles.ingredientBladeCircle}></View>
-        </View>
-      </View>
+
+      {drinkObj.ingredients.map((ingredient, i) => {
+        return (
+          <View style={styles.ingredientBladeRow}>
+            <View style={styles.ingredientBladeColumn}>
+              <Text style={styles.ingredientBladeText}>
+                {drinkObj.ingredients[i]}
+              </Text>
+            </View>
+            <View style={styles.ingredientBladeColumn}>
+              <Text style={styles.ingredientBladeText}>
+                {drinkObj.measures[i]}
+              </Text>
+            </View>
+            <View
+              style={[
+                styles.ingredientBladeColumn,
+                styles.ingredientBladeFinalColumn,
+              ]}
+            >
+              <View style={styles.ingredientBladeCircle}></View>
+            </View>
+          </View>
+        );
+      })}
     </View>
   );
 }

@@ -6,12 +6,13 @@ import { Ionicons } from "@expo/vector-icons";
 import { Constants } from "../../util/constants/constants";
 import { useNavigation } from "@react-navigation/native";
 
-
 function DrinkCard({ drinkTitle }) {
   const navigation = useNavigation();
   function openDrinkRecipe() {
     const drink = Constants.drinkList.find((d) => d.name === drinkTitle);
-    navigation.navigate("Recipe")
+    navigation.navigate("Recipe", {
+      drink: drink,
+    });
   }
 
   return (
