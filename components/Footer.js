@@ -80,10 +80,7 @@ const styles = StyleSheet.create({
     paddingHorizontal: 30,
     paddingVertical: 10,
     height: 50,
-    backgroundColor: GlobalStyles.colors.towerGray600,
-
-    borderColor: GlobalStyles.colors.robRoy100,
-    borderWidth: 1,
+    backgroundColor: GlobalStyles.colors.footerGray,
     flexDirection: "row",
     flexWrap: "wrap",
     gap: 46,

@@ -5,18 +5,25 @@ import InstructionsBlade from "../components/InstructionsBlade";
 import ChecklistBox from "../components/CheckListBox";
 import { baseEssentials, mixersEssentials } from "./BarCartScreen";
 import { GlobalStyles } from "../util/constants/globalStyles";
+import { LinearGradient } from "expo-linear-gradient";
 
 function IngredientsScreen() {
   return (
     <>
-      <ScrollView style={styles.scrollView}>
-        <MainHeader>Ingredients</MainHeader>
-        <InstructionsBlade>
-          First, let's add what ingredients you have onhand
-        </InstructionsBlade>
-        <ChecklistBox titleOptionsObject={baseEssentials} />
-        <ChecklistBox titleOptionsObject={mixersEssentials} />
-      </ScrollView>
+      <LinearGradient
+        // Background Linear Gradient
+        colors={["#468891", "#125e6e"]}
+        style={styles.background}
+      >
+        <ScrollView style={styles.scrollView}>
+          <MainHeader>Ingredients</MainHeader>
+          <InstructionsBlade>
+            First, let's add what ingredients you have onhand
+          </InstructionsBlade>
+          <ChecklistBox titleOptionsObject={baseEssentials} />
+          <ChecklistBox titleOptionsObject={mixersEssentials} />
+        </ScrollView>
+      </LinearGradient>
       <Footer />
     </>
   );
@@ -25,8 +32,8 @@ function IngredientsScreen() {
 export default IngredientsScreen;
 
 const styles = StyleSheet.create({
-  scrollView: {
-    paddingHorizontal: 8,
-    backgroundColor: GlobalStyles.colors.towerGray600,
+  background: {
+    flex: 1,
+    paddingHorizontal: 16,
   },
 });

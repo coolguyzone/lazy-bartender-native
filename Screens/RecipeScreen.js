@@ -9,6 +9,8 @@ import { Ionicons } from "@expo/vector-icons";
 import RecipeHeader from "../components/recipe-components/RecipeHeader";
 import IngredientBlade from "../components/recipe-components/IngredientBlade";
 import InstructionBlade from "../components/recipe-components/InstructionBlade";
+import { LinearGradient } from "expo-linear-gradient";
+
 
 function RecipeScreen({ route }) {
   const drinkObj = route.params?.drink;
@@ -16,6 +18,11 @@ function RecipeScreen({ route }) {
   return (
     <>
       <ScrollView style={styles.scrollView}>
+      <LinearGradient
+        // Background Linear Gradient
+        colors={["#468891", "#125e6e"]}
+        style={styles.background}
+      >
         <RecipeHeader />
         <View style={styles.recipeImage}>
           <Text>Recipe Image</Text>
@@ -30,6 +37,7 @@ function RecipeScreen({ route }) {
         <IngredientBlade drinkObj={drinkObj} />
         <View style={styles.divider}></View>
         <InstructionBlade drinkObj={drinkObj} />
+        </LinearGradient>
       </ScrollView>
 
       <Footer />
@@ -40,9 +48,14 @@ function RecipeScreen({ route }) {
 export default RecipeScreen;
 
 const styles = StyleSheet.create({
+  background: {
+    flex: 1,
+    paddingHorizontal: 16,
+    paddingBottom: 60,
+  },
   scrollView: {
-    paddingHorizontal: 8,
     backgroundColor: GlobalStyles.colors.towerGray600,
+
   },
   recipeImage: {
     height: 190,

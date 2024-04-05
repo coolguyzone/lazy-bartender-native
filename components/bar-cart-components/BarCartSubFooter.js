@@ -4,7 +4,6 @@ import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import BarCartSubFooterButton from "./BarCartSubFooterButton";
 
-
 function BarCartSubFooter() {
   const [subFooterButtonSelected, setsubFooterButtonSelected] = useState(false);
   const dispatch = useDispatch();
@@ -12,10 +11,8 @@ function BarCartSubFooter() {
   return (
     <View style={styles.barCartSubFooterContainer}>
       <View style={styles.barCartSubFooterButtons}>
-       <BarCartSubFooterButton>In My Bar</BarCartSubFooterButton>
-       <BarCartSubFooterButton>Available Drinks</BarCartSubFooterButton>
-
-       
+        <BarCartSubFooterButton>In My Bar</BarCartSubFooterButton>
+        <BarCartSubFooterButton>Available Drinks</BarCartSubFooterButton>
       </View>
     </View>
   );
@@ -25,7 +22,7 @@ export default BarCartSubFooter;
 
 const styles = StyleSheet.create({
   barCartSubFooterContainer: {
-    backgroundColor: GlobalStyles.colors.towerGray600,
+    backgroundColor: GlobalStyles.colors.footerGray,
     borderTopColor: GlobalStyles.colors.robRoy100,
     borderBottomColor: GlobalStyles.colors.robRoy100,
     borderTopWidth: 1,

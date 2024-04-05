@@ -16,7 +16,6 @@ export default InstructionsBlade;
 
 const styles = StyleSheet.create({
   instructionContainer: {
-    backgroundColor: GlobalStyles.colors.towerGray600,
     paddingVertical: 20,
   },
   instructionText: {

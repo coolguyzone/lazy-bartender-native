@@ -1,4 +1,11 @@
-import { Button, Pressable, ScrollView, StyleSheet, Text, View } from "react-native";
+import {
+  Button,
+  Pressable,
+  ScrollView,
+  StyleSheet,
+  Text,
+  View,
+} from "react-native";
 import { Constants } from "../util/constants/constants";
 import { useSelector, useDispatch } from "react-redux";
 import { addIngredient, ingredientsArray } from "../util/slices/inventorySlice";
@@ -12,6 +19,7 @@ import ScrollArrowBlade from "../components/ScrollArrowBlade";
 import Footer from "../components/Footer";
 import { GlobalStyles } from "../util/constants/globalStyles";
 import BarCartSubFooter from "../components/bar-cart-components/BarCartSubFooter";
+import { LinearGradient } from "expo-linear-gradient";
 
 export const baseEssentials = {
   title: "Cocktail Base Essentials",
@@ -29,16 +37,20 @@ function BarCartScreen() {
   return (
     <>
       <ScrollView style={styles.scrollView}>
-        <MainHeader>BAR CART </MainHeader>
-        <InstructionsBlade>
-          First, Lets add what ingredients you have on hand
-        </InstructionsBlade>
-        <ChecklistBox titleOptionsObject={baseEssentials} />
-        <ChecklistBox titleOptionsObject={mixersEssentials} />
+        <LinearGradient
+          // Background Linear Gradient
+          colors={["#468891", "#125e6e"]}
+          style={styles.background}
+        >
+          <MainHeader>BAR CART </MainHeader>
+          <InstructionsBlade>
+            First, Lets add what ingredients you have on hand
+          </InstructionsBlade>
+          <ChecklistBox titleOptionsObject={baseEssentials} />
+          <ChecklistBox titleOptionsObject={mixersEssentials} />
+        </LinearGradient>
       </ScrollView>
 
-
-      
       <BarCartSubFooter />
       <Footer />
     </>
@@ -49,7 +61,10 @@ export default BarCartScreen;
 
 const styles = StyleSheet.create({
   scrollView: {
-    paddingHorizontal: 16,
     backgroundColor: GlobalStyles.colors.towerGray600,
+  },
+  background: {
+    flex: 1,
+    paddingHorizontal: 16,
   },
 });
