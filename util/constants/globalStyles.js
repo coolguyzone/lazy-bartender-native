@@ -33,6 +33,7 @@ export const GlobalStyles = {
     towerGray800: "#375055",
     towerGray900: "#324448",
     towerGray950: "#212d30",
+    footerGray: "#0E4753",
     lazyBlack: "#270c06",
   },
 };

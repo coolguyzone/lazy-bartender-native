@@ -51,7 +51,7 @@ const styles = StyleSheet.create({
     marginBottom: 10,
     flexDirection: "row",
     flexWrap: "wrap",
-    backgroundColor: GlobalStyles.colors.towerGray500,
+    backgroundColor: 'rgba(98, 143, 149, 0.5)',
     height: 54,
     borderRadius: 5,
     padding: 8,

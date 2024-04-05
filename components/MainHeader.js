@@ -25,7 +25,6 @@ export default MainHeader;
 const styles = StyleSheet.create({
   headerContainer: {
     height: 108,
-    backgroundColor: GlobalStyles.colors.towerGray600,
   },
   headerTitle: {
     fontSize: 24,

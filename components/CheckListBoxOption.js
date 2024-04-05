@@ -18,7 +18,7 @@ function ChecklistBoxOption({ option }) {
         {
           backgroundColor: checkBoxSelected
             ? GlobalStyles.colors.tonysPink300
-            : GlobalStyles.colors.towerGray600,
+            : 'transparent',
           borderColor: checkBoxSelected
             ? GlobalStyles.colors.towerGray600
             : GlobalStyles.colors.robRoy100,
