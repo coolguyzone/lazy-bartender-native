@@ -17,12 +17,12 @@ function DrinkListScreen() {
 
   return (
     <>
-      <ScrollView style={styles.scrollView}>
-        <LinearGradient
-          // Background Linear Gradient
-          colors={["#468891", "#125e6e"]}
-          style={styles.background}
-        >
+      <LinearGradient
+        // Background Linear Gradient
+        colors={["#468891", "#125e6e"]}
+        style={styles.background}
+      >
+        <ScrollView style={styles.scrollView}>
           <MainHeader>My Drink List</MainHeader>
           <InstructionsBlade>
             Drinks available with your pantry
@@ -30,15 +30,9 @@ function DrinkListScreen() {
           {drinkList.map((drink) => {
             return <DrinkCard drinkTitle={drink} />;
           })}
-          {drinkList.length < 8 && (
-            <View
-              style={
-                drinkList.length < 4 ? styles.bigSpacer : styles.smallSpacer
-              }
-            ></View>
-          )}
-        </LinearGradient>
-      </ScrollView>
+
+        </ScrollView>
+      </LinearGradient>
       <Footer />
     </>
   );
@@ -51,8 +45,8 @@ const styles = StyleSheet.create({
     flex: 1,
     paddingLeft: 15,
     paddingRight: 15,
+    paddingTop: 60,
   },
-  scrollView: {},
   drinkContainer: {
     flexDirection: "row",
     flexWrap: "wrap",

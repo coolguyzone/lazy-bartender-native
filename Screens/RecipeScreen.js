@@ -11,34 +11,33 @@ import IngredientBlade from "../components/recipe-components/IngredientBlade";
 import InstructionBlade from "../components/recipe-components/InstructionBlade";
 import { LinearGradient } from "expo-linear-gradient";
 
-
 function RecipeScreen({ route }) {
   const drinkObj = route.params?.drink;
 
   return (
     <>
-      <ScrollView style={styles.scrollView}>
       <LinearGradient
         // Background Linear Gradient
         colors={["#468891", "#125e6e"]}
         style={styles.background}
       >
-        <RecipeHeader />
-        <View style={styles.recipeImage}>
-          <Text>Recipe Image</Text>
-        </View>
-        <View style={styles.recipeH1BladeContainer}>
-          <Text style={styles.recipeH1BladeTitle}>{drinkObj.name}</Text>
-        </View>
-        <View style={styles.strengthBarContainer}>
-          <Text style={styles.strengthBarCopy}>Strength:</Text>
-        </View>
-        <View style={styles.divider}></View>
-        <IngredientBlade drinkObj={drinkObj} />
-        <View style={styles.divider}></View>
-        <InstructionBlade drinkObj={drinkObj} />
-        </LinearGradient>
-      </ScrollView>
+        <ScrollView style={styles.scrollView}>
+          <RecipeHeader />
+          <View style={styles.recipeImage}>
+            <Text>Recipe Image</Text>
+          </View>
+          <View style={styles.recipeH1BladeContainer}>
+            <Text style={styles.recipeH1BladeTitle}>{drinkObj.name}</Text>
+          </View>
+          <View style={styles.strengthBarContainer}>
+            <Text style={styles.strengthBarCopy}>Strength:</Text>
+          </View>
+          <View style={styles.divider}></View>
+          <IngredientBlade drinkObj={drinkObj} />
+          <View style={styles.divider}></View>
+          <InstructionBlade drinkObj={drinkObj} />
+        </ScrollView>
+      </LinearGradient>
 
       <Footer />
     </>
@@ -52,10 +51,7 @@ const styles = StyleSheet.create({
     flex: 1,
     paddingHorizontal: 16,
     paddingBottom: 60,
-  },
-  scrollView: {
-    backgroundColor: GlobalStyles.colors.towerGray600,
-
+    paddingTop: 60,
   },
   recipeImage: {
     height: 190,
