@@ -10,7 +10,9 @@ import RecipeHeader from "../components/recipe-components/RecipeHeader";
 import IngredientBlade from "../components/recipe-components/IngredientBlade";
 import InstructionBlade from "../components/recipe-components/InstructionBlade";
 
-function RecipeScreen() {
+function RecipeScreen({ route }) {
+  const drinkObj = route.params?.drink;
+
   return (
     <>
       <ScrollView style={styles.scrollView}>
@@ -19,15 +21,15 @@ function RecipeScreen() {
           <Text>Recipe Image</Text>
         </View>
         <View style={styles.recipeH1BladeContainer}>
-          <Text style={styles.recipeH1BladeTitle}>Cocktail Name</Text>
+          <Text style={styles.recipeH1BladeTitle}>{drinkObj.name}</Text>
         </View>
         <View style={styles.strengthBarContainer}>
           <Text style={styles.strengthBarCopy}>Strength:</Text>
         </View>
         <View style={styles.divider}></View>
-        <IngredientBlade />
+        <IngredientBlade drinkObj={drinkObj} />
         <View style={styles.divider}></View>
-        <InstructionBlade />
+        <InstructionBlade drinkObj={drinkObj} />
       </ScrollView>
 
       <Footer />
