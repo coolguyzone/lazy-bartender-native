@@ -3,7 +3,7 @@ import Footer from "../components/Footer";
 import MainHeader from "../components/MainHeader";
 import InstructionsBlade from "../components/InstructionsBlade";
 import ChecklistBox from "../components/CheckListBox";
-import { baseEssentials, mixersEssentials } from "./BarCartScreen";
+import { baseEssentials, darkSpirits, lightSpirits, liquersEtc, mixersEssentials, moreMixers, pantryAndProduce } from "./BarCartScreen";
 import { GlobalStyles } from "../util/constants/globalStyles";
 import { LinearGradient } from "expo-linear-gradient";
 
@@ -22,6 +22,11 @@ function IngredientsScreen() {
           </InstructionsBlade>
           <ChecklistBox titleOptionsObject={baseEssentials} />
           <ChecklistBox titleOptionsObject={mixersEssentials} />
+          <ChecklistBox titleOptionsObject={darkSpirits} />
+          <ChecklistBox titleOptionsObject={lightSpirits} />
+          <ChecklistBox titleOptionsObject={moreMixers} />
+          <ChecklistBox titleOptionsObject={liquersEtc} />
+          <ChecklistBox titleOptionsObject={pantryAndProduce} />
         </ScrollView>
       </LinearGradient>
       <Footer />

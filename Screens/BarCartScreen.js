@@ -31,6 +31,31 @@ export const mixersEssentials = {
   options: Constants.mixerEssentials,
 };
 
+export const darkSpirits = {
+  title: "Dark Spirits",
+  options: Constants.brownBooze,
+}
+
+export const lightSpirits = {
+  title: 'Light Spirits',
+  options: Constants.clearBooze,
+}
+
+export const moreMixers = {
+  title: "More Mixers",
+  options: Constants.mixers,
+}
+
+export const liquersEtc = {
+  title: "Liquers etc.",
+  options: Constants.fruitBooze,
+}
+
+export const pantryAndProduce = {
+  title: "Pantry & Produce",
+  options: Constants.produce,
+}
+
 function BarCartScreen() {
   const ingredients = useSelector((state) => state.inventory);
 
@@ -48,6 +73,11 @@ function BarCartScreen() {
           </InstructionsBlade>
           <ChecklistBox titleOptionsObject={baseEssentials} />
           <ChecklistBox titleOptionsObject={mixersEssentials} />
+          <ChecklistBox titleOptionsObject={darkSpirits} />
+          <ChecklistBox titleOptionsObject={lightSpirits} />
+          <ChecklistBox titleOptionsObject={moreMixers} />
+          <ChecklistBox titleOptionsObject={liquersEtc} />
+          <ChecklistBox titleOptionsObject={pantryAndProduce} />
         </ScrollView>
       </LinearGradient>
       <BarCartSubFooter />
