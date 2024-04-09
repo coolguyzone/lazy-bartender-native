@@ -2,12 +2,22 @@ import { useState } from "react";
 import { View, Text, StyleSheet, Pressable } from "react-native";
 import { GlobalStyles } from "../util/constants/globalStyles";
 import { useDispatch, useSelector } from "react-redux";
-import { addIngredient, removeIngredient } from "../util/slices/inventorySlice";
+import inventorySlice, {
+  addIngredient,
+  ingredientsArray,
+  removeIngredient,
+} from "../util/slices/inventorySlice";
+import { Constants } from "../util/constants/constants";
 
 let bgColor = "grey";
 
 function ChecklistBoxOption({ option }) {
-  const [checkBoxSelected, setCheckBoxSelected] = useState(false);
+  //the conditional here makes sure items below the fold stay selected when the menu is closed and expanded again
+  const [checkBoxSelected, setCheckBoxSelected] = useState(
+    useSelector((state) => state.inventory.ingredientsArray).includes(option)
+      ? true
+      : false
+  );
   const dispatch = useDispatch();
   const ingredients = useSelector((state) => state.inventory.ingredientsArray);
 
@@ -25,7 +35,7 @@ function ChecklistBoxOption({ option }) {
           borderColor: checkBoxSelected
             ? GlobalStyles.colors.towerGray600
             : GlobalStyles.colors.robRoy100,
-          flexBasis: longString ? superLongString ? "100%" : "35%" : "30%",
+          flexBasis: longString ? (superLongString ? "100%" : "35%") : "30%",
         },
       ]}
       onPress={() => {
