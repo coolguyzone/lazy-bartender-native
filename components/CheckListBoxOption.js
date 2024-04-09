@@ -11,6 +11,9 @@ function ChecklistBoxOption({ option }) {
   const dispatch = useDispatch();
   const ingredients = useSelector((state) => state.inventory.ingredientsArray);
 
+  const longString = option.length > 12 ? true : false;
+  const superLongString = option.length > 22 ? true : false;
+
   return (
     <Pressable
       style={[
@@ -18,16 +21,17 @@ function ChecklistBoxOption({ option }) {
         {
           backgroundColor: checkBoxSelected
             ? GlobalStyles.colors.tonysPink300
-            : 'transparent',
+            : "transparent",
           borderColor: checkBoxSelected
             ? GlobalStyles.colors.towerGray600
             : GlobalStyles.colors.robRoy100,
+          flexBasis: longString ? superLongString ? "100%" : "35%" : "30%",
         },
       ]}
       onPress={() => {
         if (checkBoxSelected === true) {
           dispatch(removeIngredient(option));
-          setCheckBoxSelected(false);          
+          setCheckBoxSelected(false);
         } else {
           dispatch(addIngredient(option));
           setCheckBoxSelected(true);
@@ -55,11 +59,10 @@ export default ChecklistBoxOption;
 const styles = StyleSheet.create({
   checklistOption: {
     borderWidth: 1,
-    width: 104,
     height: 36,
     borderRadius: 6,
     justifyContent: "center",
     alignItems: "center",
-    flexBasis: "30%",
+    flex: 1,
   },
 });
