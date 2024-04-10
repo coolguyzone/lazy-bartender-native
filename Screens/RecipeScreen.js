@@ -13,31 +13,44 @@ import { LinearGradient } from "expo-linear-gradient";
 
 function RecipeScreen({ route }) {
   const drinkObj = route.params?.drink;
- 
 
   return (
     <>
+    {/* split this one up into several different containers so that image can go full width */}
       <LinearGradient
         // Background Linear Gradient
         colors={["#468891", "#125e6e"]}
-        style={styles.background}
+        style={styles.headerBackground}
+      >
+        <RecipeHeader />
+      </LinearGradient>
+
+      <LinearGradient
+        // Background Linear Gradient
+        colors={["#468891", "#125e6e"]}
+        style={styles.gradientBackground}
       >
         <ScrollView style={styles.scrollView}>
-          <RecipeHeader />
           <View style={styles.recipeImageContainer}>
-            {drinkObj.imageUrl ? <Image source={drinkObj.imageUrl} style={styles.recipeImage} /> : <Text>Recipe Image</Text>}
-            
+            {drinkObj.imageUrl ? (
+              <Image source={drinkObj.imageUrl} style={styles.recipeImage} />
+            ) : (
+              <Text style={styles.dummyImage}>Recipe Image</Text>
+            )}
           </View>
-          <View style={styles.recipeH1BladeContainer}>
-            <Text style={styles.recipeH1BladeTitle}>{drinkObj.name}</Text>
+
+          <View style={styles.background}>
+            <View style={styles.recipeH1BladeContainer}>
+              <Text style={styles.recipeH1BladeTitle}>{drinkObj.name}</Text>
+            </View>
+            <View style={styles.strengthBarContainer}>
+              <Text style={styles.strengthBarCopy}>Strength:</Text>
+            </View>
+            <View style={styles.divider}></View>
+            <IngredientBlade drinkObj={drinkObj} />
+            <View style={styles.divider}></View>
+            <InstructionBlade drinkObj={drinkObj} />
           </View>
-          <View style={styles.strengthBarContainer}>
-            <Text style={styles.strengthBarCopy}>Strength:</Text>
-          </View>
-          <View style={styles.divider}></View>
-          <IngredientBlade drinkObj={drinkObj} />
-          <View style={styles.divider}></View>
-          <InstructionBlade drinkObj={drinkObj} />
         </ScrollView>
       </LinearGradient>
 
@@ -50,20 +63,30 @@ export default RecipeScreen;
 
 const styles = StyleSheet.create({
   background: {
-    flex: 1,
     paddingHorizontal: 16,
     paddingBottom: 60,
-    paddingTop: 60,
+    paddingTop: 30,
+  },
+  gradientBackground: {
+    flex: 1,
+  },
+  headerBackground: {
+    paddingHorizontal: 16,
+    paddingTop: 42,
+  },
+  imageBackground: {
+    flex: 1,
   },
   recipeImageContainer: {
     height: 190,
-    borderColor: GlobalStyles.colors.robRoy100,
-    borderWidth: 1,
-    color: GlobalStyles.colors.robRoy100,
   },
   recipeImage: {
     height: 190,
     width: 390,
+  },
+  dummyImage: {
+    backgroundColor: GlobalStyles.colors.tonysPink300,
+    height: 190,
   },
   recipeH1BladeContainer: {
     flex: 1,
