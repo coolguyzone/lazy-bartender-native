@@ -1,7 +1,12 @@
 import { View, Text, StyleSheet } from "react-native";
 import { GlobalStyles } from "../../util/constants/globalStyles";
+import { useDispatch, useSelector } from "react-redux";
 
 function IngredientBlade({ drinkObj }) {
+  const ingredientsArray = useSelector(
+    (state) => state.inventory.ingredientsArray
+  );
+
   return (
     <View style={styles.ingredientBladeContainer}>
       <View style={styles.ingredientBladeRow}>
@@ -40,7 +45,16 @@ function IngredientBlade({ drinkObj }) {
                 styles.ingredientBladeFinalColumn,
               ]}
             >
-              <View style={styles.ingredientBladeCircle}></View>
+              <View
+                style={[
+                  styles.ingredientBladeCircle,
+                  {
+                    backgroundColor: ingredientsArray.includes(ingredient)
+                      ? GlobalStyles.colors.tonysPink300
+                      : "",
+                  },
+                ]}
+              ></View>
             </View>
           </View>
         );
@@ -83,7 +97,6 @@ const styles = StyleSheet.create({
     height: 18,
     width: 18,
     borderColor: GlobalStyles.colors.robRoy100,
-    // backgroundColor: GlobalStyles.colors.tonysPink300,
     borderWidth: 1,
     borderRadius: 100,
   },
