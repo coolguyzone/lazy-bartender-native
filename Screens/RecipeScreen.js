@@ -1,4 +1,4 @@
-import { ScrollView, StyleSheet, Text, View } from "react-native";
+import { Image, ScrollView, StyleSheet, Text, View } from "react-native";
 import Footer from "../components/Footer";
 import MainHeader from "../components/MainHeader";
 import InstructionsBlade from "../components/InstructionsBlade";
@@ -13,6 +13,7 @@ import { LinearGradient } from "expo-linear-gradient";
 
 function RecipeScreen({ route }) {
   const drinkObj = route.params?.drink;
+ 
 
   return (
     <>
@@ -23,8 +24,9 @@ function RecipeScreen({ route }) {
       >
         <ScrollView style={styles.scrollView}>
           <RecipeHeader />
-          <View style={styles.recipeImage}>
-            <Text>Recipe Image</Text>
+          <View style={styles.recipeImageContainer}>
+            {drinkObj.imageUrl ? <Image source={drinkObj.imageUrl} style={styles.recipeImage} /> : <Text>Recipe Image</Text>}
+            
           </View>
           <View style={styles.recipeH1BladeContainer}>
             <Text style={styles.recipeH1BladeTitle}>{drinkObj.name}</Text>
@@ -53,11 +55,15 @@ const styles = StyleSheet.create({
     paddingBottom: 60,
     paddingTop: 60,
   },
-  recipeImage: {
+  recipeImageContainer: {
     height: 190,
     borderColor: GlobalStyles.colors.robRoy100,
     borderWidth: 1,
     color: GlobalStyles.colors.robRoy100,
+  },
+  recipeImage: {
+    height: 190,
+    width: 390,
   },
   recipeH1BladeContainer: {
     flex: 1,

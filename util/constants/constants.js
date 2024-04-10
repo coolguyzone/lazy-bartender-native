@@ -1585,6 +1585,7 @@ export const Constants = {
       instructions:
         "Pour the bourbon and water into a highball glass almost filled with ice cubes.",
       glass: "Highball glass",
+      imageUrl: require('../../assets/images/bourbon-and-branch-cropped.png')
     },
 
     {
