@@ -29,7 +29,8 @@ function ChecklistBoxOption({ option }) {
     borderColor: checkBoxSelected
       ? GlobalStyles.colors.towerGray600
       : GlobalStyles.colors.robRoy100,
-    flexBasis: longString ? (superLongString ? "100%" : "35%") : "30%",
+      //TODO: this is redundant, remove superlongstring if it doesn't cause any issues
+    flexBasis: longString ? (superLongString ? "55%" : "55%") : "30%",
   }];
 
   return (
