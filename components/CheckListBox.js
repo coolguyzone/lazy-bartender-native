@@ -15,7 +15,6 @@ function ChecklistBox({ titleOptionsObject }) {
   return (
     <View style={styles.checklistContainer}>
       <View style={styles.checklistHeaderWrapper}>
-        <View style={styles.checklistHeaderIcon}></View>
         <Text style={styles.checklistHeaderText}>
           {titleOptionsObject.title}
         </Text>
@@ -53,23 +52,16 @@ const styles = StyleSheet.create({
     padding: 10,
   },
   checklistHeaderWrapper: {
-    flexDirection: "row",
-    flexWrap: "wrap",
-    marginBottom: 16,
-  },
-  checklistHeaderIcon: {
-    backgroundColor: "green",
-    height: 36,
-    width: 36,
-    marginRight: 12,
+    alignItems: 'center',
   },
   checklistHeaderText: {
     fontSize: 20,
     marginTop: 4,
+    fontWeight: 'bold',
     color: GlobalStyles.colors.robRoy100,
   },
   checklistOptionContainer: {
-    marginTop: 12,
+    marginTop: 8,
     flex: 1,
     flexWrap: "wrap",
     flexDirection: "row",
@@ -78,7 +70,7 @@ const styles = StyleSheet.create({
   divider: {
     borderBottomColor: GlobalStyles.colors.robRoy100,
     borderBottomWidth: 1,
-    marginVertical: 20,
+    marginTop: 20,
   },
   expandIcon: {
     flex: 1,
