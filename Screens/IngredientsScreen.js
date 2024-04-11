@@ -17,9 +17,6 @@ function IngredientsScreen() {
       >
         <ScrollView style={styles.scrollView}>
           <MainHeader>Ingredients</MainHeader>
-          <InstructionsBlade>
-            First, let's add what ingredients you have onhand
-          </InstructionsBlade>
           <ChecklistBox titleOptionsObject={baseEssentials} />
           <ChecklistBox titleOptionsObject={mixersEssentials} />
           <ChecklistBox titleOptionsObject={darkSpirits} />
