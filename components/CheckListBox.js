@@ -7,7 +7,7 @@ import { useState } from "react";
 
 function ChecklistBox({ titleOptionsObject }) {
   const fullOptions = titleOptionsObject.options;
-  const firstNineOptions = titleOptionsObject.options.slice(0,9);
+  const firstNineOptions = titleOptionsObject.options.slice(0,10);
 
   const [expanded, setExpanded] = useState(false);
   
@@ -27,7 +27,7 @@ function ChecklistBox({ titleOptionsObject }) {
           return <ChecklistBoxOption option={option} />;
         })}
       </View>
-      {titleOptionsObject.options.length > 9 && (
+      {titleOptionsObject.options.length > 10 && (
         <Pressable 
         onPress={() => {
           !expanded ? setExpanded(true) : setExpanded(false)
