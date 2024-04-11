@@ -22,20 +22,23 @@ function ChecklistBoxOption({ option }) {
   const longString = option.length > 12 ? true : false;
   const superLongString = option.length > 22 ? true : false;
 
+  const styleObject = [styles.checklistOption,{
+    backgroundColor: checkBoxSelected
+      ? GlobalStyles.colors.tonysPink300
+      : "transparent",
+    borderColor: checkBoxSelected
+      ? GlobalStyles.colors.towerGray600
+      : GlobalStyles.colors.robRoy100,
+    flexBasis: longString ? (superLongString ? "100%" : "35%") : "30%",
+  }];
+
   return (
     <Pressable
-      style={[
-        styles.checklistOption,
-        {
-          backgroundColor: checkBoxSelected
-            ? GlobalStyles.colors.tonysPink300
-            : "transparent",
-          borderColor: checkBoxSelected
-            ? GlobalStyles.colors.towerGray600
-            : GlobalStyles.colors.robRoy100,
-          flexBasis: longString ? (superLongString ? "100%" : "35%") : "30%",
-        },
-      ]}
+    style={({ pressed }) =>
+    pressed
+      ? [styles.pressed, styleObject]
+      : styleObject
+  }
       onPress={() => {
         if (checkBoxSelected === true) {
           dispatch(removeIngredient(option));
@@ -45,7 +48,9 @@ function ChecklistBoxOption({ option }) {
           setCheckBoxSelected(true);
         }
       }}
+      android_ripple={{ color: GlobalStyles.colors.tonysPink300 }}
     >
+     
       <Text
         style={[
           styles.checklistOptionText,
@@ -58,6 +63,7 @@ function ChecklistBoxOption({ option }) {
       >
         {option}
       </Text>
+
     </Pressable>
   );
 }
@@ -72,5 +78,8 @@ const styles = StyleSheet.create({
     justifyContent: "center",
     alignItems: "center",
     flex: 1,
+  },
+  pressed: {
+    opacity: 0.75,
   },
 });
