@@ -10,7 +10,7 @@ function Footer() {
     <View style={styles.siteFooterContainer}>
        <Pressable
         style={styles.siteFooterOption}
-        onPress={() => navigation.navigate("Ingredients")}
+        onPress={() => navigation.navigate("Home")}
       >
         <Text style={styles.siteFooterOptionIcon}>
           <Ionicons
