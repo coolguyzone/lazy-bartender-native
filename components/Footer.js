@@ -14,7 +14,20 @@ function Footer() {
       >
         <Text style={styles.siteFooterOptionIcon}>
           <Ionicons
-            name="water"
+            name="home-outline"
+            color={GlobalStyles.colors.robRoy100}
+            size={14}
+          />
+        </Text>
+        <Text style={styles.siteFooterOptionContent}>Home</Text>
+      </Pressable>
+       <Pressable
+        style={styles.siteFooterOption}
+        onPress={() => navigation.navigate("Ingredients")}
+      >
+        <Text style={styles.siteFooterOptionIcon}>
+          <Ionicons
+            name="cart-outline"
             color={GlobalStyles.colors.robRoy100}
             size={14}
           />
@@ -27,7 +40,7 @@ function Footer() {
       >
         <Text style={styles.siteFooterOptionIcon}>
           <Ionicons
-            name="water"
+            name="business-outline"
             color={GlobalStyles.colors.robRoy100}
             size={14}
           />
@@ -49,26 +62,16 @@ function Footer() {
         <Text style={styles.siteFooterOptionContent}>Drinks</Text>
       </Pressable>
      
-      <View style={styles.siteFooterOption}>
+      <Pressable style={styles.siteFooterOption}>
         <Text style={styles.siteFooterOptionIcon}>
           <Ionicons
-            name="water"
+            name="beer-outline"
             color={GlobalStyles.colors.robRoy100}
             size={14}
           />
         </Text>
         <Text style={styles.siteFooterOptionContent}>Favorites</Text>
-      </View>
-      <View style={styles.siteFooterOption}>
-        <Text style={styles.siteFooterOptionIcon}>
-          <Ionicons
-            name="water"
-            color={GlobalStyles.colors.robRoy100}
-            size={14}
-          />
-        </Text>
-        <Text style={styles.siteFooterOptionContent}>Saved</Text>
-      </View>
+      </Pressable>
     </View>
   );
 }
@@ -78,12 +81,12 @@ export default Footer;
 const styles = StyleSheet.create({
   siteFooterContainer: {
     paddingHorizontal: 30,
-    paddingVertical: 10,
-    height: 50,
+    paddingBottom: 4,
+    height: 64,
     backgroundColor: GlobalStyles.colors.footerGray,
     flexDirection: "row",
     flexWrap: "wrap",
-    gap: 46,
+    gap: 14,
   },
   siteFooterOption: {
     justifyContent: "center",
