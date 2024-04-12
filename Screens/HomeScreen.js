@@ -1,7 +1,9 @@
-import { Button, Pressable, StyleSheet, Text, View } from "react-native";
+import { Button, Pressable, ScrollView, StyleSheet, Text, View } from "react-native";
 import { useEffect, useState } from "react";
 import Footer from "../components/Footer";
 import { LinearGradient } from "expo-linear-gradient";
+import { GlobalStyles } from "../util/constants/globalStyles";
+import FeaturedDrinksBlade from "../components/FeaturedDrinksBlade";
 
 function HomeScreen() {
   return (
@@ -12,19 +14,24 @@ function HomeScreen() {
           colors={["#468891", "#125e6e"]}
           style={styles.background}
         >
-           <View style={styles.centeredView}>
-          <Text style={styles.title}>Lazy Bartender</Text>
-          <View style={styles.welcomeTextWrapper}>
+           <ScrollView style={styles.scrollView}>
+            <View style={styles.titleContainer}>
+          <Text style={styles.title}>The Lazy Bartender</Text>
+          </View>
+          <View style={styles.heroImageWrapper}>
             <View style={styles.centeredView}>
               <Text style={styles.welcomeText}>
                 Making the Best of what you got
               </Text>
             </View>
           </View>
+          <View style={styles.divider}></View>
           <Pressable style={styles.startButton}>
-            <Text style={styles.startButtonText}>Let's get started!</Text>
+            <Text style={styles.startButtonText}>Start adding your ingredients!</Text>
           </Pressable>
-          </View>
+          <View style={styles.divider}></View>
+          <FeaturedDrinksBlade />
+          </ScrollView>
         </LinearGradient>
      
       <Footer />
@@ -39,38 +46,53 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: "center",
     alignItems: "center",
-    marginTop: -80,
+    marginTop: -160,
+  },
+  titleContainer: {
+    flex: 1,
+    justifyContent: "center",
+    alignItems: "center",
   },
   title: {
-    marginBottom: 50,
+    marginBottom: 10,
     fontSize: 34,
-    marginTop: 50,
+    fongWeight: 'bold',
+    color: GlobalStyles.colors.robRoy100,
   },
-  welcomeTextWrapper: {
-    backgroundColor: "grey",
-    height: 387,
-    width: 318,
-    borderRadius: 400,
-    paddingHorizontal: 30,
-    paddingTop: 70,
+  heroImageWrapper: {
+    borderColor: 'white',
+    borderWidth: 1,
+    height: 298,
   },
   welcomeText: {
     fontSize: 34,
     color: "black",
   },
   startButton: {
-    backgroundColor: "grey",
-    marginTop: 70,
+    marginTop: 10,
     paddingVertical: 10,
-    paddingHorizontal: 40,
+    borderColor: GlobalStyles.colors.robRoy100,
+    borderWidth: 1,
+    borderRadius: 5,
+    height: 90,
+    flex: 1,
+    justifyContent: "center",
+    alignItems: "center",
   },
   startButtonText: {
     fontSize: 24,
+    color: GlobalStyles.colors.robRoy100,
+    fontWeight: 'bold',
   },
   background: {
     flex: 1,
     paddingLeft: 15,
     paddingRight: 15,
     paddingTop: 60,
+  },
+  divider: {
+    borderBottomColor: GlobalStyles.colors.robRoy100,
+    borderBottomWidth: 1,
+    marginVertical: 20,
   },
 });
