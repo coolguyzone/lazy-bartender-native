@@ -4,8 +4,42 @@ import Footer from "../components/Footer";
 import { LinearGradient } from "expo-linear-gradient";
 import { GlobalStyles } from "../util/constants/globalStyles";
 import FeaturedDrinksBlade from "../components/FeaturedDrinksBlade";
+import { useNavigation } from "@react-navigation/native";
 
 function HomeScreen() {
+
+  const navigation = useNavigation();
+  function getStarted() {
+    navigation.navigate("Ingredients")
+  }
+
+  const generateBoxShadowStyle = (
+    xOffset,
+    yOffset,
+    shadowColorIos,
+    shadowOpacity,
+    shadowRadius,
+    elevation,
+    shadowColorAndroid,
+  ) => {
+    if (Platform.OS === 'ios') {
+      styles.boxShadow = {
+        shadowColor: shadowColorIos,
+        shadowOffset: {width: xOffset, height: yOffset},
+        shadowOpacity,
+        shadowRadius,
+      };
+    } else if (Platform.OS === 'android') {
+      styles.boxShadow = {
+        elevation,
+        shadowColor: shadowColorAndroid,
+      };
+    }
+  };
+
+
+  generateBoxShadowStyle(-2, 8, 'black', 0.4, 2, 6, 'black');
+
   return (
     <>
      
@@ -26,7 +60,7 @@ function HomeScreen() {
             </View>
           </View>
           <View style={styles.divider}></View>
-          <Pressable style={styles.startButton}>
+          <Pressable style={[styles.startButton, styles.boxShadow]} onPress={getStarted}>
             <Text style={styles.startButtonText}>Start adding your ingredients!</Text>
           </Pressable>
           <View style={styles.divider}></View>
@@ -72,12 +106,17 @@ const styles = StyleSheet.create({
     marginTop: 10,
     paddingVertical: 10,
     borderColor: GlobalStyles.colors.robRoy100,
+    backgroundColor: GlobalStyles.colors.towerGray600,
     borderWidth: 1,
     borderRadius: 5,
     height: 90,
     flex: 1,
     justifyContent: "center",
     alignItems: "center",
+  },
+  elevation: {
+    elevation: 20,
+    shadowColor: 'black',
   },
   startButtonText: {
     fontSize: 24,

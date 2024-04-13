@@ -1,23 +1,28 @@
 import { View, Text, StyleSheet } from "react-native";
 import { GlobalStyles } from "../util/constants/globalStyles";
-import FeaturedDrinksSubBlade from "./FeaturedDrinksSubBlade";
 
-function FeaturedDrinksBlade() {
+function FeaturedDrinksSubBlade() {
   return (
-    <View style={styles.FDBladeContainer}>
-      <FeaturedDrinksSubBlade />
-      <FeaturedDrinksSubBlade />
-      <FeaturedDrinksSubBlade />
-      <FeaturedDrinksSubBlade />
-    </View>
+    <>
+    <View style={styles.FDBladeHeader}>
+        <Text style={styles.FDBladeHeaderText}>Hot Girl Summer</Text>
+        </View>
+        <View style={styles.FDImageContainer}>
+          <View style={styles.FDImageWrapper}>
+          <Text>Drink Image 1</Text>
+          </View>
+       
+          <View style={styles.FDImageWrapper}>
+          <Text>Drink Image 2</Text>
+          </View>
+          </View>
+          <View style={styles.divider}></View></>
   );
 }
 
-export default FeaturedDrinksBlade;
+export default FeaturedDrinksSubBlade;
 
 const styles = StyleSheet.create({
-  FDBladeContainer: {
-  },
   FDBladeHeader: {
     flex: 1,
     justifyContent: "center",
