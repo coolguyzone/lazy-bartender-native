@@ -1,5 +1,6 @@
 import {
   Button,
+  Image,
   Pressable,
   ScrollView,
   StyleSheet,
@@ -59,11 +60,7 @@ function HomeScreen() {
             <Text style={styles.title}>The Lazy Bartender</Text>
           </View>
           <View style={styles.heroImageWrapper}>
-            <View style={styles.centeredView}>
-              <Text style={styles.welcomeText}>
-                Making the Best of what you got
-              </Text>
-            </View>
+          <Image source={require('../assets/images/bourbon-and-branch-cropped.png')} style={styles.heroImage} />
           </View>
           <View style={styles.divider}></View>
           <Pressable
@@ -105,9 +102,11 @@ const styles = StyleSheet.create({
     color: GlobalStyles.colors.robRoy100,
   },
   heroImageWrapper: {
-    borderColor: "white",
-    borderWidth: 1,
     height: 298,
+  },
+  heroImage: {
+    height: 298,
+    width: 390,
   },
   welcomeText: {
     fontSize: 34,

@@ -81,6 +81,7 @@ export const Constants = {
     "Chambord Raspberry Liqueur",
     "Blue Curacao",
     "Cherry Brandy",
+    "Aperol",
   ],
   beerWine: [
     "Red Wine",
@@ -91,6 +92,7 @@ export const Constants = {
     "Guinness Stout",
     "Sherry",
     "Port",
+    "Prosecco",
     "Hard Cider",
   ],
   mixers: [
@@ -102,6 +104,7 @@ export const Constants = {
     "Orange Juice",
     "Apple Juice",
     "Grapefruit Juice",
+    "Agave Nectar",
     "Tomato Juice",
     "Sour Mix",
     "Margarita Mix",
@@ -121,6 +124,7 @@ export const Constants = {
     "Orange Peel",
     "Lime",
     "Lime Peel",
+    "Watermelon",
     "Egg",
     "Egg White",
     "Mint",
@@ -534,6 +538,15 @@ export const Constants = {
       instructions:
         "Float vermouth on top of chilled Dubonnet in a red wine glass and serve.",
       glass: "Red wine glass",
+    },
+
+    {
+      name: "Aperol Spritz",
+      ingredients: ["Prosecco", "Aperol", "Club Soda", "Orange"],
+      measures: ["3 oz ", "2 oz ", "1 oz", "1 slice (garnish) "],
+      instructions: "Fill a wine glass with ice, then add Prosecco, Aperol next, finish with club soda and garnish with the orange slice.",
+      glass: "Red wine glass",
+      imageUrl: require('../../assets/images/aperol-spritz-cropped.png'),
     },
 
     {
@@ -33823,6 +33836,14 @@ export const Constants = {
       measures: ["1/3 shot ", "1/3 shot ", "1/3 shot "],
       instructions: "pour into shot glass",
       glass: "Shot glass",
+    },
+
+    {
+      name: "Watermelon Daqueri",
+      ingredients: ["Watermelon", "Salt", "Light Rum", "Lime Juice", "Agave Nectar", "Ice"],
+      measures: ["4 cups, chopped", "1 tsp", "2.5 oz", "1 tblspn", "1/2 tblspn", "4-5 cubes",],
+      instructions: "Blend watermelon chunks until smooth, then strain into a bowl for about 1.5 cups of watermelon juice (for 8 drinks). For each cocktail use 3 tablespoons of watermelon juice then shake together with ice, white rum, lime juice, and agave nector. Strain into glass, the garnish with a salted rim and a watermelon slice.",
+      imageUrl: require('../../assets/images/watermelon-daqueri-cropped.png'),
     },
 
     {
