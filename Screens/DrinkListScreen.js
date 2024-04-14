@@ -28,7 +28,7 @@ function DrinkListScreen() {
             Drinks available with your pantry
           </InstructionsBlade>
           {drinkList.map((drink) => {
-            return <DrinkCard drinkTitle={drink} />;
+            return <DrinkCard drinkTitle={drink} key={drink} />;
           })}
 
         </ScrollView>

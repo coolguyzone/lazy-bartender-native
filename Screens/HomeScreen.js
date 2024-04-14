@@ -90,7 +90,7 @@ const styles = StyleSheet.create({
   title: {
     marginBottom: 10,
     fontSize: 34,
-    fongWeight: 'bold',
+    fontWeight: 'bold',
     color: GlobalStyles.colors.robRoy100,
   },
   heroImageWrapper: {

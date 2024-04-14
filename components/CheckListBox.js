@@ -21,9 +21,9 @@ function ChecklistBox({ titleOptionsObject }) {
       </View>
       <View style={styles.checklistOptionContainer}>
         {expanded ? fullOptions.map((option) => {
-          return <ChecklistBoxOption option={option} />;
+          return <ChecklistBoxOption option={option} key={option} />;
         }) : firstNineOptions.map((option) => {
-          return <ChecklistBoxOption option={option} />;
+          return <ChecklistBoxOption option={option} key={option} />;
         })}
       </View>
       {titleOptionsObject.options.length > 10 && (
