@@ -5,6 +5,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { Ionicons } from "@expo/vector-icons";
 import { Constants } from "../../util/constants/constants";
 import { useNavigation } from "@react-navigation/native";
+import { addFavorite, removeFavorite } from "../../util/slices/inventorySlice";
 
 function DrinkCard({ drinkTitle }) {
   const navigation = useNavigation();
@@ -13,6 +14,25 @@ function DrinkCard({ drinkTitle }) {
     navigation.navigate("Recipe", {
       drink: drink,
     });
+  }
+
+ 
+
+  const dispatch = useDispatch();
+  const favoritesArray = useSelector(
+    (state) => state.inventory.favoritesArray
+  );
+  const [favoritedState, setFavoritedState] = useState(favoritesArray.includes(drinkTitle) ? true : false);
+
+  function toggleFavorite() {
+    if (favoritesArray.indexOf(drinkTitle) < 0) {
+      dispatch(addFavorite(drinkTitle));
+      setFavoritedState(true);
+    } else {
+      dispatch(removeFavorite(drinkTitle));
+      setFavoritedState(false);
+    }
+    console.log("favoriteAdd!");
   }
 
   return (
@@ -26,13 +46,13 @@ function DrinkCard({ drinkTitle }) {
       </View>
       <Text style={styles.drinkTitle}>{drinkTitle}</Text>
       <Text style={styles.drinkPercentage}>100%</Text>
-      <View style={styles.faveIcon}>
+      <Pressable onPress={toggleFavorite} style={styles.faveIcon}>
         <Ionicons
-          name="star-outline"
+          name={favoritedState ? "star" : "star-outline"}
           color={GlobalStyles.colors.robRoy100}
           size={24}
         />
-      </View>
+      </Pressable>
       <View style={styles.faveIcon}>
         <Ionicons
           name="folder-outline"
@@ -51,7 +71,7 @@ const styles = StyleSheet.create({
     marginBottom: 10,
     flexDirection: "row",
     flexWrap: "wrap",
-    backgroundColor: 'rgba(98, 143, 149, 0.5)',
+    backgroundColor: "rgba(98, 143, 149, 0.5)",
     height: 54,
     borderRadius: 5,
     padding: 8,
