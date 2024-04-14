@@ -44,7 +44,6 @@ function RecipesScreen() {
             return;
           }
         }
-        console.log("drink", drink);
         return (
           <Pressable
             onPress={() =>

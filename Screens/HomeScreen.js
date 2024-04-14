@@ -1,4 +1,11 @@
-import { Button, Pressable, ScrollView, StyleSheet, Text, View } from "react-native";
+import {
+  Button,
+  Pressable,
+  ScrollView,
+  StyleSheet,
+  Text,
+  View,
+} from "react-native";
 import { useEffect, useState } from "react";
 import Footer from "../components/Footer";
 import { LinearGradient } from "expo-linear-gradient";
@@ -6,51 +13,50 @@ import { GlobalStyles } from "../util/constants/globalStyles";
 import FeaturedDrinksBlade from "../components/FeaturedDrinksBlade";
 import { useNavigation } from "@react-navigation/native";
 
-function HomeScreen() {
+export const generateBoxShadowStyle = (
+  xOffset,
+  yOffset,
+  shadowColorIos,
+  shadowOpacity,
+  shadowRadius,
+  elevation,
+  shadowColorAndroid
+) => {
+  if (Platform.OS === "ios") {
+    styles.boxShadow = {
+      shadowColor: shadowColorIos,
+      shadowOffset: { width: xOffset, height: yOffset },
+      shadowOpacity,
+      shadowRadius,
+    };
+  } else if (Platform.OS === "android") {
+    styles.boxShadow = {
+      elevation,
+      shadowColor: shadowColorAndroid,
+    };
+  }
+};
 
+function HomeScreen() {
   const navigation = useNavigation();
   function getStarted() {
-    navigation.navigate("Ingredients")
+    navigation.navigate("Ingredients");
   }
 
-  const generateBoxShadowStyle = (
-    xOffset,
-    yOffset,
-    shadowColorIos,
-    shadowOpacity,
-    shadowRadius,
-    elevation,
-    shadowColorAndroid,
-  ) => {
-    if (Platform.OS === 'ios') {
-      styles.boxShadow = {
-        shadowColor: shadowColorIos,
-        shadowOffset: {width: xOffset, height: yOffset},
-        shadowOpacity,
-        shadowRadius,
-      };
-    } else if (Platform.OS === 'android') {
-      styles.boxShadow = {
-        elevation,
-        shadowColor: shadowColorAndroid,
-      };
-    }
-  };
+  
 
-
-  generateBoxShadowStyle(-2, 8, 'black', 0.4, 2, 6, 'black');
+  generateBoxShadowStyle(-2, 8, "black", 0.4, 2, 6, "black");
 
   return (
     <>
-     
-        <LinearGradient
-          // Background Linear Gradient
-          colors={["#468891", "#125e6e"]}
-          style={styles.background}
-        >
-           <ScrollView style={styles.scrollView}>
-            <View style={styles.titleContainer}>
-          <Text style={styles.title}>The Lazy Bartender</Text>
+      <LinearGradient
+        // Background Linear Gradient
+        colors={["#468891", "#125e6e"]}
+        style={styles.background}
+      >
+        <ScrollView style={styles.scrollView}>
+          <View style={styles.titleContainer}>
+            <Text style={styles.title}>The Lazy Bartender</Text>
           </View>
           <View style={styles.heroImageWrapper}>
             <View style={styles.centeredView}>
@@ -60,14 +66,19 @@ function HomeScreen() {
             </View>
           </View>
           <View style={styles.divider}></View>
-          <Pressable style={[styles.startButton, styles.boxShadow]} onPress={getStarted}>
-            <Text style={styles.startButtonText}>Start adding your ingredients!</Text>
+          <Pressable
+            style={[styles.startButton, styles.boxShadow]}
+            onPress={getStarted}
+          >
+            <Text style={styles.startButtonText}>
+              Start adding your ingredients!
+            </Text>
           </Pressable>
           <View style={styles.divider}></View>
           <FeaturedDrinksBlade />
-          </ScrollView>
-        </LinearGradient>
-     
+        </ScrollView>
+      </LinearGradient>
+
       <Footer />
     </>
   );
@@ -90,11 +101,11 @@ const styles = StyleSheet.create({
   title: {
     marginBottom: 10,
     fontSize: 34,
-    fontWeight: 'bold',
+    fontWeight: "bold",
     color: GlobalStyles.colors.robRoy100,
   },
   heroImageWrapper: {
-    borderColor: 'white',
+    borderColor: "white",
     borderWidth: 1,
     height: 298,
   },
@@ -116,12 +127,12 @@ const styles = StyleSheet.create({
   },
   elevation: {
     elevation: 20,
-    shadowColor: 'black',
+    shadowColor: "black",
   },
   startButtonText: {
     fontSize: 24,
     color: GlobalStyles.colors.robRoy100,
-    fontWeight: 'bold',
+    fontWeight: "bold",
   },
   background: {
     flex: 1,
