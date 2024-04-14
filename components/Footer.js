@@ -8,7 +8,7 @@ function Footer() {
 
   return (
     <View style={styles.siteFooterContainer}>
-       <Pressable
+      <Pressable
         style={styles.siteFooterOption}
         onPress={() => navigation.navigate("Home")}
       >
@@ -21,7 +21,7 @@ function Footer() {
         </Text>
         <Text style={styles.siteFooterOptionContent}>Home</Text>
       </Pressable>
-       <Pressable
+      <Pressable
         style={styles.siteFooterOption}
         onPress={() => navigation.navigate("Ingredients")}
       >
@@ -61,8 +61,11 @@ function Footer() {
         </Text>
         <Text style={styles.siteFooterOptionContent}>Drinks</Text>
       </Pressable>
-     
-      <Pressable style={styles.siteFooterOption}>
+
+      <Pressable
+        onPress={() => navigation.navigate("Favorites")}
+        style={styles.siteFooterOption}
+      >
         <Text style={styles.siteFooterOptionIcon}>
           <Ionicons
             name="beer-outline"

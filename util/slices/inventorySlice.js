@@ -10,6 +10,7 @@ export const inventorySlice = createSlice({
   initialState: {
     ingredientsArray: ["Water"],
     drinksArray: [],
+    favoritesArray: [],
   },
   reducers: {
     addIngredient: (state, action) => {
@@ -21,9 +22,9 @@ export const inventorySlice = createSlice({
         for (let i = 0; i < drinkIngredients.length; i++) {
           if (state.ingredientsArray.indexOf(drinkIngredients[i]) < 0) {
             return;
-          } 
+          }
         }
-        state.drinksArray.push(drink.name)
+        state.drinksArray.push(drink.name);
       });
     },
     removeIngredient: (state, action) => {
@@ -37,15 +38,29 @@ export const inventorySlice = createSlice({
         for (let i = 0; i < drinkIngredients.length; i++) {
           if (state.ingredientsArray.indexOf(drinkIngredients[i]) < 0) {
             return;
-          } 
+          }
         }
-        state.drinksArray.push(drink.name)
+        state.drinksArray.push(drink.name);
       });
+    },
+    addFavorite: (state, action) => {
+      if (state.favoritesArray.indexOf(action.payload) < 1) {
+        state.favoritesArray.push(action.payload);
+      }
+      return;
+    },
+    removeFavorite: (state, action) => {
+      const index = state.favoritesArray.indexOf(action.payload);
+      if (index > -1) {
+        state.favoritesArray.splice(index, 1);
+      }
+      return;
     },
   },
 });
 
-export const { addIngredient, removeIngredient } = inventorySlice.actions;
+export const { addIngredient, removeIngredient, addFavorite, removeFavorite } =
+  inventorySlice.actions;
 export const ingredientsArray = (state) =>
   state.inventory.ingredientsArray.toString();
 

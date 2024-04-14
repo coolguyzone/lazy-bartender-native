@@ -19,6 +19,7 @@ import BarCartScreen from "./Screens/BarCartScreen";
 import IngredientsScreen from "./Screens/IngredientsScreen";
 import DrinkListScreen from "./Screens/DrinkListScreen";
 import RecipeScreen from "./Screens/RecipeScreen";
+import FavoritesScreen from "./Screens/FavoritesScreen";
 
 const Stack = createNativeStackNavigator();
 
@@ -55,6 +56,11 @@ export default function App() {
           <Stack.Screen
             name="Recipe"
             component={RecipeScreen}
+            options={{ headerShown: false }}
+          />
+          <Stack.Screen
+            name="Favorites"
+            component={FavoritesScreen}
             options={{ headerShown: false }}
           />
         </Stack.Navigator>
