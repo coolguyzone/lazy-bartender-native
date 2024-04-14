@@ -8,7 +8,7 @@ import { useNavigation } from "@react-navigation/native";
 function RecipeHeader() {
   const navigation = useNavigation();
   function goBack() {
-    navigation.navigate("Drink List");
+    navigation.goBack();
   }
 
   return (

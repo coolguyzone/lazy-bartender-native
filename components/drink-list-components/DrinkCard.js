@@ -16,6 +16,32 @@ function DrinkCard({ drinkTitle }) {
     });
   }
 
+  const generateBoxShadowStyle = (
+    xOffset,
+    yOffset,
+    shadowColorIos,
+    shadowOpacity,
+    shadowRadius,
+    elevation,
+    shadowColorAndroid
+  ) => {
+    if (Platform.OS === "ios") {
+      styles.boxShadow = {
+        shadowColor: shadowColorIos,
+        shadowOffset: { width: xOffset, height: yOffset },
+        shadowOpacity,
+        shadowRadius,
+      };
+    } else if (Platform.OS === "android") {
+      styles.boxShadow = {
+        elevation,
+        shadowColor: shadowColorAndroid,
+      };
+    }
+  };
+
+  generateBoxShadowStyle(-2, 8, "black", 0.4, 2, 18, "black");
+
  
 
   const dispatch = useDispatch();
@@ -32,11 +58,10 @@ function DrinkCard({ drinkTitle }) {
       dispatch(removeFavorite(drinkTitle));
       setFavoritedState(false);
     }
-    console.log("favoriteAdd!");
   }
 
   return (
-    <Pressable style={styles.drinkContainer} onPress={openDrinkRecipe}>
+    <Pressable style={[styles.drinkContainer, styles.boxShadow]} onPress={openDrinkRecipe}>
       <View style={styles.drinkIcon}>
         <Ionicons
           name="water"
@@ -53,13 +78,6 @@ function DrinkCard({ drinkTitle }) {
           size={24}
         />
       </Pressable>
-      <View style={styles.faveIcon}>
-        <Ionicons
-          name="folder-outline"
-          color={GlobalStyles.colors.robRoy100}
-          size={24}
-        />
-      </View>
     </Pressable>
   );
 }
@@ -68,7 +86,7 @@ export default DrinkCard;
 
 const styles = StyleSheet.create({
   drinkContainer: {
-    marginBottom: 10,
+    marginBottom: 20,
     flexDirection: "row",
     flexWrap: "wrap",
     backgroundColor: "rgba(98, 143, 149, 0.5)",
