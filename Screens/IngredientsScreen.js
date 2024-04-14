@@ -3,9 +3,45 @@ import Footer from "../components/Footer";
 import MainHeader from "../components/MainHeader";
 import InstructionsBlade from "../components/InstructionsBlade";
 import ChecklistBox from "../components/CheckListBox";
-import { baseEssentials, darkSpirits, lightSpirits, liquersEtc, mixersEssentials, moreMixers, pantryAndProduce } from "./BarCartScreen";
 import { GlobalStyles } from "../util/constants/globalStyles";
 import { LinearGradient } from "expo-linear-gradient";
+import { Constants } from "../util/constants/constants";
+
+
+export const baseEssentials = {
+  title: "Cocktail Base Essentials",
+  options: Constants.cocktailBaseEssentials,
+};
+
+export const mixersEssentials = {
+  title: "Mixer Essentials",
+  options: Constants.mixerEssentials,
+};
+
+export const darkSpirits = {
+  title: "Dark Spirits",
+  options: Constants.brownBooze,
+};
+
+export const lightSpirits = {
+  title: "Light Spirits",
+  options: Constants.clearBooze,
+};
+
+export const moreMixers = {
+  title: "More Mixers",
+  options: Constants.mixers,
+};
+
+export const liquersEtc = {
+  title: "Liquers etc.",
+  options: Constants.fruitBooze,
+};
+
+export const pantryAndProduce = {
+  title: "Pantry & Produce",
+  options: Constants.produce,
+};
 
 function IngredientsScreen() {
   return (
