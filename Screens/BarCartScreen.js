@@ -21,43 +21,96 @@ import { GlobalStyles } from "../util/constants/globalStyles";
 import BarCartSubFooter from "../components/bar-cart-components/BarCartSubFooter";
 import { LinearGradient } from "expo-linear-gradient";
 
-export const baseEssentials = {
-  title: "Cocktail Base Essentials",
-  options: Constants.cocktailBaseEssentials,
-};
-
-export const mixersEssentials = {
-  title: "Mixer Essentials",
-  options: Constants.mixerEssentials,
-};
-
-export const darkSpirits = {
-  title: "Dark Spirits",
-  options: Constants.brownBooze,
-}
-
-export const lightSpirits = {
-  title: 'Light Spirits',
-  options: Constants.clearBooze,
-}
-
-export const moreMixers = {
-  title: "More Mixers",
-  options: Constants.mixers,
-}
-
-export const liquersEtc = {
-  title: "Liquers etc.",
-  options: Constants.fruitBooze,
-}
-
-export const pantryAndProduce = {
-  title: "Pantry & Produce",
-  options: Constants.produce,
-}
 
 function BarCartScreen() {
-  const ingredients = useSelector((state) => state.inventory);
+  const ingredients = useSelector((state) => state.inventory.ingredientsArray);
+
+  let baseEssentialsInBar = [];
+  let mixerEssentialsInBar = [];
+  let darkSpiritsInBar = [];
+  let lightSpiritsInBar = [];
+  let moreMixersInBar = [];
+  let liquersEtcInBar = [];
+  let pantryAndProduceInBar = [];
+
+
+  Constants.cocktailBaseEssentials.forEach((ingredient) => {
+    if(ingredients.includes(ingredient)) {
+      baseEssentialsInBar.push(ingredient)
+    }
+  })
+
+  Constants.mixerEssentials.forEach((ingredient) => {
+    if(ingredients.includes(ingredient)) {
+      mixerEssentialsInBar.push(ingredient)
+    }
+  })
+
+  Constants.brownBooze.forEach((ingredient) => {
+    if(ingredients.includes(ingredient)) {
+      darkSpiritsInBar.push(ingredient)
+    }
+  })
+
+  Constants.clearBooze.forEach((ingredient) => {
+    if(ingredients.includes(ingredient)) {
+      lightSpiritsInBar.push(ingredient)
+    }
+  })
+
+  Constants.mixers.forEach((ingredient) => {
+    if(ingredients.includes(ingredient)) {
+      moreMixersInBar.push(ingredient)
+    }
+  })
+
+  Constants.fruitBooze.forEach((ingredient) => {
+    if(ingredients.includes(ingredient)) {
+      liquersEtcInBar.push(ingredient)
+    }
+  })
+
+  Constants.produce.forEach((ingredient) => {
+    if(ingredients.includes(ingredient)) {
+      pantryAndProduceInBar.push(ingredient)
+    }
+  })
+
+  const baseEssentials = {
+    title: "Cocktail Base Essentials",
+    options: baseEssentialsInBar,
+  };
+  
+  const mixersEssentials = {
+    title: "Mixer Essentials",
+    options: mixerEssentialsInBar,
+  };
+  
+  const darkSpirits = {
+    title: "Dark Spirits",
+    options: darkSpiritsInBar,
+  };
+  
+  const lightSpirits = {
+    title: "Light Spirits",
+    options: lightSpiritsInBar,
+  };
+  
+  const moreMixers = {
+    title: "More Mixers",
+    options: moreMixersInBar,
+  };
+  
+  const liquersEtc = {
+    title: "Liquers etc.",
+    options: liquersEtcInBar,
+  };
+  
+  const pantryAndProduce = {
+    title: "Pantry & Produce",
+    options: pantryAndProduceInBar,
+  };
+
 
   return (
     <>
@@ -67,17 +120,16 @@ function BarCartScreen() {
         style={styles.background}
       >
         <ScrollView style={styles.scrollView}>
-          <MainHeader>BAR CART </MainHeader>
-          <InstructionsBlade>
-            First, Lets add what ingredients you have on hand
-          </InstructionsBlade>
-          <ChecklistBox titleOptionsObject={baseEssentials} />
-          <ChecklistBox titleOptionsObject={mixersEssentials} />
-          <ChecklistBox titleOptionsObject={darkSpirits} />
-          <ChecklistBox titleOptionsObject={lightSpirits} />
-          <ChecklistBox titleOptionsObject={moreMixers} />
-          <ChecklistBox titleOptionsObject={liquersEtc} />
-          <ChecklistBox titleOptionsObject={pantryAndProduce} />
+          <MainHeader>MY BAR</MainHeader>
+          {baseEssentials.options.length > 0 && <ChecklistBox titleOptionsObject={baseEssentials} /> }
+          {mixersEssentials.options.length > 0 && <ChecklistBox titleOptionsObject={mixersEssentials} /> }
+          {darkSpirits.options.length > 0 && <ChecklistBox titleOptionsObject={darkSpirits} /> }
+          {lightSpirits.options.length > 0 && <ChecklistBox titleOptionsObject={lightSpirits} /> }
+          {moreMixers.options.length > 0 && <ChecklistBox titleOptionsObject={moreMixers} /> }
+          {liquersEtc.options.length > 0 && <ChecklistBox titleOptionsObject={liquersEtc} /> }
+          {pantryAndProduce.options.length > 0 && <ChecklistBox titleOptionsObject={pantryAndProduce} /> }
+          
+
         </ScrollView>
       </LinearGradient>
       <BarCartSubFooter />
