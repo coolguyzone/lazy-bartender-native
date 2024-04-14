@@ -18,6 +18,32 @@ function FeaturedDrinksSubBlade() {
     });
   }
 
+  const generateBoxShadowStyle = (
+    xOffset,
+    yOffset,
+    shadowColorIos,
+    shadowOpacity,
+    shadowRadius,
+    elevation,
+    shadowColorAndroid
+  ) => {
+    if (Platform.OS === "ios") {
+      styles.boxShadow = {
+        shadowColor: shadowColorIos,
+        shadowOffset: { width: xOffset, height: yOffset },
+        shadowOpacity,
+        shadowRadius,
+      };
+    } else if (Platform.OS === "android") {
+      styles.boxShadow = {
+        elevation,
+        shadowColor: shadowColorAndroid,
+      };
+    }
+  };
+
+  generateBoxShadowStyle(-2, 8, "black", 0.4, 2, 6, "black");
+
 
   return (
     <>
@@ -25,7 +51,7 @@ function FeaturedDrinksSubBlade() {
         <Text style={styles.FDBladeHeaderText}>Hot Girl Summer</Text>
       </View>
       <View style={styles.FDImageContainer}>
-        <Pressable style={styles.FDImageWrapper} onPress={() => openFeaturedDrinkRecipe(featuredDrink1Name)}>
+        <Pressable style={[styles.FDImageWrapper, styles.boxShadow]} onPress={() => openFeaturedDrinkRecipe(featuredDrink1Name)}>
           <Image
             source={require("../assets/images/aperol-spritz.png")}
             style={styles.FDImage}
@@ -35,7 +61,7 @@ function FeaturedDrinksSubBlade() {
           </View>
         </Pressable>
 
-        <Pressable style={styles.FDImageWrapper} onPress={() => openFeaturedDrinkRecipe(featuredDrink2Name)}>
+        <Pressable style={[styles.FDImageWrapper, styles.boxShadow]} onPress={() => openFeaturedDrinkRecipe(featuredDrink2Name)}>
           <Image
             source={require("../assets/images/watermelon-daqueri.png")}
             style={styles.FDImage}
