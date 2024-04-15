@@ -1,4 +1,11 @@
-import { ScrollView, StyleSheet, Text, View, Pressable, ImageBackground } from "react-native";
+import {
+  ScrollView,
+  StyleSheet,
+  Text,
+  View,
+  Pressable,
+  ImageBackground,
+} from "react-native";
 import Footer from "../components/Footer";
 import MainHeader from "../components/MainHeader";
 import InstructionsBlade from "../components/InstructionsBlade";
@@ -17,13 +24,12 @@ function DrinkListScreen() {
 
   return (
     <>
-      {/* <LinearGradient
-        // Background Linear Gradient
-        colors={["#468891", "#125e6e"]}
-        style={styles.background}
-      > */}<ScrollView style={styles.scrollView}>
-      <ImageBackground source={require('../assets/images/background.jpg')} resizeMode="cover" style={styles.backgroundImage}>
-        
+      <ImageBackground
+        source={require("../assets/images/background.jpg")}
+        resizeMode="cover"
+        style={styles.backgroundImage}
+      >
+        <ScrollView style={styles.scrollView}>
           <MainHeader>My Drink List</MainHeader>
           <InstructionsBlade>
             Drinks available with your pantry
@@ -31,11 +37,9 @@ function DrinkListScreen() {
           {drinkList.map((drink) => {
             return <DrinkCard drinkTitle={drink} key={drink} />;
           })}
-
-       
-      {/* </LinearGradient> */}
+        </ScrollView>
       </ImageBackground>
-      </ScrollView>
+
       <Footer />
     </>
   );
@@ -44,15 +48,9 @@ function DrinkListScreen() {
 export default DrinkListScreen;
 
 const styles = StyleSheet.create({
-  background: {
-    flex: 1,
-    paddingLeft: 15,
-    paddingRight: 15,
-    paddingTop: 60,
-  },
   backgroundImage: {
     flex: 1,
-    justifyContent: 'center',
+    justifyContent: "center",
     paddingLeft: 15,
     paddingRight: 15,
     paddingTop: 60,

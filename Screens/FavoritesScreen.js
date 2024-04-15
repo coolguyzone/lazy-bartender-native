@@ -1,4 +1,4 @@
-import { ScrollView, StyleSheet, Text, View, Pressable } from "react-native";
+import { ScrollView, StyleSheet, Text, View, Pressable, ImageBackground } from "react-native";
 import Footer from "../components/Footer";
 import MainHeader from "../components/MainHeader";
 import InstructionsBlade from "../components/InstructionsBlade";
@@ -18,11 +18,7 @@ function FavoritesScreen() {
 
   return (
     <>
-      <LinearGradient
-        // Background Linear Gradient
-        colors={["#468891", "#125e6e"]}
-        style={styles.background}
-      >
+      <ImageBackground source={require('../assets/images/background.jpg')} resizeMode="cover" style={styles.backgroundImage}>
         <ScrollView style={styles.scrollView}>
           <MainHeader>Favorites</MainHeader>
           <InstructionsBlade>
@@ -33,7 +29,7 @@ function FavoritesScreen() {
           })}
 
         </ScrollView>
-      </LinearGradient>
+      </ImageBackground>
       <Footer />
     </>
   );
@@ -42,8 +38,9 @@ function FavoritesScreen() {
 export default FavoritesScreen;
 
 const styles = StyleSheet.create({
-  background: {
+  backgroundImage: {
     flex: 1,
+    justifyContent: 'center',
     paddingLeft: 15,
     paddingRight: 15,
     paddingTop: 60,

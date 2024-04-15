@@ -1,5 +1,6 @@
 import {
   Button,
+  ImageBackground,
   Pressable,
   ScrollView,
   StyleSheet,
@@ -114,10 +115,10 @@ function BarCartScreen() {
 
   return (
     <>
-      <LinearGradient
-        // Background Linear Gradient
-        colors={["#468891", "#125e6e"]}
-        style={styles.background}
+      <ImageBackground
+        source={require("../assets/images/background.jpg")}
+        resizeMode="cover"
+        style={styles.backgroundImage}
       >
         <ScrollView style={styles.scrollView}>
           <MainHeader>MY BAR</MainHeader>
@@ -131,7 +132,7 @@ function BarCartScreen() {
           
 
         </ScrollView>
-      </LinearGradient>
+      </ImageBackground>
       <BarCartSubFooter />
       <Footer />
     </>
@@ -141,9 +142,11 @@ function BarCartScreen() {
 export default BarCartScreen;
 
 const styles = StyleSheet.create({
-  background: {
+  backgroundImage: {
     flex: 1,
-    paddingHorizontal: 16,
+    justifyContent: 'center',
+    paddingLeft: 15,
+    paddingRight: 15,
     paddingTop: 60,
   },
 });

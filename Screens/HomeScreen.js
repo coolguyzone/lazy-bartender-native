@@ -137,12 +137,6 @@ const styles = StyleSheet.create({
     color: GlobalStyles.colors.robRoy100,
     fontWeight: "bold",
   },
-  background: {
-    flex: 1,
-    paddingLeft: 15,
-    paddingRight: 15,
-    paddingTop: 60,
-  },
   divider: {
     borderBottomColor: GlobalStyles.colors.robRoy100,
     borderBottomWidth: 1,
