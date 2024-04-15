@@ -1,4 +1,4 @@
-import { ScrollView, StyleSheet, Text } from "react-native";
+import { ImageBackground, ScrollView, StyleSheet, Text } from "react-native";
 import Footer from "../components/Footer";
 import MainHeader from "../components/MainHeader";
 import InstructionsBlade from "../components/InstructionsBlade";
@@ -46,10 +46,10 @@ export const pantryAndProduce = {
 function IngredientsScreen() {
   return (
     <>
-      <LinearGradient
-        // Background Linear Gradient
-        colors={["#468891", "#125e6e"]}
-        style={styles.background}
+       <ImageBackground
+        source={require("../assets/images/background.jpg")}
+        resizeMode="cover"
+        style={styles.backgroundImage}
       >
         <ScrollView style={styles.scrollView}>
           <MainHeader>Ingredients</MainHeader>
@@ -61,7 +61,7 @@ function IngredientsScreen() {
           <ChecklistBox titleOptionsObject={liquersEtc} />
           <ChecklistBox titleOptionsObject={pantryAndProduce} />
         </ScrollView>
-      </LinearGradient>
+      </ImageBackground>
       <Footer />
     </>
   );
@@ -70,9 +70,11 @@ function IngredientsScreen() {
 export default IngredientsScreen;
 
 const styles = StyleSheet.create({
-  background: {
+  backgroundImage: {
     flex: 1,
-    paddingHorizontal: 16,
+    justifyContent: 'center',
+    paddingLeft: 15,
+    paddingRight: 15,
     paddingTop: 60,
   },
 });
