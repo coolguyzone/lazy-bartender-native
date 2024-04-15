@@ -1,6 +1,7 @@
 import {
   Button,
   Image,
+  ImageBackground,
   Pressable,
   ScrollView,
   StyleSheet,
@@ -50,11 +51,7 @@ function HomeScreen() {
 
   return (
     <>
-      <LinearGradient
-        // Background Linear Gradient
-        colors={["#468891", "#125e6e"]}
-        style={styles.background}
-      >
+       <ImageBackground source={require('../assets/images/background.jpg')} resizeMode="cover" style={styles.backgroundImage}>
         <ScrollView style={styles.scrollView}>
           <View style={styles.titleContainer}>
             <Text style={styles.title}>The Lazy Bartender</Text>
@@ -74,7 +71,7 @@ function HomeScreen() {
           <View style={styles.divider}></View>
           <FeaturedDrinksBlade />
         </ScrollView>
-      </LinearGradient>
+      </ImageBackground>
 
       <Footer />
     </>
@@ -89,6 +86,13 @@ const styles = StyleSheet.create({
     justifyContent: "center",
     alignItems: "center",
     marginTop: -160,
+  },
+  backgroundImage: {
+    flex: 1,
+    justifyContent: 'center',
+    paddingLeft: 15,
+    paddingRight: 15,
+    paddingTop: 60,
   },
   titleContainer: {
     flex: 1,

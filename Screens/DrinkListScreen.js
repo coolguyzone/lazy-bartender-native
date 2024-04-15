@@ -1,4 +1,4 @@
-import { ScrollView, StyleSheet, Text, View, Pressable } from "react-native";
+import { ScrollView, StyleSheet, Text, View, Pressable, ImageBackground } from "react-native";
 import Footer from "../components/Footer";
 import MainHeader from "../components/MainHeader";
 import InstructionsBlade from "../components/InstructionsBlade";
@@ -17,12 +17,13 @@ function DrinkListScreen() {
 
   return (
     <>
-      <LinearGradient
+      {/* <LinearGradient
         // Background Linear Gradient
         colors={["#468891", "#125e6e"]}
         style={styles.background}
-      >
-        <ScrollView style={styles.scrollView}>
+      > */}<ScrollView style={styles.scrollView}>
+      <ImageBackground source={require('../assets/images/background.jpg')} resizeMode="cover" style={styles.backgroundImage}>
+        
           <MainHeader>My Drink List</MainHeader>
           <InstructionsBlade>
             Drinks available with your pantry
@@ -31,8 +32,10 @@ function DrinkListScreen() {
             return <DrinkCard drinkTitle={drink} key={drink} />;
           })}
 
-        </ScrollView>
-      </LinearGradient>
+       
+      {/* </LinearGradient> */}
+      </ImageBackground>
+      </ScrollView>
       <Footer />
     </>
   );
@@ -43,6 +46,13 @@ export default DrinkListScreen;
 const styles = StyleSheet.create({
   background: {
     flex: 1,
+    paddingLeft: 15,
+    paddingRight: 15,
+    paddingTop: 60,
+  },
+  backgroundImage: {
+    flex: 1,
+    justifyContent: 'center',
     paddingLeft: 15,
     paddingRight: 15,
     paddingTop: 60,
