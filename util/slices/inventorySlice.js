@@ -8,7 +8,7 @@ let drinkList = Constants.drinkList;
 export const inventorySlice = createSlice({
   name: "inventory",
   initialState: {
-    ingredientsArray: ["Water"],
+    ingredientsArray: ["Water", "Salt", "Ice"],
     drinksArray: [],
     favoritesArray: [],
   },
