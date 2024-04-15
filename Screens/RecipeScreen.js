@@ -3,9 +3,7 @@ import Footer from "../components/Footer";
 import MainHeader from "../components/MainHeader";
 import InstructionsBlade from "../components/InstructionsBlade";
 import ChecklistBox from "../components/CheckListBox";
-import { baseEssentials, mixersEssentials } from "./BarCartScreen";
 import { GlobalStyles } from "../util/constants/globalStyles";
-import { Ionicons } from "@expo/vector-icons";
 import RecipeHeader from "../components/recipe-components/RecipeHeader";
 import IngredientBlade from "../components/recipe-components/IngredientBlade";
 import InstructionBlade from "../components/recipe-components/InstructionBlade";
@@ -16,7 +14,7 @@ function RecipeScreen({ route }) {
 
   return (
     <>
-    {/* split this one up into several different containers so that image can go full width */}
+    {/* split this one up into several different containers so that image can go full */}
       <LinearGradient
         // Background Linear Gradient
         colors={["#468891", "#125e6e"]}

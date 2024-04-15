@@ -8,9 +8,7 @@ import {
   Text,
   View,
 } from "react-native";
-import { useEffect, useState } from "react";
 import Footer from "../components/Footer";
-import { LinearGradient } from "expo-linear-gradient";
 import { GlobalStyles } from "../util/constants/globalStyles";
 import FeaturedDrinksBlade from "../components/FeaturedDrinksBlade";
 import { useNavigation } from "@react-navigation/native";
@@ -45,19 +43,24 @@ function HomeScreen() {
     navigation.navigate("Ingredients");
   }
 
-  
-
   generateBoxShadowStyle(-2, 8, "black", 0.4, 2, 6, "black");
 
   return (
     <>
-       <ImageBackground source={require('../assets/images/background.jpg')} resizeMode="cover" style={styles.backgroundImage}>
+      <ImageBackground
+        source={require("../assets/images/background.jpg")}
+        resizeMode="cover"
+        style={styles.backgroundImage}
+      >
         <ScrollView style={styles.scrollView}>
           <View style={styles.titleContainer}>
             <Text style={styles.title}>The Lazy Bartender</Text>
           </View>
           <View style={styles.heroImageWrapper}>
-          <Image source={require('../assets/images/bourbon-and-branch-cropped.png')} style={styles.heroImage} />
+            <Image
+              source={require("../assets/images/bourbon-and-branch-cropped.png")}
+              style={styles.heroImage}
+            />
           </View>
           <View style={styles.divider}></View>
           <Pressable
@@ -89,7 +92,7 @@ const styles = StyleSheet.create({
   },
   backgroundImage: {
     flex: 1,
-    justifyContent: 'center',
+    justifyContent: "center",
     paddingLeft: 15,
     paddingRight: 15,
     paddingTop: 60,
@@ -127,10 +130,6 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: "center",
     alignItems: "center",
-  },
-  elevation: {
-    elevation: 20,
-    shadowColor: "black",
   },
   startButtonText: {
     fontSize: 24,

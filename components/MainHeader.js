@@ -1,5 +1,4 @@
 import { View, Text, StyleSheet } from "react-native";
-import { Ionicons } from "@expo/vector-icons";
 import { AntDesign } from "@expo/vector-icons";
 import { GlobalStyles } from "../util/constants/globalStyles";
 

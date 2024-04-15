@@ -1,8 +1,6 @@
 import { createSlice } from "@reduxjs/toolkit";
 import { Constants } from "../constants/constants";
 
-function updateDrinksArray() {}
-
 let drinkList = Constants.drinkList;
 
 export const inventorySlice = createSlice({

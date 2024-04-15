@@ -1,10 +1,8 @@
 import { useState } from "react";
-import { View, Text, StyleSheet, Pressable } from "react-native";
+import { Text, StyleSheet, Pressable } from "react-native";
 import { GlobalStyles } from "../util/constants/globalStyles";
 import { useDispatch, useSelector } from "react-redux";
 import { addIngredient, removeIngredient } from "../util/slices/inventorySlice";
-
-let bgColor = "grey";
 
 function ChecklistBoxOption({ option }) {
   const ingredientsArray = useSelector(
@@ -12,9 +10,7 @@ function ChecklistBoxOption({ option }) {
   );
   //the conditional here makes sure items below the fold stay selected when the menu is closed and expanded again
   const [checkBoxSelected, setCheckBoxSelected] = useState(
-    ingredientsArray.includes(option)
-      ? true
-      : false
+    ingredientsArray.includes(option) ? true : false
   );
   const dispatch = useDispatch();
   const ingredients = useSelector((state) => state.inventory.ingredientsArray);
@@ -22,24 +18,25 @@ function ChecklistBoxOption({ option }) {
   const longString = option.length > 12 ? true : false;
   const superLongString = option.length > 22 ? true : false;
 
-  const styleObject = [styles.checklistOption,{
-    backgroundColor: checkBoxSelected
-      ? GlobalStyles.colors.tonysPink300
-      : "transparent",
-    borderColor: checkBoxSelected
-      ? GlobalStyles.colors.towerGray600
-      : GlobalStyles.colors.robRoy100,
+  const styleObject = [
+    styles.checklistOption,
+    {
+      backgroundColor: checkBoxSelected
+        ? GlobalStyles.colors.tonysPink300
+        : "transparent",
+      borderColor: checkBoxSelected
+        ? GlobalStyles.colors.towerGray600
+        : GlobalStyles.colors.robRoy100,
       //TODO: this is redundant, remove superlongstring if it doesn't cause any issues
-    flexBasis: longString ? (superLongString ? "55%" : "55%") : "30%",
-  }];
+      flexBasis: longString ? (superLongString ? "55%" : "55%") : "30%",
+    },
+  ];
 
   return (
     <Pressable
-    style={({ pressed }) =>
-    pressed
-      ? [styles.pressed, styleObject]
-      : styleObject
-  }
+      style={({ pressed }) =>
+        pressed ? [styles.pressed, styleObject] : styleObject
+      }
       onPress={() => {
         if (checkBoxSelected === true) {
           dispatch(removeIngredient(option));
@@ -51,7 +48,6 @@ function ChecklistBoxOption({ option }) {
       }}
       android_ripple={{ color: GlobalStyles.colors.tonysPink300 }}
     >
-     
       <Text
         style={[
           styles.checklistOptionText,
@@ -64,7 +60,6 @@ function ChecklistBoxOption({ option }) {
       >
         {option}
       </Text>
-
     </Pressable>
   );
 }

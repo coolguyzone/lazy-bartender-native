@@ -1,6 +1,6 @@
 import { View, Text, StyleSheet } from "react-native";
 import { GlobalStyles } from "../../util/constants/globalStyles";
-import { useDispatch, useSelector } from "react-redux";
+import { useSelector } from "react-redux";
 
 function IngredientBlade({ drinkObj }) {
   const ingredientsArray = useSelector(

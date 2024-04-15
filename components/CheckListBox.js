@@ -1,5 +1,4 @@
 import { View, Text, StyleSheet, Pressable } from "react-native";
-import { useSelector, useDispatch } from "react-redux";
 import ChecklistBoxOption from "./CheckListBoxOption";
 import { GlobalStyles } from "../util/constants/globalStyles";
 import { Ionicons } from "@expo/vector-icons";
