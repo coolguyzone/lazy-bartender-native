@@ -1,18 +1,7 @@
-import { StatusBar } from "expo-status-bar";
-import { StyleSheet, Text, View } from "react-native";
+import { StyleSheet } from "react-native";
 import { NavigationContainer } from "@react-navigation/native";
-import { createDrawerNavigator } from "@react-navigation/drawer";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
-import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import HomeScreen from "./Screens/HomeScreen";
-import RecipesScreen from "./Screens/OldRecipesScreen";
-import LightBoozeTab from "./Screens/IngredientsTabs/LightBoozeTab";
-import DarkBoozeTab from "./Screens/IngredientsTabs/DarkBoozeTab";
-import FruityBoozeTab from "./Screens/IngredientsTabs/FruityBoozeTab";
-import BeerAndWineBoozeTab from "./Screens/IngredientsTabs/BeerAndWineTab";
-import MixersTab from "./Screens/IngredientsTabs/MixersTab";
-import ProduceTab from "./Screens/IngredientsTabs/ProduceTab";
-import { Ionicons } from "@expo/vector-icons";
 import store from "./src/app/store";
 import { Provider } from "react-redux";
 import BarCartScreen from "./Screens/BarCartScreen";
@@ -41,11 +30,6 @@ export default function App() {
           <Stack.Screen
             name="Drink List"
             component={DrinkListScreen}
-            options={{ headerShown: false }}
-          />
-          <Stack.Screen
-            name="Recipes"
-            component={RecipesScreen}
             options={{ headerShown: false }}
           />
           <Stack.Screen

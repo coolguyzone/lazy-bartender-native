@@ -42,13 +42,11 @@ function DrinkCard({ drinkTitle }) {
 
   generateBoxShadowStyle(-2, 8, "black", 0.4, 2, 18, "black");
 
- 
-
   const dispatch = useDispatch();
-  const favoritesArray = useSelector(
-    (state) => state.inventory.favoritesArray
+  const favoritesArray = useSelector((state) => state.inventory.favoritesArray);
+  const [favoritedState, setFavoritedState] = useState(
+    favoritesArray.includes(drinkTitle) ? true : false
   );
-  const [favoritedState, setFavoritedState] = useState(favoritesArray.includes(drinkTitle) ? true : false);
 
   function toggleFavorite() {
     if (favoritesArray.indexOf(drinkTitle) < 0) {
@@ -61,7 +59,10 @@ function DrinkCard({ drinkTitle }) {
   }
 
   return (
-    <Pressable style={[styles.drinkContainer, styles.boxShadow]} onPress={openDrinkRecipe}>
+    <Pressable
+      style={[styles.drinkContainer, styles.boxShadow]}
+      onPress={openDrinkRecipe}
+    >
       <View style={styles.drinkIcon}>
         <Ionicons
           name="water"

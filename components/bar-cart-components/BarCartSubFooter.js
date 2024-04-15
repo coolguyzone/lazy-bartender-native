@@ -1,7 +1,7 @@
-import { View, Text, StyleSheet, Pressable } from "react-native";
+import { View, Text, StyleSheet } from "react-native";
 import { GlobalStyles } from "../../util/constants/globalStyles";
 import { useState } from "react";
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 import BarCartSubFooterButton from "./BarCartSubFooterButton";
 
 function BarCartSubFooter() {

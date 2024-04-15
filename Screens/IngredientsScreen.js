@@ -1,12 +1,8 @@
-import { ImageBackground, ScrollView, StyleSheet, Text } from "react-native";
+import { ImageBackground, ScrollView, StyleSheet } from "react-native";
 import Footer from "../components/Footer";
 import MainHeader from "../components/MainHeader";
-import InstructionsBlade from "../components/InstructionsBlade";
 import ChecklistBox from "../components/CheckListBox";
-import { GlobalStyles } from "../util/constants/globalStyles";
-import { LinearGradient } from "expo-linear-gradient";
 import { Constants } from "../util/constants/constants";
-
 
 export const baseEssentials = {
   title: "Cocktail Base Essentials",
@@ -46,7 +42,7 @@ export const pantryAndProduce = {
 function IngredientsScreen() {
   return (
     <>
-       <ImageBackground
+      <ImageBackground
         source={require("../assets/images/background.jpg")}
         resizeMode="cover"
         style={styles.backgroundImage}
@@ -72,7 +68,7 @@ export default IngredientsScreen;
 const styles = StyleSheet.create({
   backgroundImage: {
     flex: 1,
-    justifyContent: 'center',
+    justifyContent: "center",
     paddingLeft: 15,
     paddingRight: 15,
     paddingTop: 60,
