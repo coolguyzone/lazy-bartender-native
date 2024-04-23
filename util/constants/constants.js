@@ -10369,7 +10369,7 @@ export const Constants = {
       instructions:
         "Stir all ingredients (except cherry) with ice and strain into a cocktail glass. Top with the cherry and serve. (An olive may be substituted for the cherry, if preferred.)",
       glass: "Cocktail glass",
-      imageUrl: require('../../assets/images/aperol-spritz-cropped.png'),
+      imageUrl: require('../../assets/images/tailspin-cropped.png'),
     },
 
     {
