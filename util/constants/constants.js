@@ -8800,6 +8800,7 @@ export const Constants = {
       instructions:
         "In a mixing glass half-filled with ice cubes, combine the rum and vermouth. Stir well. Strain into a cocktial glass. Garnish with the lemon twist or an olive.",
       glass: "Cocktail glass",
+      imageUrl: require('../../assets/images/rum-martini-cropped.png'),
     },
 
     {
@@ -10368,6 +10369,7 @@ export const Constants = {
       instructions:
         "Stir all ingredients (except cherry) with ice and strain into a cocktail glass. Top with the cherry and serve. (An olive may be substituted for the cherry, if preferred.)",
       glass: "Cocktail glass",
+      imageUrl: require('../../assets/images/tailspin-cropped.png'),
     },
 
     {
@@ -27097,6 +27099,7 @@ export const Constants = {
       instructions:
         "Stir gin and vermouth over ice cubes in a mixing glass. Strain into a cocktail glass. Add the cocktail onions and serve.",
       glass: "vote",
+      imageUrl: require('../../assets/images/gibson-cropped.png'),
     },
 
     {
@@ -28747,6 +28750,7 @@ export const Constants = {
       instructions:
         "Stir over ice and pour into a rocks glass. Garnish with a lemon zest.",
       glass: "Old-fashioned glass",
+      imageUrl: require('../../assets/images/negroni-cropped.png'),
     },
 
     {
