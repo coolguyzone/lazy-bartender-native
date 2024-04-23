@@ -6,10 +6,12 @@ import { Constants } from "../util/constants/constants";
 
 
 
-function FeaturedDrinksSubBlade() {
+function FeaturedDrinksSubBlade({title, featuredDrink1Name, featuredDrink2Name}) {
   const navigation = useNavigation();
-  const featuredDrink1Name = 'Aperol Spritz';
-  featuredDrink2Name = 'Watermelon Daqueri';
+
+  const drink1Object = Constants.drinkList.find((d) => d.name === featuredDrink1Name);
+  const drink2Object = Constants.drinkList.find((d) => d.name === featuredDrink2Name);
+
 
   function openFeaturedDrinkRecipe(drinkTitle) {
     const drink = Constants.drinkList.find((d) => d.name === drinkTitle);
@@ -48,12 +50,12 @@ function FeaturedDrinksSubBlade() {
   return (
     <>
       <View style={styles.FDBladeHeader}>
-        <Text style={styles.FDBladeHeaderText}>Hot Girl Summer</Text>
+        <Text style={styles.FDBladeHeaderText}>{title}</Text>
       </View>
       <View style={styles.FDImageContainer}>
         <Pressable style={[styles.FDImageWrapper, styles.boxShadow]} onPress={() => openFeaturedDrinkRecipe(featuredDrink1Name)}>
           <Image
-            source={require("../assets/images/aperol-spritz.png")}
+            source={drink1Object.imageUrl}
             style={styles.FDImage}
           />
           <View style={styles.FDImageHeader}>
@@ -63,7 +65,7 @@ function FeaturedDrinksSubBlade() {
 
         <Pressable style={[styles.FDImageWrapper, styles.boxShadow]} onPress={() => openFeaturedDrinkRecipe(featuredDrink2Name)}>
           <Image
-            source={require("../assets/images/watermelon-daqueri.png")}
+            source={drink2Object.imageUrl}
             style={styles.FDImage}
           />
           <View style={styles.FDImageHeader}>
