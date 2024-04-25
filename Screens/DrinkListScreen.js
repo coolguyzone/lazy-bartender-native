@@ -6,8 +6,10 @@ import { GlobalStyles } from "../util/constants/globalStyles";
 import DrinkCard from "../components/drink-list-components/DrinkCard";
 import { useDispatch, useSelector } from "react-redux";
 
-function DrinkListScreen() {
+function DrinkListScreen({searchResultText}) {
   const drinkList = useSelector((state) => state.inventory.drinksArray);
+
+  searchResultText && console.log('search result!');
 
   return (
     <>
