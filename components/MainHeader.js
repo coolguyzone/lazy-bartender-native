@@ -2,19 +2,16 @@ import { View, Text, StyleSheet, TextInput } from "react-native";
 import { AntDesign } from "@expo/vector-icons";
 import { GlobalStyles } from "../util/constants/globalStyles";
 import { useDispatch, useSelector } from "react-redux";
-import { searchTextChanged } from "../util/slices/inventorySlice";
+import { drinkSearchTextChanged, ingredientSearchTextChanged } from "../util/slices/inventorySlice";
 
-
-
-function MainHeader({ children, search = true }) {
-
+function MainHeader({ children, search = true, searchType }) {
   const drinkList = useSelector((state) => state.inventory.drinksArray);
   const dispatch = useDispatch();
 
-
-
   function searchTextChange(text) {
-    dispatch(searchTextChanged(text))
+    searchType === "drinks"
+      ? dispatch(drinkSearchTextChanged(text))
+      : dispatch(ingredientSearchTextChanged(text));
   }
 
   return (
@@ -30,7 +27,9 @@ function MainHeader({ children, search = true }) {
           />
           <TextInput
             style={styles.searchInput}
-            placeholder="Search Drinks"
+            placeholder={
+              searchType === "drinks" ? "Search Drinks" : "Search Ingredients"
+            }
             placeholderTextColor={GlobalStyles.colors.robRoy100}
             onChangeText={(searchText) => searchTextChange(searchText)}
           />

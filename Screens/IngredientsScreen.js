@@ -1,8 +1,9 @@
-import { ImageBackground, ScrollView, StyleSheet } from "react-native";
+import { ImageBackground, ScrollView, StyleSheet, Text } from "react-native";
 import Footer from "../components/Footer";
 import MainHeader from "../components/MainHeader";
 import ChecklistBox from "../components/CheckListBox";
 import { Constants } from "../util/constants/constants";
+import { useDispatch, useSelector } from "react-redux";
 
 export const baseEssentials = {
   title: "Cocktail Base Essentials",
@@ -40,6 +41,13 @@ export const pantryAndProduce = {
 };
 
 function IngredientsScreen() {
+  const ingredientSearchArray = useSelector(
+    (state) => state.inventory.ingredientSearchArray
+  );
+  const ingredientSearchActive = useSelector(
+    (state) => state.inventory.ingredientSearchActive
+  );
+
   return (
     <>
       <ImageBackground
@@ -49,13 +57,19 @@ function IngredientsScreen() {
       >
         <ScrollView style={styles.scrollView}>
           <MainHeader>Ingredients</MainHeader>
-          <ChecklistBox titleOptionsObject={baseEssentials} />
-          <ChecklistBox titleOptionsObject={mixersEssentials} />
-          <ChecklistBox titleOptionsObject={darkSpirits} />
-          <ChecklistBox titleOptionsObject={lightSpirits} />
-          <ChecklistBox titleOptionsObject={moreMixers} />
-          <ChecklistBox titleOptionsObject={liquersEtc} />
-          <ChecklistBox titleOptionsObject={pantryAndProduce} />
+          {ingredientSearchActive ? (
+            <Text>{ingredientSearchArray}</Text>
+          ) : (
+            <>
+              <ChecklistBox titleOptionsObject={baseEssentials} />
+              <ChecklistBox titleOptionsObject={mixersEssentials} />
+              <ChecklistBox titleOptionsObject={darkSpirits} />
+              <ChecklistBox titleOptionsObject={lightSpirits} />
+              <ChecklistBox titleOptionsObject={moreMixers} />
+              <ChecklistBox titleOptionsObject={liquersEtc} />
+              <ChecklistBox titleOptionsObject={pantryAndProduce} />
+            </>
+          )}
         </ScrollView>
       </ImageBackground>
       <Footer />

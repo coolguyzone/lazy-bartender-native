@@ -13,6 +13,8 @@ export const inventorySlice = createSlice({
     favoritesArray: [],
     drinkSearchArray: [],
     drinkSearchActive: false,
+    ingredientSearchArray: [],
+    ingredientSearchActive: false,
   },
   reducers: {
     addIngredient: (state, action) => {
@@ -58,7 +60,7 @@ export const inventorySlice = createSlice({
       }
       return;
     },
-    searchTextChanged: (state, action) => {
+    drinkSearchTextChanged: (state, action) => {
       state.drinkSearchArray = [];
       for (let i = 0; i < state.drinksArray.length; i++) {
         if (state.drinksArray[i].toLowerCase().includes(action.payload.toLowerCase())) {
@@ -70,13 +72,26 @@ export const inventorySlice = createSlice({
       } else {
         state.drinkSearchActive = false;
       }
+    },
+    ingredientSearchTextChanged: (state, action) => {
+      state.ingredientSearchArray = [];
+      for (let i = 0; i < state.ingredientsArray.length; i++) {
+        if (state.ingredientsArray[i].toLowerCase().includes(action.payload.toLowerCase())) {
+          state.ingredientSearchArray.push(state.ingredientsArray[i]);
+        }
+      }
+      if (action.payload) {
+        state.ingredientSearchActive = true;
+      } else {
+        state.ingredientSearchActive = false;
+      }
     }
   },
 });
 
 
 
-export const { addIngredient, removeIngredient, addFavorite, removeFavorite, searchTextChanged } =
+export const { addIngredient, removeIngredient, addFavorite, removeFavorite, drinkSearchTextChanged, ingredientSearchTextChanged } =
   inventorySlice.actions;
 export const ingredientsArray = (state) =>
   state.inventory.ingredientsArray.toString();
