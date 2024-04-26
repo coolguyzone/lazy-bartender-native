@@ -59,7 +59,6 @@ export const inventorySlice = createSlice({
       return;
     },
     searchTextChanged: (state, action) => {
-      console.log('text changed!', state.drinkSearchArray);
       state.drinkSearchArray = [];
       for (let i = 0; i < state.drinksArray.length; i++) {
         if (state.drinksArray[i].toLowerCase().includes(action.payload.toLowerCase())) {
@@ -71,7 +70,6 @@ export const inventorySlice = createSlice({
       } else {
         state.drinkSearchActive = false;
       }
-      console.log('searchActive', state.drinkSearchActive);
     }
   },
 });

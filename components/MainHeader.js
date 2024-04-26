@@ -2,7 +2,6 @@ import { View, Text, StyleSheet, TextInput } from "react-native";
 import { AntDesign } from "@expo/vector-icons";
 import { GlobalStyles } from "../util/constants/globalStyles";
 import { useDispatch, useSelector } from "react-redux";
-import { useState } from "react";
 import { searchTextChanged } from "../util/slices/inventorySlice";
 
 
@@ -10,32 +9,12 @@ import { searchTextChanged } from "../util/slices/inventorySlice";
 function MainHeader({ children, search = true }) {
 
   const drinkList = useSelector((state) => state.inventory.drinksArray);
-  const [searchActive, setSearchActive] = useState(false);
-  let searchResults = [];
   const dispatch = useDispatch();
 
 
 
   function searchTextChange(text) {
-    // console.log('text changed!', searchResults);
-    // searchResults = [];
-    // searchDrinks(text);
-    // if (text) {
-    //   setSearchActive(true);
-    // } else {
-    //   setSearchActive(false);
-    // }
-    // console.log('searchActive', searchActive);
     dispatch(searchTextChanged(text))
-  }
-
-  function searchDrinks(input) {
-    for (let i = 0; i < drinkList.length; i++) {
-      if (drinkList[i].toLowerCase().includes(input.toLowerCase())) {
-        searchResults.push(drinkList[i]);
-      }
-    }
-    return searchResults;
   }
 
   return (
