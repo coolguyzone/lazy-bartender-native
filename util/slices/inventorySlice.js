@@ -3,12 +3,16 @@ import { Constants } from "../constants/constants";
 
 let drinkList = Constants.drinkList;
 
+
+
 export const inventorySlice = createSlice({
   name: "inventory",
   initialState: {
     ingredientsArray: ["Water", "Salt", "Ice"],
     drinksArray: [],
     favoritesArray: [],
+    drinkSearchArray: [],
+    drinkSearchActive: false,
   },
   reducers: {
     addIngredient: (state, action) => {
@@ -54,10 +58,25 @@ export const inventorySlice = createSlice({
       }
       return;
     },
+    searchTextChanged: (state, action) => {
+      state.drinkSearchArray = [];
+      for (let i = 0; i < state.drinksArray.length; i++) {
+        if (state.drinksArray[i].toLowerCase().includes(action.payload.toLowerCase())) {
+          state.drinkSearchArray.push(state.drinksArray[i]);
+        }
+      }
+      if (action.payload) {
+        state.drinkSearchActive = true;
+      } else {
+        state.drinkSearchActive = false;
+      }
+    }
   },
 });
 
-export const { addIngredient, removeIngredient, addFavorite, removeFavorite } =
+
+
+export const { addIngredient, removeIngredient, addFavorite, removeFavorite, searchTextChanged } =
   inventorySlice.actions;
 export const ingredientsArray = (state) =>
   state.inventory.ingredientsArray.toString();
