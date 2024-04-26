@@ -1,9 +1,19 @@
-import { ImageBackground, ScrollView, StyleSheet, Text } from "react-native";
+import {
+  ImageBackground,
+  ScrollView,
+  StyleSheet,
+  Text,
+  View,
+  Pressable,
+} from "react-native";
 import Footer from "../components/Footer";
 import MainHeader from "../components/MainHeader";
 import ChecklistBox from "../components/CheckListBox";
 import { Constants } from "../util/constants/constants";
 import { useDispatch, useSelector } from "react-redux";
+import { Ionicons } from "@expo/vector-icons";
+import { GlobalStyles } from "../util/constants/globalStyles";
+import IngredientSearchResult from "../components/IngredientSearchResult";
 
 export const baseEssentials = {
   title: "Cocktail Base Essentials",
@@ -58,7 +68,13 @@ function IngredientsScreen() {
         <ScrollView style={styles.scrollView}>
           <MainHeader>Ingredients</MainHeader>
           {ingredientSearchActive ? (
-            <Text>{ingredientSearchArray}</Text>
+            <>
+              <View style={styles.ingredientSearchContainer}>
+                {ingredientSearchArray.map((ingredient) => {
+                  return <IngredientSearchResult ingredientName={ingredient} />;
+                })}
+              </View>
+            </>
           ) : (
             <>
               <ChecklistBox titleOptionsObject={baseEssentials} />
