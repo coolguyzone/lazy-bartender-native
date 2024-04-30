@@ -25,7 +25,7 @@ function DrinkListScreen({ searchResultText }) {
         style={styles.backgroundImage}
       >
         <ScrollView style={styles.scrollView}>
-          <MainHeader>My Drink List</MainHeader>
+          <MainHeader searchType='drinks'>My Drink List</MainHeader>
           <InstructionsBlade>
             {drinkSearchActive ? 'Search Results With Your Ingredients' : 'Drinks Available WIth Your Ingredients'}
           </InstructionsBlade>

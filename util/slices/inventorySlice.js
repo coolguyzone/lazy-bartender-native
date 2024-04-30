@@ -3,7 +3,16 @@ import { Constants } from "../constants/constants";
 
 let drinkList = Constants.drinkList;
 
-
+let ingredientList = Constants.cocktailBaseEssentials.concat(
+  Constants.mixerEssentials,
+  Constants.brownBooze,
+  Constants.clearBooze,
+  Constants.fruitBooze,
+  Constants.beerWine,
+  Constants.mixers,
+  Constants.produce,
+  ["Water", "Salt", "Ice"]
+);
 
 export const inventorySlice = createSlice({
   name: "inventory",
@@ -13,6 +22,8 @@ export const inventorySlice = createSlice({
     favoritesArray: [],
     drinkSearchArray: [],
     drinkSearchActive: false,
+    ingredientSearchArray: [],
+    ingredientSearchActive: false,
   },
   reducers: {
     addIngredient: (state, action) => {
@@ -58,10 +69,14 @@ export const inventorySlice = createSlice({
       }
       return;
     },
-    searchTextChanged: (state, action) => {
+    drinkSearchTextChanged: (state, action) => {
       state.drinkSearchArray = [];
       for (let i = 0; i < state.drinksArray.length; i++) {
-        if (state.drinksArray[i].toLowerCase().includes(action.payload.toLowerCase())) {
+        if (
+          state.drinksArray[i]
+            .toLowerCase()
+            .includes(action.payload.toLowerCase())
+        ) {
           state.drinkSearchArray.push(state.drinksArray[i]);
         }
       }
@@ -70,14 +85,33 @@ export const inventorySlice = createSlice({
       } else {
         state.drinkSearchActive = false;
       }
-    }
+    },
+    ingredientSearchTextChanged: (state, action) => {
+      state.ingredientSearchArray = [];
+      for (let i = 0; i < ingredientList.length; i++) {
+        if (
+          ingredientList[i].toLowerCase().includes(action.payload.toLowerCase())
+        ) {
+          state.ingredientSearchArray.push(ingredientList[i]);
+        }
+      }
+      if (action.payload) {
+        state.ingredientSearchActive = true;
+      } else {
+        state.ingredientSearchActive = false;
+      }
+    },
   },
 });
 
-
-
-export const { addIngredient, removeIngredient, addFavorite, removeFavorite, searchTextChanged } =
-  inventorySlice.actions;
+export const {
+  addIngredient,
+  removeIngredient,
+  addFavorite,
+  removeFavorite,
+  drinkSearchTextChanged,
+  ingredientSearchTextChanged,
+} = inventorySlice.actions;
 export const ingredientsArray = (state) =>
   state.inventory.ingredientsArray.toString();
 
