@@ -27,7 +27,7 @@ function DrinkListScreen({ searchResultText }) {
         <ScrollView style={styles.scrollView}>
           <MainHeader searchType='drinks'>My Drink List</MainHeader>
           <InstructionsBlade>
-            {drinkSearchActive ? 'Search Results With Your Ingredients' : 'Drinks Available WIth Your Ingredients'}
+            {drinkSearchActive ? 'Search Results With Your Ingredients' : drinkList.length < 1 ? "You do not have enough ingredients for any drinks, try going to the 'ingredients' tab and adding some more!" : 'Drinks Available Woth Your Ingredients'}
           </InstructionsBlade>
           {drinkSearchActive
             ? drinkSearchArray.map((drink) => {
