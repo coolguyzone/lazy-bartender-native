@@ -23,7 +23,6 @@ export const Constants = {
     "Honey",
   ],
   brownBooze: [
-    "Coffee Liqueur",
     "Drambuie",
     "Spiced Rum",
     "Gold Tequila",
@@ -32,7 +31,6 @@ export const Constants = {
     "Canadian Whisky",
     "Irish Whiskey",
     "Rye Whiskey",
-    "Chocolate Liqueur",
     "Jägermeister",
     "Frangelico",
     "Grand Marnier",
@@ -51,9 +49,6 @@ export const Constants = {
     "Cachaca",
     "Pisco",
     "Kirschwasser",
-    "Peach Schnapps",
-    "Peppermint Schnapps",
-    "Creme de Menthe",
     "Sambuca",
     "Lemon Vodka",
     "Citrus Vodka",
@@ -88,6 +83,13 @@ export const Constants = {
     "Cynar",
     "Lillet Blanc",
     "Suze",
+    "Peach Schnapps",
+    "Peppermint Schnapps",
+    "Creme de Menthe",
+    "Coffee Liqueur",
+    "Chocolate Liqueur",
+
+
   ],
   beerWine: [
     "Red Wine",
