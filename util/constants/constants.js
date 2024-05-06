@@ -61,6 +61,7 @@ export const Constants = {
     "Peach Vodka",
     "Cranberry Vodka",
     "Vanilla Vodka",
+    "Tequila Reposado",
   ],
   fruitBooze: [
     "Absinthe",
@@ -121,6 +122,7 @@ export const Constants = {
     "Guava Juice",
     "Apple Cider",
     "Mountain Dew",
+    "Lime Juice Cordial",
   ],
   produce: [
     "Cherry",
@@ -3404,11 +3406,11 @@ export const Constants = {
 
     {
       name: "Daiquiri",
-      ingredients: ["Light Rum", "Lime", "Powdered sugar"],
-      measures: ["1 1/2 oz ", "Juice of 1/2 ", "1 tsp "],
+      ingredients: ["Light Rum", "Lime Juice", "Simple Syrup", "Lime"],
+      measures: ["1 oz ", "3/4 oz ", "3/4 oz ", "1 disc or wedge"],
       instructions:
-        "Shake all ingredients with ice, strain into a cocktail glass, and serve. (See also Frozen Daiquiri.)",
-      glass: "Cocktail glass",
+        "Shake all ingredients with ice, strain into a coupe glass, and serve with lime Garnish.",
+      glass: "Coupe glass",
     },
 
     {
@@ -4716,10 +4718,10 @@ export const Constants = {
     {
       name: "Gimlet",
       ingredients: ["Gin", "Lime juice cordial", "Lime"],
-      measures: ["2 oz ", "1/2 oz "],
+      measures: ["2 oz ", "1 oz ", "1 disc or wedge"],
       instructions:
         "Pour the gin and lime cordial into a mixing glass half-filled with ice cubes. Stir well. Strain into a cocktail glass and garnish with the lime wedge.",
-      glass: "Cocktail glass",
+      glass: "Coupe glass",
     },
 
     {
@@ -7572,12 +7574,12 @@ export const Constants = {
     },
 
     {
-      name: "Old Pal Cocktail",
-      ingredients: ["Sweet Vermouth", "Blended Whiskey", "Grenadine"],
-      measures: ["1/2 oz ", "1 1/4 oz ", "1/2 oz "],
+      name: "The Old Pal",
+      ingredients: ["Rye Whiskey", "Dry Vermouth", "Campari"],
+      measures: ["1 oz ", "1 oz ", "1 oz "],
       instructions:
-        "Stir all ingredients with ice, strain into a cocktail glass, and serve.",
-      glass: "Cocktail glass",
+        "Stir all ingredients with ice, strain into a coupe glass, and serve with orange or lemon twist garnish.",
+      glass: "Coupe glass",
     },
 
     {
@@ -9498,16 +9500,7 @@ export const Constants = {
     },
 
     {
-      name: "Sidecar Cocktail",
-      ingredients: ["Brandy", "Triple Sec", "Lemon"],
-      measures: ["1 oz ", "1/2 oz ", "Juice of 1/4 "],
-      instructions:
-        "Shake all ingredients with ice, strain into a cocktail glass, and serve.",
-      glass: "Cocktail glass",
-    },
-
-    {
-      name: "Sidecar",
+      name: "The Sidecar",
       ingredients: ["Cognac", "Triple Sec", "Lemon Juice"],
       measures: ["2 oz ", "1/2 oz ", "1 oz "],
       instructions:
@@ -11388,16 +11381,16 @@ export const Constants = {
     {
       name: "Whiskey Sour",
       ingredients: [
-        "Blended Whiskey",
-        "Lemon",
-        "Powdered sugar",
-        "Cherry",
-        "Lemon",
+        "Bourbon",
+        "Lemon Juice",
+        "Simple Syrup",
+        "Egg",
+        "Lime",
       ],
-      measures: ["2 oz ", "Juice of 1/2 ", "1/2 tsp ", "1/2 slice "],
+      measures: ["2 oz ", "Juice of 1/2 ", "1/2 tsp ", "1/2 slice ", "1 disc"],
       instructions:
-        "Shake blended whiskey, juice of lemon, and powdered sugar with ice and strain into a whiskey sour glass. Decorate with the half-slice of lemon, top with the cherry, and serve.",
-      glass: "Whiskey sour glass",
+        "Shake ingredients and strain until frothy, pourinto a coupe glass. Decorate with lime disc.",
+      glass: "Coupe glass",
     },
 
     {
@@ -15079,6 +15072,20 @@ export const Constants = {
       instructions:
         "Rub rim of cocktail glass with lime juice, dip rim in salt. Shake all ingredients with ice, strain into the salt-rimmed glass, and serve.",
       glass: "Cocktail glass",
+    },
+
+    {
+      name: "Tommy's Margarita",
+      ingredients: [
+        "Reposado Tequila",
+        "Lime Juice",
+        "Agave Nectar",
+        "Lime"
+      ],
+      measures: ["2 oz ", "3/4 oz ", "3/4 oz ", "1 wedge"],
+      instructions:
+        "Stir all ingredients with ice, strain into coupe glass, and serve with lime wedge as garnish.",
+      glass: "Coupe glass",
     },
 
     {
@@ -19541,12 +19548,12 @@ export const Constants = {
     },
 
     {
-      name: "Lemon Drop #1",
-      ingredients: ["Absolut Citron", "Lemon", "Sugar"],
-      measures: ["1 shot ", "1 slice ", "1 tsp "],
+      name: "Lemon Drop",
+      ingredients: ["Vodka", "Lemon Juice", "Simple Syrup", "Lemon"],
+      measures: ["2 oz ", "3/4 oz ", "3/4 oz tsp ", "1 twist"],
       instructions:
-        "to consume: place sugar on lemon, place in mouth and take shot, then bite down on lemon -enjoy sweet/tart flavor as vodka goes down! YummY!",
-      glass: "Shot glass",
+        "Combine ingredients in a shaker with ice, strain into glass with lemon twist garnish.",
+      glass: "Coupe glass",
     },
 
     {
@@ -20177,6 +20184,21 @@ export const Constants = {
       instructions:
         "Half fill shaker with ice. Add liquers and top with milk. Shake and pour over ice.",
       glass: "Cocktail glass",
+    },
+
+    {
+      name: "The Sour Orange Daiquiri",
+      ingredients: [
+        "Light Rum",
+        "Lime Juice",
+        "Orange Juice",
+        "Simple Syrup",
+        "Orange"
+      ],
+      measures: ["2 oz ", "1/2 oz ", "1.5 tsp ", "3/4 oz ", "1 twist "],
+      instructions:
+        "Stir all ingredients with ice, strain into coupe glass, and serve with orange twist as garnish.",
+      glass: "Coupe glass",
     },
 
     {
@@ -24939,12 +24961,12 @@ export const Constants = {
     },
 
     {
-      name: "Gimlet #2",
-      ingredients: ["Gin", "Lime juice cordial"],
-      measures: ["1 part ", "1 part "],
+      name: "Fresh Lime Gimlet",
+      ingredients: ["Gin", "Lime juice", "Simple Syrup", "Lime"],
+      measures: ["2 oz ", "3/4 oz ", "3/4 oz", "1 disc"],
       instructions:
-        "Fill the glass to 2/3 with ice cubes. Shake the gin and lime and pour into the glass.",
-      glass: "Old-fashioned glass",
+        "Fill the glass to 2/3 with ice cubes. Shake ingredients with ice and strain into the glass.",
+      glass: "Coupe glass",
     },
 
     {
@@ -25220,6 +25242,20 @@ export const Constants = {
       measures: ["1 pint ", "3/4 shot "],
       instructions: "Pour lager into beer mug or pint glass: add Kahlua. Stir.",
       glass: "Pint glass",
+    },
+
+    {
+      name: "The Bee's Knees",
+      ingredients: [
+        "Gin", 
+        "Lemon Juice",
+        "Honey",
+        "Lemon"
+      ],
+      measures: ["2 oz ", "3/4 oz ", "1/2 oz ", "Lemon"],
+      instructions:
+        "Shake all ingredients with ice, strain into coupe glass, and serve with lemon twist as garnish.",
+      glass: "Coupe glass",
     },
 
     {
@@ -34174,5 +34210,7 @@ export const Constants = {
     "Lillet Blanc",
     "Suze",
     "Grapefruit",
+    "Lime Juice Cordial",
+    "Tequila Reposado",
   ],
 };
