@@ -34,6 +34,21 @@ function Footer() {
         </Text>
         <Text style={styles.siteFooterOptionContent}>Ingredients</Text>
       </Pressable>
+
+      <Pressable
+        onPress={() => navigation.navigate("Drink List")}
+        style={styles.siteFooterMainOption}
+      >
+        <Text style={styles.siteFooterOptionIcon}>
+          <Ionicons
+            name="wine"
+            color={GlobalStyles.colors.robRoy100}
+            size={14}
+          />
+        </Text>
+        <Text style={styles.siteFooterOptionContent}>Drinks</Text>
+      </Pressable>
+
       <Pressable
         onPress={() => navigation.navigate("Bar Cart")}
         style={styles.siteFooterOption}
@@ -46,20 +61,6 @@ function Footer() {
           />
         </Text>
         <Text style={styles.siteFooterOptionContent}>My Bar</Text>
-      </Pressable>
-
-      <Pressable
-        onPress={() => navigation.navigate("Drink List")}
-        style={styles.siteFooterOption}
-      >
-        <Text style={styles.siteFooterOptionIcon}>
-          <Ionicons
-            name="water"
-            color={GlobalStyles.colors.robRoy100}
-            size={14}
-          />
-        </Text>
-        <Text style={styles.siteFooterOptionContent}>Drinks</Text>
       </Pressable>
 
       <Pressable
@@ -94,6 +95,16 @@ const styles = StyleSheet.create({
   siteFooterOption: {
     justifyContent: "center",
     alignItems: "center",
+  },
+  siteFooterMainOption: {
+    justifyContent: "center",
+    alignItems: "center",
+    backgroundColor: GlobalStyles.colors.footerGray,
+    borderRadius: 100,
+    borderColor: GlobalStyles.colors.robRoy100,
+    borderWidth: 2,
+    flex: 1,
+    marginTop: -16,
   },
   siteFooterOptionContent: {
     color: GlobalStyles.colors.robRoy100,
