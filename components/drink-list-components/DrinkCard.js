@@ -101,13 +101,14 @@ const styles = StyleSheet.create({
   drinkTitle: {
     color: GlobalStyles.colors.robRoy100,
     fontSize: 18,
-    marginTop: 6,
+    marginTop: 10,
+    marginLeft: 12,
     flex: 1,
   },
   drinkPercentage: {
     color: GlobalStyles.colors.robRoy100,
     fontSize: 14,
-    marginTop: 8,
+    marginTop: 11,
   },
   faveIcon: {
     marginLeft: 12,

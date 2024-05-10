@@ -71,13 +71,11 @@ export const inventorySlice = createSlice({
     },
     drinkSearchTextChanged: (state, action) => {
       state.drinkSearchArray = [];
-      for (let i = 0; i < state.drinksArray.length; i++) {
+      for (let i = 0; i < drinkList.length; i++) {
         if (
-          state.drinksArray[i]
-            .toLowerCase()
-            .includes(action.payload.toLowerCase())
+          drinkList[i].name.toLowerCase().includes(action.payload.toLowerCase())
         ) {
-          state.drinkSearchArray.push(state.drinksArray[i]);
+          state.drinkSearchArray.push(drinkList[i].name);
         }
       }
       if (action.payload) {

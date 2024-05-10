@@ -16991,14 +16991,6 @@ export const Constants = {
     },
 
     {
-      name: "Lynchburg Lemonade",
-      ingredients: ["Bourbon", "Triple Sec", "Sour Mix", "Lemon-Lime Soda"],
-      measures: ["1 part ", "1 part ", "1 part ", "4 parts "],
-      instructions: "Mix ingredients into a punch bowl.",
-      glass: "Punch bowl",
-    },
-
-    {
       name: "Jellyfish",
       ingredients: ["Creme de Cacao", "Amaretto", "Irish Cream", "Grenadine"],
       measures: ["1/2 shot white ", "1/2 shot ", "A little "],
@@ -25677,29 +25669,6 @@ export const Constants = {
     },
 
     {
-      name: "Killer Kool-Aid",
-      ingredients: [
-        "Vodka",
-        "Amaretto",
-        "Malibu Rum",
-        "Sloe gin",
-        "Midori Melon",
-        "Cranberry Juice",
-      ],
-      measures: [
-        "1 part ",
-        "1 part ",
-        "1 part ",
-        "1 part ",
-        "1 part ",
-        "1 part ",
-      ],
-      instructions:
-        "Pour equal parts into a mug/glass. Add the alcohol first, then add the cranberry juice last. This drink may be mixed/stirred, but it isn't required.",
-      glass: "vote",
-    },
-
-    {
       name: "Purple Haze Shooter",
       ingredients: [
         "Tennessee Whiskey",
@@ -26017,15 +25986,6 @@ export const Constants = {
       instructions:
         "pour it all into an ice-cream pail and add more vodka if you wish.",
       glass: "vote",
-    },
-
-    {
-      name: "Mint Russki",
-      ingredients: ["Vodka", "Mint", "Ice"],
-      measures: ["2 1/2 oz frozen ", "cube "],
-      instructions:
-        "Add crushed or twisted leaves of mint, ice cubes, then frozen vodka. Stir and serve.",
-      glass: "Old-fashioned glass",
     },
 
     {
