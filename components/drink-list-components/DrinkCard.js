@@ -8,9 +8,18 @@ import { useNavigation } from "@react-navigation/native";
 import { addFavorite, removeFavorite } from "../../util/slices/inventorySlice";
 
 function DrinkCard({ drinkTitle }) {
+  const ownedIngredientsArray = useSelector((state) => state.inventory.ingredientsArray);
+  const drink = Constants.drinkList.find((d) => d.name === drinkTitle);
+
+  //calculate the percentage of ingredients you have for the drink
+  const drinkIngredientsArray = drink.ingredients;
+  const totalIngredients = drinkIngredientsArray.length;
+  const ingredientsInInventory = drinkIngredientsArray.filter((ele) => ownedIngredientsArray.includes(ele)).length;
+  const ingredientPercentage = Math.floor((ingredientsInInventory / totalIngredients) * 100);
+
   const navigation = useNavigation();
+
   function openDrinkRecipe() {
-    const drink = Constants.drinkList.find((d) => d.name === drinkTitle);
     navigation.navigate("Recipe", {
       drink: drink,
     });
@@ -71,7 +80,7 @@ function DrinkCard({ drinkTitle }) {
         />
       </View>
       <Text style={styles.drinkTitle}>{drinkTitle}</Text>
-      <Text style={styles.drinkPercentage}>100%</Text>
+      <Text style={styles.drinkPercentage}>{ingredientPercentage + '%'}</Text>
       <Pressable onPress={toggleFavorite} style={styles.faveIcon}>
         <Ionicons
           name={favoritedState ? "star" : "star-outline"}
