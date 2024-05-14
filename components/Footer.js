@@ -90,11 +90,12 @@ const styles = StyleSheet.create({
     backgroundColor: GlobalStyles.colors.footerGray,
     flexDirection: "row",
     flexWrap: "wrap",
-    gap: 14,
+    gap: 1,
   },
   siteFooterOption: {
     justifyContent: "center",
     alignItems: "center",
+    flex: 1,
   },
   siteFooterMainOption: {
     justifyContent: "center",
@@ -108,5 +109,6 @@ const styles = StyleSheet.create({
   },
   siteFooterOptionContent: {
     color: GlobalStyles.colors.robRoy100,
+    fontSize: 10,
   },
 });

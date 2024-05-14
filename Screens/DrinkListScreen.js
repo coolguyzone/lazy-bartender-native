@@ -51,9 +51,13 @@ function DrinkListScreen({ searchResultText }) {
             }) 
           )}
           <View style={styles.divider}></View>
-         <DrinkCategoryList category="Whiskey" />
+         <DrinkCategoryList category="Bourbon" />
          <DrinkCategoryList category="Rum" />
          <DrinkCategoryList category="Vodka" />
+         <DrinkCategoryList category="Tequila" />
+         <DrinkCategoryList category="Gin" />
+         <DrinkCategoryList category="Whiskey" />
+         <DrinkCategoryList category="Scotch" />
         </ScrollView>
       </ImageBackground>
       <Footer />
@@ -70,6 +74,7 @@ const styles = StyleSheet.create({
     paddingLeft: 15,
     paddingRight: 15,
     paddingTop: 60,
+    paddingBottom: 30,
   },
   divider: {
     borderColor: GlobalStyles.colors.robRoy100,

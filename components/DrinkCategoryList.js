@@ -1,16 +1,34 @@
-import { View, Text, StyleSheet } from "react-native";
+import { View, Text, StyleSheet, Pressable } from "react-native";
+import { Ionicons } from "@expo/vector-icons";
 import { GlobalStyles } from "../util/constants/globalStyles";
 import FeaturedDrinksSubBlade from "./FeaturedDrinksSubBlade";
 import DrinkCard from "./drink-list-components/DrinkCard";
 import { Constants } from "../util/constants/constants";
+import { useState } from "react";
 
 function DrinkCategoryList({ category }) {
+  const [expanded, setExpanded] = useState(false);
   const drinkList = Constants.drinkList;
-  const filteredDrinkList = drinkList.filter((drink) => {
-    return drink.ingredients.includes(category);
-  });
+  const filteredDrinkList = [];
 
-  console.log("filter", filteredDrinkList);
+  drinkList.forEach((drink) => {
+    let include = false;
+    drink.ingredients.forEach((ele) => {
+      if (ele.includes(category)) {
+        include = true;
+      }
+    })
+    if (include) {
+      filteredDrinkList.push(drink)
+    }
+  })
+  
+  // drinkList.filter((drink) => {
+  //   // return drink.ingredients.includes(category);
+  //   return drinkList.filter((drink) => ele.includes(category))
+  // });
+  const firstThreeOptions = filteredDrinkList.slice(0, 3);
+
 
   return (
     <View style={styles.drinkCategoryListContainer}>
@@ -21,10 +39,25 @@ function DrinkCategoryList({ category }) {
         </View>
       </View>
       <View style={styles.drinkCategoryListDrinkCards}>
-        {filteredDrinkList.map((drink) => {
+        {expanded ? filteredDrinkList.map((drink) => {
+          return <DrinkCard drinkTitle={drink.name} key={drink.name} />;
+        }) : firstThreeOptions.map((drink) => {
           return <DrinkCard drinkTitle={drink.name} key={drink.name} />;
         })}
       </View>
+      {filteredDrinkList.length > 3 && (
+        <Pressable 
+        onPress={() => {
+          !expanded ? setExpanded(true) : setExpanded(false)
+        }}
+        style={styles.expandIcon}>
+          <Ionicons
+            name={expanded ? "chevron-up-outline" : "chevron-down-outline"}
+            color={GlobalStyles.colors.robRoy100}
+            size={30}
+          />
+        </Pressable>
+      )}
     </View>
   );
 }
@@ -32,6 +65,9 @@ function DrinkCategoryList({ category }) {
 export default DrinkCategoryList;
 
 const styles = StyleSheet.create({
+  drinkCategoryListContainer: {
+    marginBottom: 30,
+  },
   drinkCategoryListHeader: {
     height: 60,
     flexDirection: "row",
@@ -60,5 +96,10 @@ const styles = StyleSheet.create({
     color: GlobalStyles.colors.robRoy100,
     fontSize: 18,
     fontWeight: "bold",
+  },
+  expandIcon: {
+    flex: 1,
+    justifyContent: "center",
+    alignItems: "center",
   },
 });
