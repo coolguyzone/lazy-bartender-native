@@ -7,6 +7,7 @@ import {
   StyleSheet,
   Text,
   View,
+  Platform,
 } from "react-native";
 import Footer from "../components/Footer";
 import { GlobalStyles } from "../util/constants/globalStyles";

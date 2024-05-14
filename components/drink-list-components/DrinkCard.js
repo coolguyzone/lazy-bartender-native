@@ -1,4 +1,4 @@
-import { View, Text, StyleSheet, Pressable } from "react-native";
+import { View, Text, StyleSheet, Pressable, Platform } from "react-native";
 import { GlobalStyles } from "../../util/constants/globalStyles";
 import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
