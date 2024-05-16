@@ -35,5 +35,6 @@ export const GlobalStyles = {
     towerGray950: "#212d30",
     footerGray: "#0E4753",
     lazyBlack: "#270c06",
+    inactiveFooterIcon: '#1E6876',
   },
 };
