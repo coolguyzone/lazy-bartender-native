@@ -1,4 +1,4 @@
-import { View, Text, StyleSheet, Pressable, Platform } from "react-native";
+import { View, Text, StyleSheet, Pressable, Platform, Image } from "react-native";
 import { GlobalStyles } from "../../util/constants/globalStyles";
 import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
@@ -73,20 +73,21 @@ function DrinkCard({ drinkTitle }) {
       onPress={openDrinkRecipe}
     >
       <View style={styles.drinkIcon}>
-        <Ionicons
-          name="water"
-          color={GlobalStyles.colors.robRoy100}
-          size={34}
-        />
+      <View style={styles.ikconContainer}>
+          <Image
+              source={drink.imageUrl ? drink.imageUrl : require("../../assets/images/icons/icon-drink.png")}
+              style={styles.icon}
+            />
+            </View>
       </View>
       <Text style={styles.drinkTitle}>{drinkTitle}</Text>
       <Text style={styles.drinkPercentage}>{ingredientPercentage + '%'}</Text>
       <Pressable onPress={toggleFavorite} style={styles.faveIcon}>
-        <Ionicons
-          name={favoritedState ? "star" : "star-outline"}
-          color={GlobalStyles.colors.robRoy100}
-          size={24}
-        />
+      <Image
+              source={require("../../assets/images/icons/icon-star.png")}
+              style={styles.faveIcon}
+            />
+            
       </Pressable>
     </Pressable>
   );
@@ -123,4 +124,15 @@ const styles = StyleSheet.create({
     marginLeft: 12,
     marginTop: 5,
   },
+  icon: {
+    width: 34,
+    height: 32,
+  },
+  faveIcon: {
+    width: 30,
+    height: 28,
+    marginLeft: 4,
+    marginRight: 4,
+    marginTop: 1,
+  }
 });
