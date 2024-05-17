@@ -1,5 +1,4 @@
-import { View, Text, StyleSheet, Pressable } from "react-native";
-import { Ionicons } from "@expo/vector-icons";
+import { View, Text, StyleSheet, Pressable, Image } from "react-native";
 import { useNavigation } from "@react-navigation/native";
 import { GlobalStyles } from "../util/constants/globalStyles";
 import { useSelector } from "react-redux";
@@ -19,11 +18,12 @@ function Footer() {
         onPress={() => navigation.navigate("Home")}
       >
         <Text style={styles.siteFooterOptionIcon}>
-          <Ionicons
-            name="home-outline"
-            color={GlobalStyles.colors.robRoy100}
-            size={14}
-          />
+        <View style={styles.footerIconContainer}>
+          <Image
+              source={require("../assets/images/icons/icon-home.png")}
+              style={styles.footerIcon}
+            />
+            </View>
         </Text>
         <Text style={styles.siteFooterOptionContent}>Home</Text>
       </Pressable>
@@ -32,11 +32,12 @@ function Footer() {
         onPress={() => navigation.navigate("Ingredients")}
       >
         <Text style={styles.siteFooterOptionIcon}>
-          <Ionicons
-            name="cart-outline"
-            color={GlobalStyles.colors.robRoy100}
-            size={14}
-          />
+          <View style={styles.footerIconContainer}>
+          <Image
+              source={require("../assets/images/icons/icon-ingredients.png")}
+              style={styles.footerIcon}
+            />
+            </View>
         </Text>
         <Text style={styles.siteFooterOptionContent}>Ingredients</Text>
       </Pressable>
@@ -56,15 +57,12 @@ function Footer() {
         ]}
       >
         <Text style={styles.siteFooterOptionIcon}>
-          <Ionicons
-            name="wine"
-            color={
-              isDrinkScreen
-                ? GlobalStyles.colors.footerGray
-                : GlobalStyles.colors.robRoy100
-            }
-            size={14}
-          />
+        <View style={styles.footerIconContainer}>
+          <Image
+              source={require("../assets/images/icons/icon-drink.png")}
+              style={styles.footerIcon}
+            />
+            </View>
         </Text>
         <Text
           style={[
@@ -83,11 +81,12 @@ function Footer() {
         style={styles.siteFooterOption}
       >
         <Text style={styles.siteFooterOptionIcon}>
-          <Ionicons
-            name="business-outline"
-            color={GlobalStyles.colors.robRoy100}
-            size={14}
-          />
+        <View style={styles.footerIconContainer}>
+          <Image
+              source={require("../assets/images/icons/icon-inmybar.png")}
+              style={styles.footerIcon}
+            />
+            </View>
         </Text>
         <Text style={styles.siteFooterOptionContent}>My Bar</Text>
       </Pressable>
@@ -97,11 +96,12 @@ function Footer() {
         style={styles.siteFooterOption}
       >
         <Text style={styles.siteFooterOptionIcon}>
-          <Ionicons
-            name="beer-outline"
-            color={GlobalStyles.colors.robRoy100}
-            size={14}
-          />
+        <View style={styles.footerIconContainer}>
+          <Image
+              source={require("../assets/images/icons/icon-heart.png")}
+              style={styles.footerIcon}
+            />
+            </View>
         </Text>
         <Text style={styles.siteFooterOptionContent}>Favorites</Text>
       </Pressable>
@@ -114,7 +114,7 @@ export default Footer;
 const styles = StyleSheet.create({
   siteFooterContainer: {
     paddingHorizontal: 4,
-    paddingBottom: 4,
+    paddingBottom: 8,
     height: 64,
     backgroundColor: GlobalStyles.colors.footerGray,
     flexDirection: "row",
@@ -139,9 +139,12 @@ const styles = StyleSheet.create({
     color: GlobalStyles.colors.robRoy100,
     fontSize: 10,
   },
+  footerIconContainer: {
+    marginBottom: 0,
+  },
   footerIcon: {
     color: GlobalStyles.colors.robRoy100,
-    width: 24,
-    height: 24,
+    width: 20,
+    height: 18,
   },
 });
