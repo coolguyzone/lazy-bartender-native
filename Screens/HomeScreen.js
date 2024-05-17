@@ -62,6 +62,12 @@ function HomeScreen() {
               source={require("../assets/images/bourbon-and-branch-cropped.png")}
               style={styles.heroImage}
             />
+            <View style={styles.heroImageLabel}>
+              <Text style={styles.heroImageLabelCopy}>DRINK OF THE WEEK</Text>
+            </View>
+            <View style={styles.heroImageDrinkName}>
+              <Text style={styles.heroImageDrinkNameCopy}>The Manhattan</Text>
+            </View>
           </View>
           <View style={styles.divider}></View>
           <Pressable
@@ -111,10 +117,39 @@ const styles = StyleSheet.create({
   },
   heroImageWrapper: {
     height: 298,
+    position: 'relative',
   },
   heroImage: {
     height: 298,
     width: 390,
+  },
+  heroImageLabel: {
+    position: 'absolute',
+    left: '8%',
+    top: '5%',
+    height: 28,
+    width: '84%',
+    borderRadius: 6,
+    backgroundColor: GlobalStyles.colors.robRoy100,
+    justifyContent: "center",
+    alignItems: "center",
+    opacity: 0.9
+  },
+  heroImageLabelCopy: {
+    fontSize: 24,
+  },
+  heroImageDrinkName: {
+    position: 'absolute',
+    left: '4%',
+    bottom: '4%',
+    height: 28,
+    width: '50%',
+    borderRadius: 6,
+    backgroundColor: GlobalStyles.colors.tonysPink300,
+    opacity: 0.8,
+  },
+  heroImageDrinkNameCopy: {
+    fontSize: 24,
   },
   welcomeText: {
     fontSize: 34,
