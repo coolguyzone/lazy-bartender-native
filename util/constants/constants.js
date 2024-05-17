@@ -76,6 +76,7 @@ export const Constants = {
     "Green Creme de Menthe",
     "Maraschino Liqueur",
     "Chambord Raspberry Liqueur",
+    "Curacao",
     "Blue Curacao",
     "Cherry Brandy",
     "Aperol",
@@ -88,8 +89,6 @@ export const Constants = {
     "Creme de Menthe",
     "Coffee Liqueur",
     "Chocolate Liqueur",
-
-
   ],
   beerWine: [
     "Red Wine",
@@ -125,6 +124,8 @@ export const Constants = {
     "Apple Cider",
     "Mountain Dew",
     "Lime Juice Cordial",
+    "Orgeat syrup",
+
   ],
   produce: [
     "Cherry",
@@ -6625,16 +6626,18 @@ export const Constants = {
     {
       name: "Mai Tai",
       ingredients: [
+        "Dark Rum",
         "Light Rum",
+        "Curacao",
+        "Lime Juice",
         "Orgeat syrup",
-        "Triple Sec",
-        "Sour Mix",
-        "Cherry",
+        "Simple Syrup",
       ],
-      measures: ["1 oz ", "1/2 oz ", "1/2 oz ", "1 1/2 oz "],
+      measures: ["1 oz ", "1 oz ", "1/2 oz ", "1 oz ", "1/2 oz"],
       instructions:
-        "Shake all ingredients (except cherry) with ice and strain into a collins glass over several ice cubes. Top with the cherry and serve.",
+        "Shake all ingredients with ice and strain into a collins glass over several ice cubes. Garnish with mint or cherry and serve.",
       glass: "Collins glass",
+      imageUrl: require("../../assets/images/mai-tai-cropped.png"),
     },
 
     {
@@ -34174,5 +34177,7 @@ export const Constants = {
     "Grapefruit",
     "Lime Juice Cordial",
     "Tequila Reposado",
+    "Orgeat syrup",
+    "Curacao",
   ],
 };
