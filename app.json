@@ -1,7 +1,6 @@
 {
   "expo": {
-    "plugins": [
-    ],
+    "plugins": [],
     "name": "Lazy-Bartender-Native",
     "slug": "Lazy-Bartender-Native",
     "version": "1.0.0",
@@ -17,7 +16,8 @@
       "**/*"
     ],
     "ios": {
-      "supportsTablet": true
+      "supportsTablet": true,
+      "bundleIdentifier": "com.coolguyzone.LazyBartenderNative"
     },
     "android": {
       "adaptiveIcon": {
@@ -27,6 +27,11 @@
     },
     "web": {
       "favicon": "./assets/favicon.png"
+    },
+    "extra": {
+      "eas": {
+        "projectId": "37eda1b3-ade2-4887-a151-e3fcab197a9d"
+      }
     }
   }
 }
