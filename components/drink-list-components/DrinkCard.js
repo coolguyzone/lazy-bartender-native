@@ -1,4 +1,11 @@
-import { View, Text, StyleSheet, Pressable, Platform, Image } from "react-native";
+import {
+  View,
+  Text,
+  StyleSheet,
+  Pressable,
+  Platform,
+  Image,
+} from "react-native";
 import { GlobalStyles } from "../../util/constants/globalStyles";
 import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
@@ -8,14 +15,20 @@ import { useNavigation } from "@react-navigation/native";
 import { addFavorite, removeFavorite } from "../../util/slices/inventorySlice";
 
 function DrinkCard({ drinkTitle }) {
-  const ownedIngredientsArray = useSelector((state) => state.inventory.ingredientsArray);
+  const ownedIngredientsArray = useSelector(
+    (state) => state.inventory.ingredientsArray
+  );
   const drink = Constants.drinkList.find((d) => d.name === drinkTitle);
 
   //calculate the percentage of ingredients you have for the drink
   const drinkIngredientsArray = drink.ingredients;
   const totalIngredients = drinkIngredientsArray.length;
-  const ingredientsInInventory = drinkIngredientsArray.filter((ele) => ownedIngredientsArray.includes(ele)).length;
-  const ingredientPercentage = Math.floor((ingredientsInInventory / totalIngredients) * 100);
+  const ingredientsInInventory = drinkIngredientsArray.filter((ele) =>
+    ownedIngredientsArray.includes(ele)
+  ).length;
+  const ingredientPercentage = Math.floor(
+    (ingredientsInInventory / totalIngredients) * 100
+  );
 
   const navigation = useNavigation();
 
@@ -73,21 +86,28 @@ function DrinkCard({ drinkTitle }) {
       onPress={openDrinkRecipe}
     >
       <View style={styles.drinkIcon}>
-      <View style={styles.ikconContainer}>
+        <View style={styles.ikconContainer}>
           <Image
-              source={drink.imageUrl ? drink.imageUrl : require("../../assets/images/icons/icon-drink.png")}
-              style={styles.icon}
-            />
-            </View>
+            source={
+              drink.imageUrl
+                ? drink.imageUrl
+                : require("../../assets/images/icons/icon-drink.png")
+            }
+            style={styles.icon}
+          />
+        </View>
       </View>
       <Text style={styles.drinkTitle}>{drinkTitle}</Text>
-      <Text style={styles.drinkPercentage}>{ingredientPercentage + '%'}</Text>
+      <Text style={styles.drinkPercentage}>{ingredientPercentage + "%"}</Text>
       <Pressable onPress={toggleFavorite} style={styles.faveIcon}>
-      <Image
-              source={require("../../assets/images/icons/icon-star.png")}
-              style={styles.faveIcon}
-            />
-            
+        <Image
+          source={
+            favoritedState
+              ? require("../../assets/images/icons/icon-star-filled.png")
+              : require("../../assets/images/icons/icon-star.png")
+          }
+          style={styles.faveIcon}
+        />
       </Pressable>
     </Pressable>
   );
@@ -134,5 +154,5 @@ const styles = StyleSheet.create({
     marginLeft: 4,
     marginRight: 4,
     marginTop: 1,
-  }
+  },
 });
