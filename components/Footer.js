@@ -10,7 +10,7 @@ function Footer() {
   const drinksAvailable = drinkList.length > 0 ? true : false;
   const route = useRoute();
   const isDrinkScreen = route.name === "Drink List" ? true : false;
-  
+
   return (
     <View style={styles.siteFooterContainer}>
       <Pressable
@@ -18,12 +18,12 @@ function Footer() {
         onPress={() => navigation.navigate("Home")}
       >
         <Text style={styles.siteFooterOptionIcon}>
-        <View style={styles.footerIconContainer}>
-          <Image
+          <View style={styles.footerIconContainer}>
+            <Image
               source={require("../assets/images/icons/icon-home.png")}
               style={styles.footerIcon}
             />
-            </View>
+          </View>
         </Text>
         <Text style={styles.siteFooterOptionContent}>Home</Text>
       </Pressable>
@@ -33,11 +33,11 @@ function Footer() {
       >
         <Text style={styles.siteFooterOptionIcon}>
           <View style={styles.footerIconContainer}>
-          <Image
+            <Image
               source={require("../assets/images/icons/icon-ingredients.png")}
               style={styles.footerIcon}
             />
-            </View>
+          </View>
         </Text>
         <Text style={styles.siteFooterOptionContent}>Ingredients</Text>
       </Pressable>
@@ -47,9 +47,10 @@ function Footer() {
         style={[
           styles.siteFooterMainOption,
           {
-            borderColor: drinksAvailable && !isDrinkScreen
-              ? GlobalStyles.colors.robRoy100
-              : GlobalStyles.colors.towerGray600,
+            borderColor:
+              drinksAvailable && !isDrinkScreen
+                ? GlobalStyles.colors.robRoy100
+                : GlobalStyles.colors.towerGray600,
             backgroundColor: isDrinkScreen
               ? GlobalStyles.colors.robRoy100
               : GlobalStyles.colors.footerGray,
@@ -57,19 +58,25 @@ function Footer() {
         ]}
       >
         <Text style={styles.siteFooterOptionIcon}>
-        <View style={styles.footerIconContainer}>
-          <Image
-              source={require("../assets/images/icons/icon-drink.png")}
+          <View style={styles.footerIconContainer}>
+            <Image
+              source={
+                isDrinkScreen
+                  ? require("../assets/images/icons/icon-drink-dark.png")
+                  : require("../assets/images/icons/icon-drink.png")
+              }
               style={styles.footerIcon}
             />
-            </View>
+          </View>
         </Text>
         <Text
           style={[
             styles.siteFooterOptionContent,
-            {color:isDrinkScreen
-              ? GlobalStyles.colors.footerGray
-              : GlobalStyles.colors.robRoy100,}
+            {
+              color: isDrinkScreen
+                ? GlobalStyles.colors.footerGray
+                : GlobalStyles.colors.robRoy100,
+            },
           ]}
         >
           Drinks
@@ -81,12 +88,12 @@ function Footer() {
         style={styles.siteFooterOption}
       >
         <Text style={styles.siteFooterOptionIcon}>
-        <View style={styles.footerIconContainer}>
-          <Image
+          <View style={styles.footerIconContainer}>
+            <Image
               source={require("../assets/images/icons/icon-inmybar.png")}
               style={styles.footerIcon}
             />
-            </View>
+          </View>
         </Text>
         <Text style={styles.siteFooterOptionContent}>My Bar</Text>
       </Pressable>
@@ -96,12 +103,12 @@ function Footer() {
         style={styles.siteFooterOption}
       >
         <Text style={styles.siteFooterOptionIcon}>
-        <View style={styles.footerIconContainer}>
-          <Image
+          <View style={styles.footerIconContainer}>
+            <Image
               source={require("../assets/images/icons/icon-heart.png")}
               style={styles.footerIcon}
             />
-            </View>
+          </View>
         </Text>
         <Text style={styles.siteFooterOptionContent}>Favorites</Text>
       </Pressable>
