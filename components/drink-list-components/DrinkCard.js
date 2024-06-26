@@ -62,7 +62,7 @@ function DrinkCard({ drinkTitle }) {
     }
   };
 
-  generateBoxShadowStyle(-2, 8, "black", 0.4, 2, 18, "black");
+  generateBoxShadowStyle(-2, 2, "black", 0.4, 2, 18, "black");
 
   const dispatch = useDispatch();
   const favoritesArray = useSelector((state) => state.inventory.favoritesArray);
@@ -117,7 +117,7 @@ export default DrinkCard;
 
 const styles = StyleSheet.create({
   drinkContainer: {
-    marginBottom: 20,
+    marginBottom: 16,
     flexDirection: "row",
     flexWrap: "wrap",
     backgroundColor: "rgba(98, 143, 149, 0.5)",
