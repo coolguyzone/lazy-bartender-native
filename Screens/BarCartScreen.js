@@ -1,13 +1,21 @@
-import { ImageBackground, ScrollView, StyleSheet } from "react-native";
+import { ImageBackground, ScrollView, StyleSheet, View, Text, Image } from "react-native";
 import { Constants } from "../util/constants/constants";
-import { useSelector } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
+import { calculateAlmostDrinks } from "../util/slices/inventorySlice";
 import MainHeader from "../components/MainHeader";
 import ChecklistBox from "../components/CheckListBox";
 import Footer from "../components/Footer";
 import BarCartSubFooter from "../components/bar-cart-components/BarCartSubFooter";
+import { GlobalStyles } from "../util/constants/globalStyles";
+import MyBarIngredientList from "../components/bar-cart-components/MyBarIngredientList";
+import { useEffect } from "react";
+import MyBarRecs from "../components/bar-cart-components/MyBarRecs";
 
 function BarCartScreen() {
   const ingredients = useSelector((state) => state.inventory.ingredientsArray);
+  ;
+ 
+  const almostDrinks = useSelector((state) => state.inventory.almostDrinks);
 
   let baseEssentialsInBar = [];
   let mixerEssentialsInBar = [];
@@ -103,7 +111,9 @@ function BarCartScreen() {
       >
         <ScrollView style={styles.scrollView}>
           <MainHeader>MY BAR</MainHeader>
-          {baseEssentials.options.length > 0 && (
+          <MyBarIngredientList ingredients={ingredients} />
+         
+          {/* {baseEssentials.options.length > 0 && (
             <ChecklistBox titleOptionsObject={baseEssentials} />
           )}
           {mixersEssentials.options.length > 0 && (
@@ -123,10 +133,12 @@ function BarCartScreen() {
           )}
           {pantryAndProduce.options.length > 0 && (
             <ChecklistBox titleOptionsObject={pantryAndProduce} />
-          )}
+          )} */}
+
+          <MyBarRecs />
+          
         </ScrollView>
       </ImageBackground>
-      <BarCartSubFooter />
       <Footer />
     </>
   );
@@ -141,5 +153,22 @@ const styles = StyleSheet.create({
     paddingLeft: 15,
     paddingRight: 15,
     paddingTop: 60,
+  },
+  myBarIngredientsWrapper: {
+    marginTop: 32,
+  },
+  myBarIngredient: {
+    flexDirection: "row",
+    flexWrap: "wrap",
+    marginBottom: 20,
+  },
+  myBarIngredientCopy: {
+    flex: 1,
+    color: GlobalStyles.colors.robRoy100,
+    fontSize: 14,
+  },
+  myBarIngredientIcon: {
+    width: 12,
+    height: 12,
   },
 });
