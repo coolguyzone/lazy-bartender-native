@@ -1,15 +1,16 @@
 import { View, Text, StyleSheet, Image, Pressable } from "react-native";
 import { GlobalStyles } from "../../util/constants/globalStyles";
-import { useEffect, useState } from "react";
-import { Ionicons } from "@expo/vector-icons";
+import { useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { calculateAlmostDrinks } from "../../util/slices/inventorySlice";
 
-function MyBarRecs({ ingredients }) {
+function MyBarRecs() {
   const dispatch = useDispatch();
   const almostDrinks = useSelector((state) => state.inventory.almostDrinks);
-  const ingredientsArray = useSelector((state) => state.inventory.ingredientsArray);
-  const sortedDrinkRecsArray = useSelector(
+  const ingredientsArray = useSelector(
+    (state) => state.inventory.ingredientsArray
+  );
+  let sortedDrinkRecsArray = useSelector(
     (state) => state.inventory.sortedDrinkRecsArray
   );
 
@@ -21,17 +22,18 @@ function MyBarRecs({ ingredients }) {
     <View style={styles.suggestedIngredientsWrapper}>
       <View style={styles.suggestedIngredientsHeader}>
         <Text style={styles.suggestedIngredientsHeaderCopy}>
-          Suggested Ingredients: If you have these ingredients you can make X
-          more drinks
+          Suggested Ingredients to make more drinks!
         </Text>
         {sortedDrinkRecsArray.map((ele) => {
           return (
-            <View style={styles.suggestedIngredientWrapper}>
+            <View style={styles.suggestedIngredientWrapper} key={ele[0]}>
               <Text style={styles.suggestedIngredientCopy}>{ele[0]}</Text>
-              <Text style={styles.suggestedIngredientNumber}>{ele[1]} Drinks</Text>
+              <Text style={styles.suggestedIngredientNumber}>
+                +{ele[1]} Drinks
+              </Text>
               <View>
                 <Image
-                  source={require("../../assets/images/icons/icon-drink.png")}
+                  source={require("../../assets/images/icons/icon-in-bar.png")}
                   style={styles.suggestedIngredientIcon}
                 />
               </View>

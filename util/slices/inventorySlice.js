@@ -108,6 +108,7 @@ export const inventorySlice = createSlice({
       state.almostDrinks = [];
       state.missingIngredientsArray = [];
       state.drinkRecsArray = [];
+      state.sortedDrinkRecsArray = [];
       drinkList.forEach((drink) => {
         let missingIngredients = 0;
         let missingIngredient;
@@ -116,42 +117,40 @@ export const inventorySlice = createSlice({
             missingIngredients++;
             missingIngredient = ingredient;
           }
-        })
+        });
         if (missingIngredients === 1) {
           state.almostDrinks.push(drink);
           state.missingIngredientsArray.push(missingIngredient);
         }
-      })
+      });
       state.missingIngredientsArray.forEach((ingredient) => {
         let found = false;
-        console.log('hey dude', state.drinkRecsArray);
-        for (let i=0;  i < state.drinkRecsArray.length; i++) {
-          console.log('howdy', state.drinkRecsArray[i], state.drinkRecsArray[i][0]);
+        for (let i = 0; i < state.drinkRecsArray.length; i++) {
           if (state.drinkRecsArray[i][0] === ingredient) {
-            console.log('mfer')
             found = true;
             state.drinkRecsArray[i][1]++;
-          } 
+          }
         }
         if (!found) {
           state.drinkRecsArray.push([ingredient, 1]);
         }
-      })
-      console.log('drinkrecsarray', state.drinkRecsArray);
-      while (state.sortedDrinkRecsArray.length < 5 && state.drinkRecsArray.length > 0) {
-        let max = ['', 0];
+      });
+      while (
+        state.sortedDrinkRecsArray.length < 5 &&
+        state.drinkRecsArray.length > 0
+      ) {
+        let max = ["", 0];
         let maxIndex;
         state.drinkRecsArray.forEach((ele, i) => {
           if (ele[1] > max[1]) {
             max = ele;
             maxIndex = i;
           }
-        })
+        });
         state.sortedDrinkRecsArray.push(max);
         state.drinkRecsArray.splice(maxIndex, 1);
       }
-      console.log('sorteddrinksarray', state.sortedDrinkRecsArray)
-    }
+    },
   },
 });
 

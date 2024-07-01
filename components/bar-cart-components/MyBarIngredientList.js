@@ -1,9 +1,7 @@
 import { View, Text, StyleSheet, Image, Pressable } from "react-native";
 import { GlobalStyles } from "../../util/constants/globalStyles";
 import { useState } from "react";
-import { useDispatch } from "react-redux";
 import { Ionicons } from "@expo/vector-icons";
-
 
 function MyBarIngredientList({ ingredients }) {
   const firstElevenIngredients = ingredients.slice(0, 11);
@@ -29,21 +27,26 @@ function MyBarIngredientList({ ingredients }) {
             return (
               <View style={styles.myBarIngredient} key={ele}>
                 <Text style={styles.myBarIngredientCopy}>{ele}</Text>
-                <View>
+                <View style={styles.myBarIngredientIconContainer}>
                   <Image
                     source={require("../../assets/images/icons/icon-drink.png")}
+                    style={styles.myBarIngredientIcon}
+                  />
+                  <Image
+                    source={require("../../assets/images/icons/icon-trash.jpg")}
                     style={styles.myBarIngredientIcon}
                   />
                 </View>
               </View>
             );
           })}
-          {ingredients.length > 11 && (
-        <Pressable 
-        onPress={() => {
-          !expanded ? setExpanded(true) : setExpanded(false)
-        }}
-        style={styles.expandIcon}>
+      {ingredients.length > 11 && (
+        <Pressable
+          onPress={() => {
+            !expanded ? setExpanded(true) : setExpanded(false);
+          }}
+          style={styles.expandIcon}
+        >
           <Ionicons
             name={expanded ? "chevron-up-outline" : "chevron-down-outline"}
             color={GlobalStyles.colors.robRoy100}
@@ -70,6 +73,11 @@ const styles = StyleSheet.create({
     flex: 1,
     color: GlobalStyles.colors.robRoy100,
     fontSize: 14,
+  },
+  myBarIngredientIconContainer: {
+    flexDirection: "row",
+    flexWrap: "wrap",
+    gap: 12,
   },
   myBarIngredientIcon: {
     width: 12,
