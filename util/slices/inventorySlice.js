@@ -24,6 +24,10 @@ export const inventorySlice = createSlice({
     drinkSearchActive: false,
     ingredientSearchArray: [],
     ingredientSearchActive: false,
+    almostDrinks: [],
+    missingIngredientsArray: [],
+    drinkRecsArray: [],
+    sortedDrinkRecsArray: [],
   },
   reducers: {
     addIngredient: (state, action) => {
@@ -99,6 +103,54 @@ export const inventorySlice = createSlice({
         state.ingredientSearchActive = false;
       }
     },
+
+    calculateAlmostDrinks: (state, action) => {
+      state.almostDrinks = [];
+      state.missingIngredientsArray = [];
+      state.drinkRecsArray = [];
+      state.sortedDrinkRecsArray = [];
+      drinkList.forEach((drink) => {
+        let missingIngredients = 0;
+        let missingIngredient;
+        drink.ingredients.forEach((ingredient) => {
+          if (!state.ingredientsArray.includes(ingredient)) {
+            missingIngredients++;
+            missingIngredient = ingredient;
+          }
+        });
+        if (missingIngredients === 1) {
+          state.almostDrinks.push(drink);
+          state.missingIngredientsArray.push(missingIngredient);
+        }
+      });
+      state.missingIngredientsArray.forEach((ingredient) => {
+        let found = false;
+        for (let i = 0; i < state.drinkRecsArray.length; i++) {
+          if (state.drinkRecsArray[i][0] === ingredient) {
+            found = true;
+            state.drinkRecsArray[i][1]++;
+          }
+        }
+        if (!found) {
+          state.drinkRecsArray.push([ingredient, 1]);
+        }
+      });
+      while (
+        state.sortedDrinkRecsArray.length < 5 &&
+        state.drinkRecsArray.length > 0
+      ) {
+        let max = ["", 0];
+        let maxIndex;
+        state.drinkRecsArray.forEach((ele, i) => {
+          if (ele[1] > max[1]) {
+            max = ele;
+            maxIndex = i;
+          }
+        });
+        state.sortedDrinkRecsArray.push(max);
+        state.drinkRecsArray.splice(maxIndex, 1);
+      }
+    },
   },
 });
 
@@ -109,6 +161,7 @@ export const {
   removeFavorite,
   drinkSearchTextChanged,
   ingredientSearchTextChanged,
+  calculateAlmostDrinks,
 } = inventorySlice.actions;
 export const ingredientsArray = (state) =>
   state.inventory.ingredientsArray.toString();
