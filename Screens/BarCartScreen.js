@@ -1,14 +1,22 @@
-import { ImageBackground, ScrollView, StyleSheet, View, Text, Image } from "react-native";
+import {
+  ImageBackground,
+  ScrollView,
+  StyleSheet,
+  View,
+  Text,
+  Pressable,
+} from "react-native";
 import { useSelector } from "react-redux";
 import MainHeader from "../components/MainHeader";
 import Footer from "../components/Footer";
 import { GlobalStyles } from "../util/constants/globalStyles";
 import MyBarIngredientList from "../components/bar-cart-components/MyBarIngredientList";
 import MyBarRecs from "../components/bar-cart-components/MyBarRecs";
+import { useNavigation } from "@react-navigation/native";
 
 function BarCartScreen() {
   const ingredients = useSelector((state) => state.inventory.ingredientsArray);
-  ;
+  const navigation = useNavigation();
 
   return (
     <>
@@ -23,7 +31,16 @@ function BarCartScreen() {
           <View style={styles.divider}></View>
 
           <MyBarRecs />
-          
+          <View style={styles.divider}></View>
+          <Pressable
+            style={styles.availableDrinksBtn}
+            onPress={() => {
+              navigation.navigate("Drink List");
+            }}
+            android_ripple={{ color: GlobalStyles.colors.tonysPink300 }}
+          >
+            <Text style={styles.availableDrinksBtnCopy}>Available Drinks</Text>
+          </Pressable>
         </ScrollView>
       </ImageBackground>
       <Footer />
@@ -62,5 +79,15 @@ const styles = StyleSheet.create({
     borderBottomColor: GlobalStyles.colors.robRoy100,
     borderBottomWidth: 1,
     marginVertical: 20,
+  },
+  availableDrinksBtn: {
+    backgroundColor: GlobalStyles.colors.robRoy100,
+    borderColor: GlobalStyles.colors.robRoy100,
+    borderWidth: 1,
+    height: 36,
+    borderRadius: 6,
+    justifyContent: "center",
+    alignItems: "center",
+    flex: 1,
   },
 });

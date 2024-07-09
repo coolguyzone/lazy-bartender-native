@@ -6,7 +6,6 @@ import { calculateAlmostDrinks } from "../../util/slices/inventorySlice";
 
 function MyBarRecs() {
   const dispatch = useDispatch();
-  const almostDrinks = useSelector((state) => state.inventory.almostDrinks);
   const ingredientsArray = useSelector(
     (state) => state.inventory.ingredientsArray
   );
@@ -24,23 +23,24 @@ function MyBarRecs() {
         <Text style={styles.suggestedIngredientsHeaderCopy}>
           Suggested Ingredients to make more drinks!
         </Text>
-        {sortedDrinkRecsArray.map((ele) => {
-          return (
-            <View style={styles.suggestedIngredientWrapper} key={ele[0]}>
-              <Text style={styles.suggestedIngredientCopy}>{ele[0]}</Text>
-              <Text style={styles.suggestedIngredientNumber}>
-                +{ele[1]} Drinks
-              </Text>
-              <View>
-                <Image
-                  source={require("../../assets/images/icons/icon-in-bar.png")}
-                  style={styles.suggestedIngredientIcon}
-                />
-              </View>
-            </View>
-          );
-        })}
       </View>
+
+      {sortedDrinkRecsArray.map((ele) => {
+        return (
+          <View style={styles.suggestedIngredientWrapper} key={ele[0]}>
+            <Text style={styles.suggestedIngredientCopy}>{ele[0]}</Text>
+            <Text style={styles.suggestedIngredientNumber}>
+              +{ele[1]} Drinks
+            </Text>
+            <View>
+              <Image
+                source={require("../../assets/images/icons/icon-in-bar.png")}
+                style={styles.suggestedIngredientIcon}
+              />
+            </View>
+          </View>
+        );
+      })}
     </View>
   );
 }
@@ -48,6 +48,9 @@ function MyBarRecs() {
 export default MyBarRecs;
 
 const styles = StyleSheet.create({
+  suggestedIngredientsHeader: {
+    marginBottom: 20,
+  },
   suggestedIngredientsHeaderCopy: {
     color: GlobalStyles.colors.robRoy100,
     fontSize: 14,
