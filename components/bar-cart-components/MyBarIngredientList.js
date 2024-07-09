@@ -2,10 +2,13 @@ import { View, Text, StyleSheet, Image, Pressable } from "react-native";
 import { GlobalStyles } from "../../util/constants/globalStyles";
 import { useState } from "react";
 import { Ionicons } from "@expo/vector-icons";
+import { useDispatch } from "react-redux";
+import { removeIngredient } from "../../util/slices/inventorySlice";
 
 function MyBarIngredientList({ ingredients }) {
   const firstElevenIngredients = ingredients.slice(0, 11);
   const [expanded, setExpanded] = useState(false);
+  const dispatch = useDispatch();
 
   return (
     <View style={styles.myBarIngredientsWrapper}>
@@ -32,10 +35,16 @@ function MyBarIngredientList({ ingredients }) {
                     source={require("../../assets/images/icons/icon-drink.png")}
                     style={styles.myBarIngredientIcon}
                   />
-                  <Image
-                    source={require("../../assets/images/icons/icon-trash.jpg")}
-                    style={styles.myBarIngredientIcon}
-                  />
+                  <Pressable
+                    onPress={() => {
+                      dispatch(removeIngredient(ele));
+                    }}
+                  >
+                    <Image
+                      source={require("../../assets/images/icons/icon-trash.png")}
+                      style={styles.myBarIngredientIcon}
+                    />
+                  </Pressable>
                 </View>
               </View>
             );
