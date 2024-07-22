@@ -14340,6 +14340,7 @@ export const Constants = {
       instructions:
         "1. Fill mixing glass with ice 2. Add light rum and lime juice and sugar syrup 3. Shake 4. Strain into a collins glass filled with ice 5. Fill with club soda. 6. Garnish with a wedge of lime.",
       glass: "Collins glass",
+      imageUrl: require("../../assets/images/rum-rickey.png"),
     },
 
     {
@@ -14468,6 +14469,7 @@ export const Constants = {
       instructions:
         "Stir all ingredients with ice, strain into a glass with ice, and serve with orange twist as garnish.",
       glass: "Old-fashioned glass",
+      imageUrl: require("../../assets/images/mezcal-negroni.png"),
     },
 
     {
@@ -14642,6 +14644,7 @@ export const Constants = {
       measures: ["1 oz Stoli ", "1 oz ", "Small dash ", "Small dash "],
       instructions: "Stir ingredients on ice and strain into martini glass.",
       glass: "Cocktail glass",
+      imageUrl: require("../../assets/images/cosmopolitan.png"),
     },
 
     {
@@ -14922,6 +14925,7 @@ export const Constants = {
       instructions:
       'In a highball glass with ice add the rum and lime, then the ginger beer and stir, squeeze and top with lime.',
       glass: "Highball glass",
+      imageUrl: require("../../assets/images/dark-and-stormy.png"),
     },
     {
       name: "The Paloma",
@@ -14930,6 +14934,7 @@ export const Constants = {
       instructions:
       'In a highball glass with ice add the tequila and lime, then the soda and stir, squeeze and top with lime.',
       glass: "Highball glass",
+      imageUrl: require("../../assets/images/paloma.png"),
     },
     {
       name: "The Last Word",
