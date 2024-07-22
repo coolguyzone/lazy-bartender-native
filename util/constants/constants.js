@@ -90,6 +90,7 @@ export const Constants = {
     "Coffee Liqueur",
     "Chocolate Liqueur",
     "Goldschlager",
+    "Cointreau",
   ],
   beerWine: [
     "Red Wine",
@@ -126,6 +127,7 @@ export const Constants = {
     "Mountain Dew",
     "Lime Juice Cordial",
     "Orgeat syrup",
+    "Grapefruit Soda",
   ],
   produce: [
     "Cherry",
@@ -946,17 +948,17 @@ export const Constants = {
     {
       name: "Beachcomber",
       ingredients: [
-        "Sugar",
-        "Lime",
         "Light Rum",
+        "Cointreau",
         "Maraschino Liqueur",
-        "Cherry Brandy",
         "Lime Juice",
+        "Simple Syrup",
+        "Lime",
       ],
-      measures: ["2 tsp superfine ", "2 oz ", "1 tsp ", "1 tsp ", "1/2 oz "],
+      measures: ["2 oz ", "3/4 oz ", "1/4 oz ", "1 wedge "],
       instructions:
-        "Place sugar in a saucer. Rub the rim of a cocktail glass with lime wedge and dip glass into sugar to coat rim thoroughly, reserve lime. In a shaker half-filled with ice cubes, combine rum, maraschino liqueur, cherry brandy, and lime juice. Shake well.",
-      glass: "Cocktail glass",
+        "Combine all ingredients with ice in a shaker, strain into a coupe glass or old-fashioned glass over ice. Garnish with lime wedge and/or an optional mint sprig.",
+      glass: "Coupe glass",
     },
 
     {
@@ -5015,7 +5017,7 @@ export const Constants = {
     {
       name: "Greyhound",
       ingredients: ["Gin", "Grapefruit Juice"],
-      measures: ["1 1/2 oz ", "5 oz "],
+      measures: ["2 oz ", "2-4 oz "],
       instructions:
         "Pour ingredients into a highball glass over ice cubes. Stir well and serve. (Vodka may be substituted for gin, if preferred.)",
       glass: "Highball glass",
@@ -8487,7 +8489,7 @@ export const Constants = {
     {
       name: "Rusty Nail",
       ingredients: ["Scotch", "Drambuie", "Lemon Peel"],
-      measures: ["1 1/2 oz ", "1/2 oz ", "1 twist of "],
+      measures: ["2 oz ", "1 oz ", "1 twist of "],
       instructions:
         "Pour the Scotch and Drambuie into an old-fashioned glass almost filled with ice cubes. Stir well. Garnish with the lemon twist.",
       glass: "Old-fashioned glass",
@@ -8839,7 +8841,7 @@ export const Constants = {
     {
       name: "Screwdriver",
       ingredients: ["Vodka", "Orange Juice"],
-      measures: ["2 oz "],
+      measures: ["2 oz ", "4 oz "],
       instructions:
         "Put 3 ice cubes into a highball glass. Pour in vodka. Fill balance of glass with orange juice, stir, and serve.",
       glass: "Highball glass",
@@ -12501,7 +12503,7 @@ export const Constants = {
     {
       name: "Cape Codder",
       ingredients: ["Vodka", "Cranberry Juice", "Lime"],
-      measures: ["1 1/2 oz ", "3 oz ", "1 wedge "],
+      measures: ["2 oz ", "4 oz ", "1 wedge "],
       instructions:
         "Pour Vodka and Cranberry Juice into a High Ball glass over ice. Stir well, add the wedge of lime, and serve.",
       glass: "Highball glass",
@@ -14857,6 +14859,104 @@ export const Constants = {
         "In a shaker half-filler with ice cubes, combine all of the ingredients. Shake well. Strain into a cocktail glass.",
       glass: "Cocktail glass",
     },
+    {
+      name: "The Derby",
+      ingredients: ["Bourbon", "Cointreau", "Sweet Vermouth", "Lime Juice"],
+      measures: ["2 oz ", "1 oz ", "1 oz ", "1 oz ", "3/4 oz "],
+      instructions:
+        "In a shaker half-filler with ice cubes, combine all of the ingredients. Shake well. Strain into a coupe glass, use a mint sprig as an optional garnish.",
+      glass: "Coupe glass",
+    },
+    {
+      name: "The Pegu Club",
+      ingredients: [
+        "Gin",
+        "Cointreau",
+        "Lime Juice",
+        "Simple Syrup",
+        "Angostura Bitters",
+        "Orange Bitters",
+        "Lime",
+      ],
+      measures: [
+        "2 oz ",
+        "3/4 oz ",
+        "1/2 oz ",
+        "1 tsp ",
+        "1 dash ",
+        "1 dash ",
+        "1 wedge ",
+      ],
+      instructions:
+        "In a shaker half-filler with ice cubes, combine all of the ingredients. Shake well. Strain into a coupe glass or rocks glass over ice, garnish with lime.",
+      glass: "Coupe glass",
+    },
+    {
+      name: "The Obituary",
+      ingredients: ["Gin", "Dry Vermouth", "Absinthe", "Lemon"],
+      measures: ["2 oz ", "1/4 oz ", "1/4 oz ", "1 twist "],
+      instructions:
+        "In a shaker half-filler with ice cubes, combine all of the ingredients. Shake well. Strain into a coupe or martini glass, add lemon twist.",
+      glass: "Coupe glass",
+    },
+    {
+      name: "The Vesper",
+      ingredients: ["Gin", "Vodka", "Lillet Blanc", "Orange"],
+      measures: ["3 oz ", "1 oz ", "1/2 oz ", "1 twist "],
+      instructions:
+        "In a shaker half-filler with ice cubes, combine all of the ingredients. Shake well. Strain into a coupe or martini glass, add orange twist.",
+      glass: "Coupe glass",
+    },
+    {
+      name: "Chartreuse and Tonic",
+      ingredients: ["Green Chartreuse", "Tonic", "Lime"],
+      measures: ["2 oz ", "4 oz ", "1 wedge "],
+      instructions:
+      'In a highball glass with ice add the Chartruese, then the tonic, top with lime.',
+      glass: "Highball glass",
+    },
+    {
+      name: "Dark and Stormy",
+      ingredients: ["Dark Rum", "Lime Juice", 'Ginger Beer', 'Lime'],
+      measures: ["2 oz ", '1/2 oz ', '2-4 oz', '1 wedge'],
+      instructions:
+      'In a highball glass with ice add the rum and lime, then the ginger beer and stir, squeeze and top with lime.',
+      glass: "Highball glass",
+    },
+    {
+      name: "The Paloma",
+      ingredients: ["Tequila", "Lime Juice", "Grapefruit Soda", "Lime"],
+      measures: ["2 oz ", '1/4 oz ', '4 oz', '1 wedge '],
+      instructions:
+      'In a highball glass with ice add the tequila and lime, then the soda and stir, squeeze and top with lime.',
+      glass: "Highball glass",
+    },
+    {
+      name: "The Last Word",
+      ingredients: ["Gin", 'Green Chartreuse',"Maraschino Liqueur", 'Lime Juice',],
+      measures: ["3/4 oz ", '3/4 oz ', '3/4 oz ', '3/4 oz '],
+      instructions:
+      "In a shaker half-filler with ice cubes, combine all of the ingredients. Shake well. Strain into a coupe glass, optionally garnish with a brandied cherry.",
+      glass: "Coupe glass",
+    },
+    {
+      name: "The Division Bell",
+      ingredients: ["Mezcal", 'Aperol', 'Maraschino Liqueur', 'Lime Juice', 'Grapefruit'],
+      measures: ["1 oz ", '3/4 oz ', '1/2 oz ', '3/4 oz ', '1 twist '],
+      instructions:
+      "In a shaker half-filler with ice cubes, combine all of the ingredients. Shake well. Strain into a coupe glass, top with grapefruit.",
+      glass: "Coupe glass",
+    },
+    
+    {
+      name: "The Sun Also Rises",
+      ingredients: ["Rum", 'Maraschino Liqueur', 'Absinthe', 'Lime Juice', 'Grapefruit Juice'],
+      measures: ["2 oz ", '1/2 oz ', '1 tsp ', '3/4 oz '],
+      instructions:
+      "In a shaker half-filler with ice cubes, combine all of the ingredients. Shake well. Strain into an old-fashioned glass over ice, optionally garnish with a grapefruit wedge or twist.",
+      glass: "Old-fashioned glass",
+    },
+    
   ],
 
   allIngredients: [
@@ -15005,5 +15105,7 @@ export const Constants = {
     "Orgeat syrup",
     "Curacao",
     "Goldschlager",
+    "Cointreau",
+    "Grapefruit Soda",
   ],
 };
