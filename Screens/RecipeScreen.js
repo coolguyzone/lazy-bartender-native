@@ -33,7 +33,7 @@ function RecipeScreen({ route }) {
             {drinkObj.imageUrl ? (
               <Image source={drinkObj.imageUrl} style={styles.recipeImage} />
             ) : (
-              <Text style={styles.dummyImage}>Recipe Image</Text>
+              <Image source={require("../assets/images/placeholder2.png")} style={styles.recipeImage} />
             )}
           </View>
 
