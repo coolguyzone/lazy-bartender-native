@@ -1,4 +1,4 @@
-import { StyleSheet } from "react-native";
+import { StyleSheet, Button } from "react-native";
 import { NavigationContainer } from "@react-navigation/native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import HomeScreen from "./Screens/HomeScreen";
@@ -9,6 +9,14 @@ import IngredientsScreen from "./Screens/IngredientsScreen";
 import DrinkListScreen from "./Screens/DrinkListScreen";
 import RecipeScreen from "./Screens/RecipeScreen";
 import FavoritesScreen from "./Screens/FavoritesScreen";
+import * as Sentry from '@sentry/react-native';
+
+Sentry.init({
+  dsn: 'https://87ecbc349ec74aec0506f80a4979d2bb@o4508010433216512.ingest.us.sentry.io/4508758036643841',
+
+  // uncomment the line below to enable Spotlight (https://spotlightjs.com)
+  // spotlight: __DEV__,
+});
 
 const Stack = createNativeStackNavigator();
 

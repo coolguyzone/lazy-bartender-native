@@ -1,6 +1,16 @@
 {
+  "newArchEnabled": true,
   "expo": {
-    "plugins": [],
+    "plugins": [
+      [
+        "@sentry/react-native/expo",
+        {
+          "url": "https://sentry.io/",
+          "project": "lazy-bartender",
+          "organization": "danflashes"
+        }
+      ]
+    ],
     "name": "Lazy-Bartender-Native",
     "slug": "Lazy-Bartender-Native",
     "version": "1.0.0",
